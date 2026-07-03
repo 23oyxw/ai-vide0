@@ -14,6 +14,7 @@ class Settings(BaseSettings):
 
     video_factory_path: Path = Path(r"C:\Users\oyxw\Projects\video-factory")
     ai_koubo_path: Path = Path(r"C:\Users\oyxw\Projects\ai-koubo-platform")
+    ai_koubo_url: str = "http://127.0.0.1:8000"
     c4d_root: Path = Path(r"C:\BKC4D")
     ffmpeg_path: Path = Path(r"C:\Users\oyxw\bin\ffmpeg\ffmpeg.exe")
     openclaw_bin: str = "openclaw"

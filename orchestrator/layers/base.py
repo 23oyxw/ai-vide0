@@ -11,7 +11,7 @@ class LayerContext(BaseModel):
 
     job_id: str
     product_url: str | None = None
-    demo_name: str = "product_ad"
+    demo_name: str = "post_production_15s_zhongcao"
     c4d_project: str | None = None
     metadata: dict[str, Any] = Field(default_factory=dict)
     artifacts: dict[str, str] = Field(default_factory=dict)

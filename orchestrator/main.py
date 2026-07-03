@@ -7,6 +7,7 @@ from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.responses import JSONResponse
 
 from orchestrator import __version__
+from orchestrator.adapters.ai_koubo import check_health as koubo_health
 from orchestrator.adapters.c4d import check_c4d, render_project
 from orchestrator.adapters.video_factory import list_demos, run_demo
 from orchestrator.config import settings
@@ -91,6 +92,8 @@ async def health() -> ApiEnvelope[HealthData]:
 async def tools_check() -> ApiEnvelope[ToolsCheckData]:
     import shutil
 
+    koubo_status = await koubo_health()
+
     return ok_envelope(
         ToolsCheckData(
             video_factory={
@@ -101,6 +104,8 @@ async def tools_check() -> ApiEnvelope[ToolsCheckData]:
             ai_koubo={
                 "path": str(settings.ai_koubo_path),
                 "exists": settings.ai_koubo_path.exists(),
+                "url": settings.ai_koubo_url,
+                **koubo_status,
             },
             c4d=check_c4d(),
             ffmpeg={
@@ -401,7 +406,9 @@ async def pipeline_run(req: PipelineRunRequest) -> ApiEnvelope[PipelineRunData]:
 
 
 @app.post("/tools/video-factory/run")
-async def tool_video_factory(demo_name: str = "product_ad") -> ApiEnvelope[dict[str, Any]]:
+async def tool_video_factory(
+    demo_name: str = "post_production_15s_zhongcao",
+) -> ApiEnvelope[dict[str, Any]]:
     return ok_envelope(run_demo(demo_name), layer="L4")
 
 

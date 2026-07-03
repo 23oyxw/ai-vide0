@@ -1,10 +1,19 @@
 from __future__ import annotations
 
+import os
 import subprocess
 import sys
 from pathlib import Path
 
 from orchestrator.config import settings
+
+
+def _video_factory_python(vf_root: Path) -> str:
+    for rel in (".venv/Scripts/python.exe", "venv/Scripts/python.exe"):
+        candidate = vf_root / rel
+        if candidate.exists():
+            return str(candidate)
+    return sys.executable
 
 
 def run_demo(demo_name: str) -> dict:
@@ -23,7 +32,9 @@ def run_demo(demo_name: str) -> dict:
             "message": f"run.py missing in {vf_root}",
         }
 
-    cmd = [sys.executable, str(run_py), "run", demo_name]
+    cmd = [_video_factory_python(vf_root), str(run_py), "run", demo_name]
+    env = os.environ.copy()
+    env.setdefault("PIPELINE_MODE", "mock")
     try:
         proc = subprocess.run(
             cmd,
@@ -31,6 +42,7 @@ def run_demo(demo_name: str) -> dict:
             capture_output=True,
             text=True,
             timeout=600,
+            env=env,
         )
         output_dir = str(vf_root / "output" / demo_name)
         if proc.returncode == 0:

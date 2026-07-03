@@ -71,6 +71,7 @@ export function DashboardShell() {
           topic,
           product,
           script,
+          demo_name: "post_production_15s_zhongcao",
           layers: ["L3", "L4"],
         }),
       });
