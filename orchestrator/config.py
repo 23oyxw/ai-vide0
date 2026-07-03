@@ -21,6 +21,10 @@ class Settings(BaseSettings):
 
     orchestrator_host: str = "127.0.0.1"
     orchestrator_port: int = 8765
+    pipeline_mode: str = "mock"
+    jobs_dir: Path = Path("data/jobs")
+    data_root: Path = Path("data")
+    c4d_project_template: Path | None = None
 
     mysql_host: str = "127.0.0.1"
     mysql_port: int = 3306

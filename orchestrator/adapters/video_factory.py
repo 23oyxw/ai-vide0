@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import os
 import subprocess
 import sys
@@ -14,6 +15,30 @@ def _video_factory_python(vf_root: Path) -> str:
         if candidate.exists():
             return str(candidate)
     return sys.executable
+
+
+def find_latest_run(output_base: Path) -> Path | None:
+    """Return newest run directory containing manifest.json."""
+    if not output_base.exists():
+        return None
+    candidates = [
+        p
+        for p in output_base.iterdir()
+        if p.is_dir() and (p / "manifest.json").exists()
+    ]
+    if not candidates:
+        return None
+    return max(candidates, key=lambda p: p.stat().st_mtime)
+
+
+def read_manifest(run_dir: Path) -> dict | None:
+    manifest_path = run_dir / "manifest.json"
+    if not manifest_path.exists():
+        return None
+    try:
+        return json.loads(manifest_path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return None
 
 
 def run_demo(demo_name: str) -> dict:
@@ -34,7 +59,7 @@ def run_demo(demo_name: str) -> dict:
 
     cmd = [_video_factory_python(vf_root), str(run_py), "run", demo_name]
     env = os.environ.copy()
-    env.setdefault("PIPELINE_MODE", "mock")
+    env["PIPELINE_MODE"] = settings.pipeline_mode
     try:
         proc = subprocess.run(
             cmd,
@@ -44,12 +69,25 @@ def run_demo(demo_name: str) -> dict:
             timeout=600,
             env=env,
         )
-        output_dir = str(vf_root / "output" / demo_name)
+        output_base = vf_root / "output" / demo_name
+        run_dir = find_latest_run(output_base)
+        manifest_path = str(run_dir / "manifest.json") if run_dir else ""
+        final_video = ""
+        if run_dir and manifest_path and Path(manifest_path).exists():
+            manifest = json.loads(Path(manifest_path).read_text(encoding="utf-8"))
+            final_name = manifest.get("final_video", "final.mp4")
+            candidate = run_dir / str(final_name)
+            if candidate.exists():
+                final_video = str(candidate)
+
         if proc.returncode == 0:
             return {
                 "status": "ok",
                 "message": f"video-factory demo '{demo_name}' completed",
-                "output_dir": output_dir,
+                "output_dir": str(run_dir or output_base),
+                "manifest_path": manifest_path,
+                "final_video": final_video,
+                "pipeline_mode": settings.pipeline_mode,
                 "stdout": proc.stdout[-2000:] if proc.stdout else "",
             }
         return {

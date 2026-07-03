@@ -32,7 +32,7 @@ try {
 
     $body = @{
         product_url = "https://example.com/product/demo"
-        demo_name = "product_ad"
+        demo_name = "post_production_15s_zhongcao"
         layers = @("L1","L2","L3","L4","L5","L6","L7","L8")
     } | ConvertTo-Json
 

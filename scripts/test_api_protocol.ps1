@@ -197,7 +197,7 @@ Test-Endpoint -Name "POST /data/analysis" -Method Post -Path "/data/analysis" -B
 
 Test-Endpoint -Name "POST /pipeline/run (L1-L3)" -Method Post -Path "/pipeline/run" -Body @{
     product_url = "https://example.com/product/demo"
-    demo_name = "product_ad"
+    demo_name = "post_production_15s_zhongcao"
     layers = @("L1", "L2", "L3")
 } -Assert {
     param($r)
@@ -206,6 +206,31 @@ Test-Endpoint -Name "POST /pipeline/run (L1-L3)" -Method Post -Path "/pipeline/r
     if (-not $r.meta.job_id) { throw "expected meta.job_id" }
     if ($r.data.layer_results.Count -ne 3) { throw "expected 3 layer_results" }
     if ($r.data.status -ne "ok") { throw "expected data.status=ok" }
+    if (-not $r.data.artifacts.storyboard_yaml) { throw "expected storyboard_yaml artifact" }
+}
+
+Test-Endpoint -Name "POST /pipeline/run (L1-L8 full)" -Method Post -Path "/pipeline/run" -Body @{
+    product_url = "https://example.com/product/demo"
+    demo_name = "post_production_15s_zhongcao"
+    layers = @("L1", "L2", "L3", "L4", "L5", "L6", "L7", "L8")
+} -Assert {
+    param($r)
+    if (-not $r.ok) { throw "expected ok=true" }
+    if ($r.data.layer_results.Count -ne 8) { throw "expected 8 layer_results" }
+    if ($r.data.status -ne "ok") { throw "expected data.status=ok" }
+    if (-not $r.data.artifacts.manifest_path) { throw "expected manifest_path" }
+    if (-not $r.data.artifacts.qa_score) { throw "expected qa_score" }
+}
+
+Test-Endpoint -Name "POST /pipeline/run (force_qa_fail)" -Method Post -Path "/pipeline/run" -Body @{
+    demo_name = "post_production_15s_zhongcao"
+    layers = @("L1", "L2", "L3", "L4", "L5", "L6")
+    force_qa_fail = $true
+} -Assert {
+    param($r)
+    if (-not $r.ok) { throw "expected ok=true envelope" }
+    if ($r.data.status -ne "qa_failed") { throw "expected qa_failed" }
+    if ($r.data.retry_from -ne "L2") { throw "expected retry_from=L2" }
 }
 
 Test-Endpoint -Name "POST /pipeline/run (bad layer order)" -Method Post -Path "/pipeline/run" -Body @{

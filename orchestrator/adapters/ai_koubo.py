@@ -122,7 +122,7 @@ async def publish_video(
 ) -> dict:
     """L7: POST /api/pipeline/publish, stub if offline."""
     if not await _reachable():
-        return _publish_stub(job_id)
+        return _publish_stub(job_id, video_path=video_path)
 
     payload = {
         "video_path": video_path or str(
@@ -149,6 +149,7 @@ async def publish_video(
                 ),
                 "artifacts": {
                     "publish_target": "ai-koubo",
+                    "video_path": video_path,
                     "publish_provider": str(data.get("provider", "")),
                     "publish_results": json.dumps(
                         data.get("results", []), ensure_ascii=False
@@ -156,23 +157,29 @@ async def publish_video(
                 },
             }
     except Exception as exc:
-        stub = _publish_stub(job_id)
+        stub = _publish_stub(job_id, video_path=video_path)
         stub["message"] = f"ai-koubo publish failed, stub fallback: {exc}"
         return stub
 
 
-def _publish_stub(job_id: str) -> dict:
+def _publish_stub(job_id: str, *, video_path: str = "") -> dict:
     koubo = settings.ai_koubo_path
+    artifacts: dict[str, str] = {"publish_target": "ai-koubo-stub"}
+    if video_path:
+        artifacts["video_path"] = video_path
     if not koubo.exists():
         return {
             "status": "skipped",
             "message": f"AI_KOUBO unreachable and path not found: {koubo}",
-            "artifacts": {},
+            "artifacts": artifacts,
         }
+    msg = f"publish stub for job {job_id} (ai-koubo offline at {koubo})"
+    if video_path:
+        msg += f"; video={video_path}"
     return {
         "status": "ok",
-        "message": f"publish stub for job {job_id} (ai-koubo offline at {koubo})",
-        "artifacts": {"publish_target": "ai-koubo-stub"},
+        "message": msg,
+        "artifacts": artifacts,
     }
 
 

@@ -72,6 +72,8 @@ class PipelineRunRequest(BaseModel):
     c4d_project: str | None = None
     layers: list[str] = Field(default_factory=lambda: list(DEFAULT_PIPELINE))
     force_qa_fail: bool = False
+    topic: str | None = None
+    script: str | None = None
 
 
 class LayerResultPayload(BaseModel):
