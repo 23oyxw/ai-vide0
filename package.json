@@ -1,0 +1,11 @@
+{
+  "name": "ai-video-orchestrator",
+  "private": true,
+  "workspaces": ["apps/web"],
+  "scripts": {
+    "dev:web": "npm run dev --workspace=web",
+    "build:web": "npm run build --workspace=web",
+    "lint:web": "npm run lint --workspace=web",
+    "dev:orchestrator": "uvicorn orchestrator.main:app --reload --port 8765"
+  }
+}

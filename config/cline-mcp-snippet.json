@@ -1,0 +1,13 @@
+﻿{
+  "mcpServers": {
+    "c4d-mcp": {
+      "disabled": false,
+      "timeout": 1800,
+      "command": "python",
+      "args": ["C:/Users/oyxw/Projects/ai-video-orchestrator/mcp/c4d-mcp/server.py"],
+      "env": {
+        "C4D_ROOT": "C:/BKC4D"
+      }
+    }
+  }
+}
