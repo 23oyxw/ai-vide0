@@ -1,5 +1,7 @@
 export const maxDuration = 60;
 
+import type { ApiEnvelope } from "@/lib/api-envelope";
+
 const ORCHESTRATOR_URL =
   process.env.ORCHESTRATOR_URL ?? "http://127.0.0.1:8765";
 
@@ -27,17 +29,20 @@ export async function POST(req: Request) {
       body: body || "{}",
     });
 
-    const data = await upstream.json();
-    return Response.json(data, { status: upstream.status });
+    const envelope = (await upstream.json()) as ApiEnvelope;
+    return Response.json(envelope, { status: upstream.status });
   } catch {
-    return Response.json(
-      {
-        stub: true,
+    const envelope: ApiEnvelope = {
+      ok: false,
+      data: null,
+      error: {
+        code: "orchestrator_unreachable",
         message:
           "Orchestrator unreachable. Start: uvicorn orchestrator.main:app --port 8765",
-        orchestrator_url: ORCHESTRATOR_URL,
+        detail: { orchestrator_url: ORCHESTRATOR_URL },
       },
-      { status: 503 },
-    );
+      meta: { layer: "L5", timestamp: new Date().toISOString() },
+    };
+    return Response.json(envelope, { status: 503 });
   }
 }

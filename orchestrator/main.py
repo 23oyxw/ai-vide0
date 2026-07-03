@@ -3,8 +3,8 @@ from __future__ import annotations
 import uuid
 from typing import Any
 
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel, Field
+from fastapi import FastAPI, HTTPException, Query, Request
+from fastapi.responses import JSONResponse
 
 from orchestrator import __version__
 from orchestrator.adapters.c4d import check_c4d, render_project
@@ -18,31 +18,36 @@ from orchestrator.pipeline_state import (
     QA_RETRY_FROM,
     PipelineState,
 )
+from orchestrator.schemas import (
+    ApiEnvelope,
+    CrawlerData,
+    CrawlerRequest,
+    DataAnalysisData,
+    DataAnalysisRequest,
+    DataClickData,
+    DataClickQuery,
+    DataConversionData,
+    DataConversionQuery,
+    DataOrderData,
+    DataOrderQuery,
+    HealthData,
+    LayerResultPayload,
+    MonitorCheck,
+    MonitorData,
+    MonitorRequest,
+    PipelineRunData,
+    PipelineRunRequest,
+    SelectionCard,
+    ToolsCheckData,
+    err_envelope,
+    ok_envelope,
+)
 
 app = FastAPI(
     title="AI Video Orchestrator",
     description="8-layer tooling coordination for e-commerce seeding videos",
     version=__version__,
 )
-
-
-class PipelineRequest(BaseModel):
-    product_url: str | None = None
-    demo_name: str = "product_ad"
-    c4d_project: str | None = None
-    layers: list[str] = Field(default_factory=lambda: list(DEFAULT_PIPELINE))
-    force_qa_fail: bool = False
-
-
-class PipelineResponse(BaseModel):
-    job_id: str
-    status: str
-    pipeline_state: str
-    results: list[dict[str, Any]]
-    artifacts: dict[str, str]
-    errors: list[str]
-    retry_from: str | None = None
-    optimization_hints: list[str] = Field(default_factory=list)
 
 
 def validate_layer_order(layers: list[str]) -> None:
@@ -60,65 +65,249 @@ def validate_layer_order(layers: list[str]) -> None:
         prev = idx
 
 
-@app.get("/health")
-async def health() -> dict:
-    return {
-        "status": "ok",
-        "version": __version__,
-        "layers": list(LAYER_REGISTRY.keys()),
-    }
+@app.exception_handler(HTTPException)
+async def http_exception_handler(_request: Request, exc: HTTPException) -> JSONResponse:
+    envelope = err_envelope(
+        code=f"http_{exc.status_code}",
+        message=str(exc.detail),
+        detail=exc.detail if isinstance(exc.detail, dict) else None,
+    )
+    return JSONResponse(status_code=exc.status_code, content=envelope.model_dump())
 
 
-@app.get("/tools/check")
-async def tools_check() -> dict:
+@app.get("/health", response_model=ApiEnvelope[HealthData])
+async def health() -> ApiEnvelope[HealthData]:
+    return ok_envelope(
+        HealthData(
+            status="ok",
+            version=__version__,
+            layers=list(LAYER_REGISTRY.keys()),
+        ),
+        layer="L0",
+    )
+
+
+@app.get("/tools/check", response_model=ApiEnvelope[ToolsCheckData])
+async def tools_check() -> ApiEnvelope[ToolsCheckData]:
     import shutil
-    from pathlib import Path
 
-    return {
-        "video_factory": {
-            "path": str(settings.video_factory_path),
-            "exists": settings.video_factory_path.exists(),
-            "demos": list_demos(),
-        },
-        "ai_koubo": {
-            "path": str(settings.ai_koubo_path),
-            "exists": settings.ai_koubo_path.exists(),
-        },
-        "c4d": check_c4d(),
-        "ffmpeg": {
-            "path": str(settings.ffmpeg_path),
-            "exists": settings.ffmpeg_path.exists(),
-            "in_path": shutil.which("ffmpeg"),
-        },
-        "openclaw": {
-            "bin": settings.openclaw_bin,
-            "role": "dev_tooling_only",
-            "note": "Not production scheduler; L5 uses Vercel Workflow in prod",
-        },
-    }
+    return ok_envelope(
+        ToolsCheckData(
+            video_factory={
+                "path": str(settings.video_factory_path),
+                "exists": settings.video_factory_path.exists(),
+                "demos": list_demos(),
+            },
+            ai_koubo={
+                "path": str(settings.ai_koubo_path),
+                "exists": settings.ai_koubo_path.exists(),
+            },
+            c4d=check_c4d(),
+            ffmpeg={
+                "path": str(settings.ffmpeg_path),
+                "exists": settings.ffmpeg_path.exists(),
+                "in_path": shutil.which("ffmpeg"),
+            },
+            openclaw={
+                "bin": settings.openclaw_bin,
+                "role": "dev_tooling_only",
+                "note": "Not production scheduler; L5 uses Vercel Workflow in prod",
+            },
+        ),
+        layer="L0",
+    )
 
 
 @app.get("/layers")
-async def list_layers() -> dict:
-    return {
-        lid: {"name": layer.name, "description": layer.description}
-        for lid, layer in LAYER_REGISTRY.items()
-    }
+async def list_layers() -> ApiEnvelope[dict[str, dict[str, str]]]:
+    return ok_envelope(
+        {
+            lid: {"name": layer.name, "description": layer.description}
+            for lid, layer in LAYER_REGISTRY.items()
+        },
+        layer="L0",
+    )
 
 
-@app.get("/monitor")
-async def monitor() -> dict:
-    """L6 QA monitor stub."""
-    return {
-        "status": "ok",
-        "qa_score_avg": 0.85,
-        "active_jobs": 0,
-        "message": "RAG/QA monitor stub — connect Qdrant for full RAG",
-    }
+@app.get("/agent/crawler", response_model=ApiEnvelope[CrawlerData])
+async def agent_crawler_get(
+    product_url: str | None = Query(default=None),
+) -> ApiEnvelope[CrawlerData]:
+    req = CrawlerRequest(product_url=product_url)
+    return await agent_crawler(req)
 
 
-@app.post("/pipeline/run", response_model=PipelineResponse)
-async def pipeline_run(req: PipelineRequest) -> PipelineResponse:
+@app.post("/agent/crawler", response_model=ApiEnvelope[CrawlerData])
+async def agent_crawler(req: CrawlerRequest) -> ApiEnvelope[CrawlerData]:
+    job_id = req.job_id or str(uuid.uuid4())[:8]
+    ctx = LayerContext(job_id=job_id, product_url=req.product_url)
+    await LAYER_REGISTRY["L1"].run(ctx)
+    url = ctx.artifacts.get("crawled_url", req.product_url or "https://example.com/product")
+
+    return ok_envelope(
+        CrawlerData(
+            crawled_url=url,
+            selection_card=SelectionCard(
+                title="Demo 选品卡片",
+                pain_points=["痛点 A：功效不明显", "痛点 B：价格敏感"],
+                category="beauty",
+            ),
+            competitor_count=len(req.competitor_urls),
+            rag_candidates=[f"rag_candidate_{job_id}"],
+        ),
+        layer="L1",
+        job_id=job_id,
+    )
+
+
+def _monitor_payload(job_id: str | None = None) -> MonitorData:
+    return MonitorData(
+        qa_score_avg=0.85,
+        active_jobs=0,
+        checks=[
+            MonitorCheck(
+                name="visual_quality",
+                passed=True,
+                score=0.88,
+                message="画面清晰度 stub 通过",
+            ),
+            MonitorCheck(
+                name="script_intellisafe",
+                passed=True,
+                score=0.90,
+                message="脚本合规 stub 通过",
+            ),
+            MonitorCheck(
+                name="structure_15s",
+                passed=True,
+                score=0.82,
+                message="15 秒结构 stub 通过",
+            ),
+        ],
+        message="RAG/QA monitor stub — connect Qdrant for full RAG",
+    )
+
+
+@app.get("/monitor", response_model=ApiEnvelope[MonitorData])
+async def monitor_get(
+    job_id: str | None = Query(default=None),
+) -> ApiEnvelope[MonitorData]:
+    return ok_envelope(_monitor_payload(job_id), layer="L6", job_id=job_id)
+
+
+@app.post("/monitor", response_model=ApiEnvelope[MonitorData])
+async def monitor_post(req: MonitorRequest) -> ApiEnvelope[MonitorData]:
+    return ok_envelope(_monitor_payload(req.job_id), layer="L6", job_id=req.job_id)
+
+
+def _data_click(job_id: str | None) -> DataClickData:
+    return DataClickData(
+        clicks=1280,
+        unique_clicks=960,
+        ctr=0.042,
+        records=[
+            {
+                "job_id": job_id or "demo",
+                "utm_campaign": "seed_video",
+                "clicks": 1280,
+            }
+        ],
+    )
+
+
+@app.get("/data/click", response_model=ApiEnvelope[DataClickData])
+async def data_click_get(
+    job_id: str | None = Query(default=None),
+    utm_campaign: str | None = Query(default=None),
+) -> ApiEnvelope[DataClickData]:
+    return ok_envelope(_data_click(job_id), layer="L8", job_id=job_id)
+
+
+@app.post("/data/click", response_model=ApiEnvelope[DataClickData])
+async def data_click_post(req: DataClickQuery) -> ApiEnvelope[DataClickData]:
+    return ok_envelope(_data_click(req.job_id), layer="L8", job_id=req.job_id)
+
+
+def _data_conversion(job_id: str | None) -> DataConversionData:
+    return DataConversionData(
+        conversions=86,
+        conversion_rate=0.089,
+        records=[{"job_id": job_id or "demo", "conversions": 86}],
+    )
+
+
+@app.get("/data/conversion", response_model=ApiEnvelope[DataConversionData])
+async def data_conversion_get(
+    job_id: str | None = Query(default=None),
+) -> ApiEnvelope[DataConversionData]:
+    return ok_envelope(_data_conversion(job_id), layer="L8", job_id=job_id)
+
+
+@app.post("/data/conversion", response_model=ApiEnvelope[DataConversionData])
+async def data_conversion_post(
+    req: DataConversionQuery,
+) -> ApiEnvelope[DataConversionData]:
+    return ok_envelope(_data_conversion(req.job_id), layer="L8", job_id=req.job_id)
+
+
+def _data_order(job_id: str | None) -> DataOrderData:
+    return DataOrderData(
+        orders=42,
+        gmv=12880.50,
+        records=[{"job_id": job_id or "demo", "orders": 42, "gmv": 12880.50}],
+    )
+
+
+@app.get("/data/order", response_model=ApiEnvelope[DataOrderData])
+async def data_order_get(
+    job_id: str | None = Query(default=None),
+) -> ApiEnvelope[DataOrderData]:
+    return ok_envelope(_data_order(job_id), layer="L8", job_id=job_id)
+
+
+@app.post("/data/order", response_model=ApiEnvelope[DataOrderData])
+async def data_order_post(req: DataOrderQuery) -> ApiEnvelope[DataOrderData]:
+    return ok_envelope(_data_order(req.job_id), layer="L8", job_id=req.job_id)
+
+
+@app.get("/data/analysis", response_model=ApiEnvelope[DataAnalysisData])
+async def data_analysis_get(
+    job_id: str | None = Query(default=None),
+) -> ApiEnvelope[DataAnalysisData]:
+    return ok_envelope(
+        DataAnalysisData(
+            summary="L8 分析 stub：点击/转化/订单汇总",
+            optimization_hints=[
+                "提高前3秒 hook 强度 -> 反馈 L2 脚本模板",
+                "L1: 低效 SKU 降权，优先高转化类目",
+            ],
+            feedback_targets=["L1", "L2", "L3"],
+        ),
+        layer="L8",
+        job_id=job_id,
+    )
+
+
+@app.post("/data/analysis", response_model=ApiEnvelope[DataAnalysisData])
+async def data_analysis_post(
+    req: DataAnalysisRequest,
+) -> ApiEnvelope[DataAnalysisData]:
+    return ok_envelope(
+        DataAnalysisData(
+            summary="L8 分析 stub：基于提交 metrics 生成优化建议",
+            optimization_hints=[
+                "提高前3秒 hook 强度 -> 反馈 L2 脚本模板",
+                "L3: 增加产品特写镜头占比",
+            ],
+            feedback_targets=["L1", "L2", "L3"],
+        ),
+        layer="L8",
+        job_id=req.job_id,
+    )
+
+
+@app.post("/pipeline/run", response_model=ApiEnvelope[PipelineRunData])
+async def pipeline_run(req: PipelineRunRequest) -> ApiEnvelope[PipelineRunData]:
     validate_layer_order(req.layers)
 
     job_id = str(uuid.uuid4())[:8]
@@ -192,26 +381,36 @@ async def pipeline_run(req: PipelineRequest) -> PipelineResponse:
             if isinstance(raw_hints, list):
                 optimization_hints = [str(h) for h in raw_hints]
 
-    return PipelineResponse(
+    layer_results = [LayerResultPayload.model_validate(r) for r in results]
+
+    return ok_envelope(
+        PipelineRunData(
+            job_id=job_id,
+            status=status,
+            pipeline_state=pipeline_state.value,
+            layers=list(req.layers),
+            layer_results=layer_results,
+            artifacts=ctx.artifacts,
+            errors=ctx.errors,
+            retry_from=retry_from,
+            optimization_hints=optimization_hints,
+        ),
+        layer="L5",
         job_id=job_id,
-        status=status,
-        pipeline_state=pipeline_state.value,
-        results=results,
-        artifacts=ctx.artifacts,
-        errors=ctx.errors,
-        retry_from=retry_from,
-        optimization_hints=optimization_hints,
     )
 
 
 @app.post("/tools/video-factory/run")
-async def tool_video_factory(demo_name: str = "product_ad") -> dict:
-    return run_demo(demo_name)
+async def tool_video_factory(demo_name: str = "product_ad") -> ApiEnvelope[dict[str, Any]]:
+    return ok_envelope(run_demo(demo_name), layer="L4")
 
 
 @app.post("/tools/c4d/render")
-async def tool_c4d_render(project_path: str, output_path: str | None = None) -> dict:
-    return render_project(project_path, output_path)
+async def tool_c4d_render(
+    project_path: str,
+    output_path: str | None = None,
+) -> ApiEnvelope[dict[str, Any]]:
+    return ok_envelope(render_project(project_path, output_path), layer="L4")
 
 
 if __name__ == "__main__":

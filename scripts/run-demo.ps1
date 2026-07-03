@@ -28,7 +28,7 @@ Start-Sleep -Seconds 3
 Write-Host "`n=== Step 4: Health + Pipeline ===" -ForegroundColor Cyan
 try {
     $health = Invoke-RestMethod -Uri "http://127.0.0.1:8765/health" -Method Get
-    Write-Host "Health: $($health | ConvertTo-Json -Compress)" -ForegroundColor Green
+    Write-Host "Health: ok=$($health.ok) status=$($health.data.status)" -ForegroundColor Green
 
     $body = @{
         product_url = "https://example.com/product/demo"
@@ -37,8 +37,8 @@ try {
     } | ConvertTo-Json
 
     $pipeline = Invoke-RestMethod -Uri "http://127.0.0.1:8765/pipeline/run" -Method Post -Body $body -ContentType "application/json"
-    Write-Host "Pipeline job: $($pipeline.job_id) status=$($pipeline.status)" -ForegroundColor Green
-    $pipeline.results | ForEach-Object { Write-Host "  $($_.layer_id) $($_.status): $($_.message)" }
+    Write-Host "Pipeline job: $($pipeline.data.job_id) status=$($pipeline.data.status)" -ForegroundColor Green
+    $pipeline.data.layer_results | ForEach-Object { Write-Host "  $($_.layer_id) $($_.status): $($_.message)" }
 } catch {
     Write-Host "API call failed: $_" -ForegroundColor Red
 } finally {

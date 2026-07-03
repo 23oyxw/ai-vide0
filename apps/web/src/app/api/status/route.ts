@@ -1,5 +1,9 @@
+import type { ApiEnvelope } from "@/lib/api-envelope";
+
 const ORCHESTRATOR_URL =
   process.env.ORCHESTRATOR_URL ?? "http://127.0.0.1:8765";
+
+type HealthData = { status?: string };
 
 export async function GET() {
   const aiGatewayConfigured = Boolean(process.env.AI_GATEWAY_API_KEY);
@@ -15,8 +19,12 @@ export async function GET() {
       signal: AbortSignal.timeout(3000),
     });
     if (res.ok) {
-      const data = (await res.json()) as { status?: string };
-      orchestrator = { reachable: true, status: data.status ?? "ok" };
+      const envelope = (await res.json()) as ApiEnvelope<HealthData>;
+      const status = envelope.ok ? (envelope.data?.status ?? "ok") : "error";
+      orchestrator = { reachable: envelope.ok, status };
+      if (!envelope.ok) {
+        orchestrator.error = envelope.error?.message ?? "health check failed";
+      }
     } else {
       orchestrator = {
         reachable: false,
@@ -30,10 +38,20 @@ export async function GET() {
     };
   }
 
-  return Response.json({
-    aiGatewayConfigured,
-    orchestratorUrl: ORCHESTRATOR_URL,
-    orchestrator,
-    timestamp: new Date().toISOString(),
-  });
+  const envelope: ApiEnvelope<{
+    aiGatewayConfigured: boolean;
+    orchestratorUrl: string;
+    orchestrator: typeof orchestrator;
+  }> = {
+    ok: true,
+    data: {
+      aiGatewayConfigured,
+      orchestratorUrl: ORCHESTRATOR_URL,
+      orchestrator,
+    },
+    error: null,
+    meta: { layer: "L0", timestamp: new Date().toISOString() },
+  };
+
+  return Response.json(envelope);
 }

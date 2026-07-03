@@ -26,9 +26,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 
 type StatusPayload = {
-  aiGatewayConfigured: boolean;
-  orchestratorUrl: string;
-  orchestrator: { reachable: boolean; status?: string; error?: string };
+  ok: boolean;
+  data: {
+    aiGatewayConfigured: boolean;
+    orchestratorUrl: string;
+    orchestrator: { reachable: boolean; status?: string; error?: string };
+  } | null;
 };
 
 export function DashboardShell() {
@@ -44,7 +47,8 @@ export function DashboardShell() {
     setStatusLoading(true);
     try {
       const res = await fetch("/api/status");
-      setStatus((await res.json()) as StatusPayload);
+      const envelope = (await res.json()) as StatusPayload;
+      setStatus(envelope);
     } catch {
       setStatus(null);
     } finally {
@@ -262,7 +266,7 @@ export function DashboardShell() {
                       <dd>
                         {statusLoading ? (
                           <Badge variant="secondary">检测中</Badge>
-                        ) : status?.aiGatewayConfigured ? (
+                        ) : status?.data?.aiGatewayConfigured ? (
                           <Badge>已配置</Badge>
                         ) : (
                           <Badge variant="outline">未配置</Badge>
@@ -274,18 +278,18 @@ export function DashboardShell() {
                       <dd>
                         {statusLoading ? (
                           <Badge variant="secondary">检测中</Badge>
-                        ) : status?.orchestrator.reachable ? (
-                          <Badge>在线 · {status.orchestrator.status}</Badge>
+                        ) : status?.data?.orchestrator.reachable ? (
+                          <Badge>在线 · {status.data.orchestrator.status}</Badge>
                         ) : (
                           <Badge variant="destructive">离线</Badge>
                         )}
                       </dd>
                     </div>
-                    {status && (
+                    {status?.data && (
                       <p className="text-xs text-muted-foreground">
-                        目标：{status.orchestratorUrl}
-                        {status.orchestrator.error
-                          ? ` · ${status.orchestrator.error}`
+                        目标：{status.data.orchestratorUrl}
+                        {status.data.orchestrator.error
+                          ? ` · ${status.data.orchestrator.error}`
                           : ""}
                       </p>
                     )}
