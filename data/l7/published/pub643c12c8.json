@@ -1,0 +1,14 @@
+{
+  "id": "pub643c12c8",
+  "job_id": "jae018226",
+  "utm_campaign": "seed_jae018226",
+  "utm_content": "video_jae018226",
+  "video_path": "data\\l4\\renders\\jae018226\\output.mp4",
+  "blob_path": "blob://published/jae018226/final.mp4",
+  "publish_target": "douyin",
+  "platforms": [
+    "douyin"
+  ],
+  "status": "ok",
+  "created_at": "2026-07-06T20:36:26.746067+00:00"
+}

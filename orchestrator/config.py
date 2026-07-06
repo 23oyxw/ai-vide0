@@ -52,11 +52,11 @@ class Settings(BaseSettings):
     zhipu_text_model: str = "GLM-4-Flash"       # 免费文本模型
     zhipu_reasoning_model: str = "GLM-Z1-Flash"  # 免费推理模型（L6 质检）
     zhipu_vision_model: str = "GLM-4.6V-Flash"   # 免费多模态（L1 商品图）
-    cogvideo_model: str = "cogvideox-3"           # CogVideoX-3 视频生成
+    cogvideo_model: str = "cogvideox-flash"        # CogVideoX-Flash 免费视频生成
     cogvideo_quality: str = "speed"               # speed | quality
     cogvideo_duration: int = 5                    # 5 | 10 秒
     cogvideo_size: str = "1920x1080"
-    cogvideo_poll_max_seconds: int = 600           # 轮询超时（10 分钟）
+    cogvideo_poll_max_seconds: int = 180           # 轮询超时（3 分钟，flash 更快）
     cogvideo_poll_interval: int = 5                # 轮询间隔（秒）
 
     @property

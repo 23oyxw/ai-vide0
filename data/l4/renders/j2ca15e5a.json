@@ -1,0 +1,23 @@
+{
+  "job_id": "j2ca15e5a",
+  "status": "ok",
+  "demo_name": "post_production_15s_zhongcao",
+  "manifest_path": "data\\l4\\renders\\j2ca15e5a\\manifest.json",
+  "video_path": "data\\l4\\renders\\j2ca15e5a\\output.mp4",
+  "output_dir": "data\\l4\\renders\\j2ca15e5a",
+  "c4d_scene2_output": "",
+  "cogvideo_task_id": "",
+  "cogvideo_video_url": "",
+  "cogvideo_local_path": "",
+  "messages": [
+    "CogView: 白底主图",
+    "CogView: 场景氛围图",
+    "CogView: 卖点特写图",
+    "CogView: 场景氛围图",
+    "4/4 product images",
+    "4-scene video 4x3.8s=15s",
+    "CogVideo started in background"
+  ],
+  "created_at": "2026-07-06T20:45:05.710362+00:00",
+  "updated_at": "2026-07-06T20:45:05.710362+00:00"
+}

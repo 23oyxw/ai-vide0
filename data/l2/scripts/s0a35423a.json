@@ -1,0 +1,42 @@
+{
+  "id": "s0a35423a",
+  "full_text": "你还在忍受鞋子磨脚、走路像踩针的痛吗？\n挤脚、累脚、搭配两难，每天出门都能纠结到崩溃\n看这双，后跟软垫不磨脚，一脚蹬设计不挤脚，鞋底云感缓震走一天也轻松\n少喝两杯奶茶，换整季的解放双脚与时尚自由，评论区等你来问！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "你还在忍受鞋子磨脚、走路像踩针的痛吗？"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "挤脚、累脚、搭配两难，每天出门都能纠结到崩溃"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "看这双，后跟软垫不磨脚，一脚蹬设计不挤脚，鞋底云感缓震走一天也轻松"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "少喝两杯奶茶，换整季的解放双脚与时尚自由，评论区等你来问！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://detail.tmall.com/item.htm?id=shoes-demo",
+  "created_at": "2026-07-06T20:25:43.908887+00:00"
+}
