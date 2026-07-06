@@ -1,0 +1,28 @@
+{
+  "job_id": "j961a90b8",
+  "status": "ok",
+  "demo_name": "post_production_15s_zhongcao",
+  "manifest_path": "C:\\Users\\oyxw\\Projects\\video-factory\\output\\post_production_15s_zhongcao\\20260706_111256\\manifest.json",
+  "video_path": "C:\\Users\\oyxw\\Projects\\video-factory\\output\\post_production_15s_zhongcao\\20260706_111256\\final.mp4",
+  "output_dir": "C:\\Users\\oyxw\\Projects\\video-factory\\output\\post_production_15s_zhongcao\\20260706_111256",
+  "c4d_scene2_output": "",
+  "cogvideo_task_id": "",
+  "cogvideo_video_url": "",
+  "cogvideo_local_path": "",
+  "messages": [
+    "FFmpeg占位: 1. \"每天家务忙，脏衣",
+    "FFmpeg占位: 1. \"每天家务忙，脏衣",
+    "FFmpeg占位: 1. \"每天家务忙，脏衣",
+    "FFmpeg占位: 1. \"每天家务忙，脏衣",
+    "4/4 product images",
+    "S0 fail: ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFm",
+    "S1 fail: ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFm",
+    "S2 fail: ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFm",
+    "S3 fail: ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFm",
+    "Only 0 scenes generated, using fallback",
+    "video-factory demo 'post_production_15s_zhongcao' completed",
+    "CogVideo started in background"
+  ],
+  "created_at": "2026-07-06T11:13:30.238168+00:00",
+  "updated_at": "2026-07-06T11:13:30.238168+00:00"
+}

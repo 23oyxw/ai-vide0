@@ -13,3 +13,11 @@ export function unwrapEnvelope<T>(body: ApiEnvelope<T>): T {
   }
   return body.data;
 }
+
+/** UTF-8 JSON for Chinese text in API responses. */
+export function jsonResponse(data: unknown, status = 200): Response {
+  return new Response(JSON.stringify(data), {
+    status,
+    headers: { "Content-Type": "application/json; charset=utf-8" },
+  });
+}

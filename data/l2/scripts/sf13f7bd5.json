@@ -1,0 +1,42 @@
+{
+  "id": "sf13f7bd5",
+  "full_text": "1. \"每天护肤，却还是满脸痘痘？试试这款神奇面膜！\"\n2. \"因为它能深入毛孔，一敷就干净，告别痘痘烦恼！\"\n3. \"冰丝质地，轻薄透气，敷完肌肤水嫩透亮，就像新生！\"\n4. \"速抢优惠，前100名下单立减20！评论区晒出你的美肌照！\"",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "1. \"每天护肤，却还是满脸痘痘？试试这款神奇面膜！\""
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "2. \"因为它能深入毛孔，一敷就干净，告别痘痘烦恼！\""
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "3. \"冰丝质地，轻薄透气，敷完肌肤水嫩透亮，就像新生！\""
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "4. \"速抢优惠，前100名下单立减20！评论区晒出你的美肌照！\""
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": null,
+  "created_at": "2026-07-05T06:27:16.636921+00:00"
+}

@@ -1,0 +1,49 @@
+{
+  "id": "sb76accf5f",
+  "demo_name": "post_production_15s_zhongcao",
+  "title": "post_production_15s_zhongcao",
+  "duration_target_sec": 15.0,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "segments": [
+    {
+      "code": "hook",
+      "title": "前3秒钩子",
+      "start": 0.0,
+      "end": 3.0,
+      "duration": 3.0,
+      "narration": "1. \"还在为找不到好用的知识库头疼？试试RAG，一秒变学霸！\"",
+      "visual": ""
+    },
+    {
+      "code": "pain",
+      "title": "痛点展开",
+      "start": 3.0,
+      "end": 7.0,
+      "duration": 4.0,
+      "narration": "2. \"RAG，智能知识库，帮你快速找到所需信息，告别繁琐搜索！\"",
+      "visual": ""
+    },
+    {
+      "code": "product",
+      "title": "产品特写",
+      "start": 7.0,
+      "end": 12.0,
+      "duration": 5.0,
+      "narration": "3. \"RAG，文档导入轻松，界面简洁，用起来就像你的私人智库！\"",
+      "visual": ""
+    },
+    {
+      "code": "cta",
+      "title": "行动号召",
+      "start": 12.0,
+      "end": 15.0,
+      "duration": 3.0,
+      "narration": "4. \"快来体验RAG，限时免费试用，评论区告诉我你的使用心得！\"",
+      "visual": ""
+    }
+  ],
+  "yaml_path": "\\completely\\nonexistent\\path_xyz\\demos\\post_production_15s_zhongcao.yaml",
+  "created_at": "2026-07-05T06:30:30.581496+00:00"
+}

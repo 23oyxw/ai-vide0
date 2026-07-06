@@ -1,0 +1,42 @@
+{
+  "id": "sfa045c98",
+  "full_text": "【开场钩子】夏天来了，你的防晒霜真的够轻薄吗？\n【痛点展开】烈日下，厚重的防晒霜闷热又油腻，你还在忍受吗？\n【产品特写】RAG防晒喷雾，轻薄如水，清爽一夏，轻松应对户外活动。\n【CTA】速来抢购，限时优惠，评论区晒出你的清爽夏日！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【开场钩子】夏天来了，你的防晒霜真的够轻薄吗？"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "【痛点展开】烈日下，厚重的防晒霜闷热又油腻，你还在忍受吗？"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【产品特写】RAG防晒喷雾，轻薄如水，清爽一夏，轻松应对户外活动"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "【CTA】速来抢购，限时优惠，评论区晒出你的清爽夏日！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.taobao.com/item.htm?id=123456",
+  "created_at": "2026-07-05T07:48:51.008673+00:00"
+}

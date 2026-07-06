@@ -1,0 +1,42 @@
+{
+  "id": "s96c6a2fb",
+  "full_text": "1. 磨脚挤脚，走路累？试试李宁软鞋，上脚秒懂舒适！\n2. 每天脚趾红肿，搭配衣服总踩雷？这双鞋，让你的脚舒服到飞起！\n3. 软垫设计，像踩云朵，显瘦鞋型，裙子裤子都高级！\n4. 李宁官方旗舰店，戳链接，立即安排这双“解放脚丫”的神鞋！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "1. 磨脚挤脚，走路累？试试李宁软鞋，上脚秒懂舒适！"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "2. 每天脚趾红肿，搭配衣服总踩雷？这双鞋，让你的脚舒服到飞起！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "3. 软垫设计，像踩云朵，显瘦鞋型，裙子裤子都高级！"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "4. 李宁官方旗舰店，戳链接，立即安排这双“解放脚丫”的神鞋！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://lining.jd.com/view_search-208102-30530638-99-1-24-1.html",
+  "created_at": "2026-07-05T21:40:45.084545+00:00"
+}

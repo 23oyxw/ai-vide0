@@ -12,6 +12,7 @@ from orchestrator.modules.l5_scheduler import router as l5_router
 from orchestrator.modules.l6_qa import legacy_router as l6_legacy, router as l6_router
 from orchestrator.modules.l7_publish import router as l7_router
 from orchestrator.modules.l8_analytics import legacy_router as l8_legacy, router as l8_router
+from orchestrator.rag.router import report_router, router as rag_router
 
 MODULE_ROUTERS: list[APIRouter] = [
     l1_router,
@@ -25,6 +26,8 @@ MODULE_ROUTERS: list[APIRouter] = [
     l7_router,
     l8_router,
     l8_legacy,
+    rag_router,
+    report_router,
 ]
 
 MODULE_REGISTRY: dict[str, str] = {
@@ -36,6 +39,7 @@ MODULE_REGISTRY: dict[str, str] = {
     "M6": "l6-qa",
     "M7": "l7-publish",
     "M8": "l8-analytics",
+    "RAG": "intellisafe-rag",
 }
 
 

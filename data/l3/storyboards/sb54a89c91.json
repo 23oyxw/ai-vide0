@@ -1,0 +1,49 @@
+{
+  "id": "sb54a89c91",
+  "demo_name": "post_production_15s_zhongcao",
+  "title": "15s 竖屏种草标准片",
+  "duration_target_sec": 15.0,
+  "width": 1080,
+  "height": 1920,
+  "fps": 24,
+  "segments": [
+    {
+      "code": "hook",
+      "title": "前3秒钩子",
+      "start": 0.0,
+      "end": 3.0,
+      "duration": 3.0,
+      "narration": "还在被新鞋磨脚、走路累到想哭？",
+      "visual": ""
+    },
+    {
+      "code": "pain",
+      "title": "痛点展开",
+      "start": 3.0,
+      "end": 7.0,
+      "duration": 4.0,
+      "narration": "挤脚、酸胀、穿搭还翻车，试一件退一件太抓狂！",
+      "visual": ""
+    },
+    {
+      "code": "product",
+      "title": "产品特写",
+      "start": 7.0,
+      "end": 12.0,
+      "duration": 5.0,
+      "narration": "看这李宁云缓震科技，踩上去像棉花糖回弹，鞋口软包边不磨后跟",
+      "visual": ""
+    },
+    {
+      "code": "cta",
+      "title": "行动号召",
+      "start": 12.0,
+      "end": 15.0,
+      "duration": 3.0,
+      "narration": "颜值能打又舒适，快去李宁官方旗舰店，早买早爽！",
+      "visual": ""
+    }
+  ],
+  "yaml_path": "C:\\Users\\oyxw\\Projects\\video-factory\\demos\\post_production_15s_zhongcao.yaml",
+  "created_at": "2026-07-05T20:36:36.326168+00:00"
+}

@@ -1,0 +1,18 @@
+{
+  "job_id": "jdc9c3e75",
+  "status": "ok",
+  "demo_name": "post_production_15s_zhongcao",
+  "manifest_path": "data\\l4\\renders\\jdc9c3e75\\manifest.json",
+  "video_path": "data\\l4\\renders\\jdc9c3e75\\output.mp4",
+  "output_dir": "data\\l4\\renders\\jdc9c3e75",
+  "c4d_scene2_output": "",
+  "cogvideo_task_id": "",
+  "cogvideo_video_url": "",
+  "cogvideo_local_path": "",
+  "messages": [
+    "4-scene video 4x3.8s=15s",
+    "CogVideo started in background"
+  ],
+  "created_at": "2026-07-05T22:34:01.454667+00:00",
+  "updated_at": "2026-07-05T22:34:01.454667+00:00"
+}

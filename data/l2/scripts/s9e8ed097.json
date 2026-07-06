@@ -1,0 +1,42 @@
+{
+  "id": "s9e8ed097",
+  "full_text": "1. \"你还在为手机充电慢烦恼吗？\"\n2. \"电量总是不够用，出门在外怎么办？\"\n3. \"这款快充宝，充电速度快到惊人，出门必备神器！\"\n4. \"赶紧下单，前100名送充电线，评论区晒出你的充电速度吧！\"",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "1. \"你还在为手机充电慢烦恼吗？\""
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "2. \"电量总是不够用，出门在外怎么办？\""
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "3. \"这款快充宝，充电速度快到惊人，出门必备神器！\""
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "4. \"赶紧下单，前100名送充电线，评论区晒出你的充电速度吧！\""
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": null,
+  "created_at": "2026-07-05T06:21:34.488553+00:00"
+}

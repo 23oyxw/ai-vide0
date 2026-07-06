@@ -1,0 +1,42 @@
+{
+  "id": "sd0ddb976",
+  "full_text": "【钩子】家，不是垃圾场！告别脏衣堆，你需要这款脏衣篮！\n\n【痛点展开】每天换洗衣物堆满角落，收纳无章，脏衣篮，让你的家回归整洁！\n\n【产品特写】防滑底座，承重稳固，轻巧设计，轻松收纳，给你一个干净整洁的家居环境！\n\n【CTA】赶紧下单，限时优惠，评论区晒出你的脏衣篮，还有神秘礼品等你拿！京东正品保障，速来抢购！🛒🎁",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】家，不是垃圾场！告别脏衣堆，你需要这款脏衣篮！"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "【痛点展开】每天换洗衣物堆满角落，收纳无章，脏衣篮，让你的家回归整洁！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【产品特写】防滑底座，承重稳固，轻巧设计，轻松收纳，给你一个干净整洁的家居环境！"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "【CTA】赶紧下单，限时优惠，评论区晒出你的脏衣篮，还有神秘礼品等你拿！京东正品保障，速来抢购！🛒🎁"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-05T22:41:53.459663+00:00"
+}

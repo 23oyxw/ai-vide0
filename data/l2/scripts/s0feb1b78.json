@@ -1,0 +1,42 @@
+{
+  "id": "s0feb1b78",
+  "full_text": "1. 你还在为找资料头疼吗？试试这款RAG知识库，3秒快速检索，告别繁琐！\n2. 一键导入文档，海量信息秒速呈现，工作学习更高效，你值得拥有！\n3. 专业的知识图谱，清晰展示信息关联，质感界面，让你爱不释手！\n4. 立即体验，限时优惠，评论区留言“种草”，更有惊喜福利等你来拿！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "1. 你还在为找资料头疼吗？试试这款RAG知识库，3秒快速检索，告别繁琐！"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "2. 一键导入文档，海量信息秒速呈现，工作学习更高效，你值得拥有！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "3. 专业的知识图谱，清晰展示信息关联，质感界面，让你爱不释手！"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "4. 立即体验，限时优惠，评论区留言“种草”，更有惊喜福利等你来拿！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://example.com/product/demo",
+  "created_at": "2026-07-05T06:34:14.489004+00:00"
+}

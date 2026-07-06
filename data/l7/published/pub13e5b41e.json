@@ -1,0 +1,14 @@
+{
+  "id": "pub13e5b41e",
+  "job_id": "j15d806c5",
+  "utm_campaign": "seed_j15d806c5",
+  "utm_content": "video_j15d806c5",
+  "video_path": "data\\l4\\renders\\j15d806c5\\output.mp4",
+  "blob_path": "blob://published/j15d806c5/final.mp4",
+  "publish_target": "douyin",
+  "platforms": [
+    "douyin"
+  ],
+  "status": "ok",
+  "created_at": "2026-07-05T21:26:42.321264+00:00"
+}

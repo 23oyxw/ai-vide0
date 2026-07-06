@@ -1,0 +1,42 @@
+{
+  "id": "s67d93f5d",
+  "full_text": "你有没有发现，最近刷到的内容越来越“戳中你”了？  \n不是手机偷偷长了眼睛，是有人真的在琢磨你想要什么。  \n今天这条视频，我就把“爆款密码”拆开给你看——  \n记住这个公式：痛点+场景+解决方案=爆款。  \n比如，你是不是一到下午就犯困，咖啡都救不回来？  \n来，试试这个“3分钟清醒法”：站起来，双手举过头顶，深呼吸5次，然后原地跳30下。  \n评论区告诉我，你试完第几下就不困了？  \n别光收藏，去发一条，下个爆款就是你。",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "你有没有发现，最近刷到的内容越来越“戳中你”了？"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "不是手机偷偷长了眼睛，是有人真的在琢磨你想要什么"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "今天这条视频，我就把“爆款密码”拆开给你看——"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "记住这个公式：痛点+场景+解决方案=爆款"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "cloud-llm",
+  "product_url": "https://example.com/p/demo",
+  "created_at": "2026-07-03T19:48:32.916435+00:00"
+}

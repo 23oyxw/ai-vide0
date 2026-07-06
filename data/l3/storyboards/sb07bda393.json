@@ -1,0 +1,49 @@
+{
+  "id": "sb07bda393",
+  "demo_name": "post_production_15s_zhongcao",
+  "title": "15s 竖屏种草标准片",
+  "duration_target_sec": 15.0,
+  "width": 1080,
+  "height": 1920,
+  "fps": 24,
+  "segments": [
+    {
+      "code": "hook",
+      "title": "前3秒钩子",
+      "start": 0.0,
+      "end": 3.0,
+      "duration": 3.0,
+      "narration": "【钩子】告别脏衣服满天飞，脏衣篮让你生活焕然一新！",
+      "visual": ""
+    },
+    {
+      "code": "pain",
+      "title": "痛点展开",
+      "start": 3.0,
+      "end": 7.0,
+      "duration": 4.0,
+      "narration": "【痛点展开】家里乱糟糟，衣服堆满地，你知道脏衣篮有多重要吗？",
+      "visual": ""
+    },
+    {
+      "code": "product",
+      "title": "产品特写",
+      "start": 7.0,
+      "end": 12.0,
+      "duration": 5.0,
+      "narration": "【产品特写】这款脏衣篮大容量设计，轻松收纳，简约时尚，让你的家焕然一新！",
+      "visual": ""
+    },
+    {
+      "code": "cta",
+      "title": "行动号召",
+      "start": 12.0,
+      "end": 15.0,
+      "duration": 3.0,
+      "narration": "【CTA】快来京东抢购，限时优惠，评论晒单还有惊喜哦！🛒🛍️📣",
+      "visual": ""
+    }
+  ],
+  "yaml_path": "C:\\Users\\oyxw\\Projects\\video-factory\\demos\\post_production_15s_zhongcao.yaml",
+  "created_at": "2026-07-05T21:38:44.581874+00:00"
+}

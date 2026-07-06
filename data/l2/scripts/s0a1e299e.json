@@ -1,0 +1,42 @@
+{
+  "id": "s0a1e299e",
+  "full_text": "【钩子】告别杂乱，脏衣篮让你生活井井有条！\n【痛点展开】每天堆满脏衣服，整理收纳成难题？\n【产品特写】超大容量，轻松收纳全家衣物，防尘盖设计，保持衣物干净整洁！\n【CTA】快来京东购买，限时优惠，评论区晒出你的脏衣篮！🛍️🛒",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】告别杂乱，脏衣篮让你生活井井有条！"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "【痛点展开】每天堆满脏衣服，整理收纳成难题？"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【产品特写】超大容量，轻松收纳全家衣物，防尘盖设计，保持衣物干净整洁！"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "【CTA】快来京东购买，限时优惠，评论区晒出你的脏衣篮！🛍️🛒"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-06T17:17:14.636374+00:00"
+}

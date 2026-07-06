@@ -1,0 +1,23 @@
+{
+  "job_id": "j88e94225",
+  "status": "ok",
+  "demo_name": "post_production_15s_zhongcao",
+  "manifest_path": "data\\l4\\renders\\j88e94225\\manifest.json",
+  "video_path": "data\\l4\\renders\\j88e94225\\output.mp4",
+  "output_dir": "data\\l4\\renders\\j88e94225",
+  "c4d_scene2_output": "",
+  "cogvideo_task_id": "",
+  "cogvideo_video_url": "",
+  "cogvideo_local_path": "",
+  "messages": [
+    "FreeAI: 白底主图",
+    "Placeholder: 【钩子】别再让鞋子“吃”",
+    "Placeholder: 【钩子】别再让鞋子“吃”",
+    "FreeAI: 场景氛围图",
+    "4/4 product images",
+    "4-scene video 4x3.8s=15s",
+    "CogVideo started in background"
+  ],
+  "created_at": "2026-07-06T17:32:35.813874+00:00",
+  "updated_at": "2026-07-06T17:32:35.813874+00:00"
+}

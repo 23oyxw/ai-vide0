@@ -1,0 +1,19 @@
+{
+  "job_id": "j903fb38b",
+  "status": "ok",
+  "demo_name": "product_ad",
+  "manifest_path": "data\\l4\\renders\\j903fb38b\\manifest.json",
+  "video_path": "data\\l4\\renders\\j903fb38b\\output.mp4",
+  "output_dir": "C:\\Users\\oyxw\\Projects\\video-factory\\output\\product_ad\\20260705_211405",
+  "c4d_scene2_output": "",
+  "cogvideo_task_id": "",
+  "cogvideo_video_url": "",
+  "cogvideo_local_path": "",
+  "messages": [
+    "FFmpeg video generated: output.mp4",
+    "video-factory demo 'product_ad' completed",
+    "CogVideo generation started in background"
+  ],
+  "created_at": "2026-07-05T21:14:42.782050+00:00",
+  "updated_at": "2026-07-05T21:14:42.782050+00:00"
+}

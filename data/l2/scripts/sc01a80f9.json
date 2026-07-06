@@ -1,0 +1,42 @@
+{
+  "id": "sc01a80f9",
+  "full_text": "1. “你知道吗？每天手机滑屏，皮肤干燥得像沙漠！”\n\n2. “这款种草产品，深层锁水，让你的肌肤喝饱水，恢复弹润。”\n\n3. “只需简单涂抹，清爽质地，瞬间吸收，告别干纹细纹。”\n\n4. “速抢限时优惠，评论还有神秘礼物！快来种草你的水润肌肤吧！”",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "1. “你知道吗？每天手机滑屏，皮肤干燥得像沙漠！”"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "2. “这款种草产品，深层锁水，让你的肌肤喝饱水，恢复弹润"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "”"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "3. “只需简单涂抹，清爽质地，瞬间吸收，告别干纹细纹"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": null,
+  "created_at": "2026-07-05T06:22:49.201639+00:00"
+}

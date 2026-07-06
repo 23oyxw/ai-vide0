@@ -1,0 +1,42 @@
+{
+  "id": "sd34f060e",
+  "full_text": "还在被新鞋磨脚、走路累到想哭？\n挤脚、酸胀、穿搭还翻车，试一件退一件太抓狂！\n看这李宁云缓震科技，踩上去像棉花糖回弹，鞋口软包边不磨后跟。\n颜值能打又舒适，快去李宁官方旗舰店，早买早爽！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "还在被新鞋磨脚、走路累到想哭？"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "挤脚、酸胀、穿搭还翻车，试一件退一件太抓狂！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "看这李宁云缓震科技，踩上去像棉花糖回弹，鞋口软包边不磨后跟"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "颜值能打又舒适，快去李宁官方旗舰店，早买早爽！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://lining.jd.com/view_search-208102-30530638-99-1-24-1.html",
+  "created_at": "2026-07-05T20:36:36.302758+00:00"
+}

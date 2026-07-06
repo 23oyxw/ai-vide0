@@ -1,0 +1,49 @@
+{
+  "id": "sb17422e4e",
+  "demo_name": "motion_poster",
+  "title": "动态海报 / 活动预告 Demo",
+  "duration_target_sec": 15.0,
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "segments": [
+    {
+      "code": "hook",
+      "title": "前3秒钩子",
+      "start": 0.0,
+      "end": 3.0,
+      "duration": 3.0,
+      "narration": "穿鞋挤脚磨脚？脚踝割伤后跟起泡？",
+      "visual": ""
+    },
+    {
+      "code": "pain",
+      "title": "痛点展开",
+      "start": 3.0,
+      "end": 7.0,
+      "duration": 4.0,
+      "narration": "李宁旗舰店鞋款超软鞋垫+宽楦设计，一蹬即合，轻盈如光脚！",
+      "visual": ""
+    },
+    {
+      "code": "product",
+      "title": "产品特写",
+      "start": 7.0,
+      "end": 12.0,
+      "duration": 5.0,
+      "narration": "锁定直播间，这双解放双脚的搭配王炸！",
+      "visual": ""
+    },
+    {
+      "code": "cta",
+      "title": "行动号召",
+      "start": 12.0,
+      "end": 15.0,
+      "duration": 3.0,
+      "narration": "京东下单，品质保证，立即行动，错过等一年！",
+      "visual": ""
+    }
+  ],
+  "yaml_path": "C:\\Users\\oyxw\\Projects\\video-factory\\demos\\motion_poster.yaml",
+  "created_at": "2026-07-05T21:22:59.813583+00:00"
+}

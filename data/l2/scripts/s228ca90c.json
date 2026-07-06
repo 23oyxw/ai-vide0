@@ -1,0 +1,42 @@
+{
+  "id": "s228ca90c",
+  "full_text": "【钩子】\n\"家里杂乱无章，脏衣堆成山？别急，一招解决！\"\n\n【痛点展开】\n\"告别传统脏衣篮占地又难看，这款壁挂免打孔脏衣篮，让你的房间瞬间清爽！\"\n\n【产品特写】\n\"轻松挂墙，不占空间，可折叠设计，轻巧易用，质感面料，持久耐用，让家务变得轻松又时尚！\"\n\n【CTA】\n\"快来抢购，限时优惠，评论晒单还有好礼相送！京东正品保障，点击链接立即购买→https://item.jd.com/100012043978.html\"",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "\"家里杂乱无章，脏衣堆成山？别急，一招解决！\""
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【痛点展开】"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "\"告别传统脏衣篮占地又难看，这款壁挂免打孔脏衣篮，让你的房间瞬间清爽！\""
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-05T21:52:45.377044+00:00"
+}

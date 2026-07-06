@@ -1,0 +1,42 @@
+{
+  "id": "sb0c12048",
+  "full_text": "15秒硬核种草，让你掏钱都愿意！\n\n🎬开头吸睛-第1秒：\n“别划走！这玩意儿说啥都得看！”\n\n📸第2-8秒-实力打脸：\n“平时熬夜脸色蜡黄，敷面膜都没救。但自从用了它，皮肤直接从垃圾变宝藏！”\n\n🎯第9-13秒-临门一脚：\n“成分党看好了，积雪草和烟酰胺双搭载，敏感肌也能用！它家专利技术不是吹的！”\n\n💥第14-15秒-行动号召：\n“链接在左下角，错过这波绝版，等下次促销真的要等到头发白！”\n\n🌟结尾互动：\n“用过好用的在评论区扣1，咱们一起偷偷美！”",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "15秒硬核种草，让你掏钱都愿意！"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "🎬开头吸睛-第1秒："
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "“别划走！这玩意儿说啥都得看！”"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "📸第2-8秒-实力打脸："
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "deepseek",
+  "product_url": null,
+  "created_at": "2026-07-05T06:50:19.057704+00:00"
+}

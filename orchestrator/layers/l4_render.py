@@ -9,7 +9,7 @@ from orchestrator.layers.base import BaseLayer, LayerContext, LayerResult
 class RenderLayer(BaseLayer):
     layer_id = "L4"
     name = "render"
-    description = "Render - video-factory + C4D scene2 stub + OpenClaw video_generate"
+    description = "Render - video-factory + C4D + CogVideoX-3 AI generation"
 
     async def run(self, ctx: LayerContext) -> LayerResult:
         artifacts: dict[str, str] = {}

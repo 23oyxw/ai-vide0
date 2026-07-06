@@ -1,0 +1,23 @@
+{
+  "job_id": "jb62cac5d",
+  "status": "ok",
+  "demo_name": "post_production_15s_zhongcao",
+  "manifest_path": "data\\l4\\renders\\jb62cac5d\\manifest.json",
+  "video_path": "data\\l4\\renders\\jb62cac5d\\output.mp4",
+  "output_dir": "data\\l4\\renders\\jb62cac5d",
+  "c4d_scene2_output": "",
+  "cogvideo_task_id": "",
+  "cogvideo_video_url": "",
+  "cogvideo_local_path": "",
+  "messages": [
+    "FFmpeg占位: 【钩子】\n“家里的脏衣服",
+    "FFmpeg占位: 【钩子】\n“家里的脏衣服",
+    "FFmpeg占位: 【钩子】\n“家里的脏衣服",
+    "FFmpeg占位: 【钩子】\n“家里的脏衣服",
+    "4/4 product images",
+    "4-scene video 4x3.8s=15s",
+    "CogVideo started in background"
+  ],
+  "created_at": "2026-07-06T12:04:35.717009+00:00",
+  "updated_at": "2026-07-06T12:04:35.717009+00:00"
+}

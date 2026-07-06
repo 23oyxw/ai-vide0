@@ -1,0 +1,14 @@
+{
+  "job_id": "jf07b734b",
+  "status": "skipped",
+  "demo_name": "post_production_15s_zhongcao",
+  "manifest_path": "",
+  "video_path": "",
+  "output_dir": "",
+  "c4d_scene2_output": "",
+  "messages": [
+    "VIDEO_FACTORY_PATH not found: \\completely\\nonexistent\\path_xyz"
+  ],
+  "created_at": "2026-07-05T05:21:23.034632+00:00",
+  "updated_at": "2026-07-05T05:21:23.034632+00:00"
+}

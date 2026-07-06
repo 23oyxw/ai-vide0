@@ -1,0 +1,42 @@
+{
+  "id": "sdcc46927",
+  "full_text": "1. \"衣服堆满床？不，是时候解放你的空间了！\"\n2. \"每天洗完衣服却找不到地方放？这款脏衣篮，帮你告别杂乱无章。\"\n3. \"可折叠设计，轻松收纳，不占空间，让你的房间瞬间清爽！\"\n4. \"京东热销款，现在下单立享优惠，快来抢购吧！#脏衣篮#评论区见！\"",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "1. \"衣服堆满床？不，是时候解放你的空间了！\""
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "2. \"每天洗完衣服却找不到地方放？这款脏衣篮，帮你告别杂乱无章"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "\""
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "3. \"可折叠设计，轻松收纳，不占空间，让你的房间瞬间清爽！\""
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-06T11:37:20.175477+00:00"
+}

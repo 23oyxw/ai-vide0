@@ -2,6 +2,16 @@ from __future__ import annotations
 
 import hashlib
 
+from datetime import date, datetime, timezone
+
+from orchestrator.adapters.l8_store import (
+    data_source_label,
+    fetch_aggregated_metrics,
+    init_local_store,
+    resolve_database_url,
+    upsert_daily_metrics,
+)
+from orchestrator.config import settings
 from orchestrator.job_store import job_store
 from orchestrator.modules.common import list_json_records, module_dir
 from orchestrator.modules.l8_analytics.models import (
@@ -9,6 +19,8 @@ from orchestrator.modules.l8_analytics.models import (
     ClickResponse,
     ConversionResponse,
     DashboardResponse,
+    MetricsRecordRequest,
+    MetricsRecordResponse,
     OrderResponse,
 )
 from orchestrator.pipeline_state import QA_PASS_THRESHOLD
@@ -34,6 +46,9 @@ def _echarts_line(title: str, labels: list[str], series: list[dict]) -> dict:
 
 
 def _job_metrics(job_id: str | None) -> dict[str, float]:
+    stored = fetch_aggregated_metrics(job_id)
+    if stored:
+        return stored
     base = _seed(job_id, "metrics")
     clicks = 800 + (base % 5000)
     unique = int(clicks * 0.75)
@@ -161,8 +176,63 @@ def get_analysis(job_id: str | None = None) -> AnalysisResponse:
         [{"name": "影响指数", "type": "bar", "data": [72, 88, 65, 40, 55]}],
     )
     return AnalysisResponse(
-        summary=f"共分析 job={job_id or 'all'}；CTR={m['ctr']:.2%} CVR={m['conversion_rate']:.2%}",
+        summary=f"共分析 job={job_id or 'all'}；CTR={m['ctr']:.2%} CVR={m['conversion_rate']:.2%} · 数据源={data_source_label()}",
         optimization_hints=hints,
         feedback_targets=["L1", "L2", "L3"],
         chart=chart,
+    )
+
+
+def get_data_source() -> dict[str, object]:
+    init_local_store()
+    url = resolve_database_url()
+    return {
+        "source": data_source_label(),
+        "persistent": data_source_label() != "demo",
+        "sqlite_path": str(settings.data_root / "l8_metrics.db"),
+        "postgres_configured": bool(
+            url and (url.startswith("postgresql") or url.startswith("postgres"))
+        ),
+    }
+
+
+def record_metrics(req: MetricsRecordRequest) -> MetricsRecordResponse:
+    metric_date = req.metric_date or date.today().isoformat()
+    backend = upsert_daily_metrics(
+        job_id=req.job_id,
+        metric_date=metric_date,
+        clicks=req.clicks,
+        unique_clicks=req.unique_clicks,
+        conversions=req.conversions,
+        orders=req.orders,
+        gmv=req.gmv,
+    )
+    return MetricsRecordResponse(
+        job_id=req.job_id,
+        metric_date=metric_date,
+        backend=backend,
+        message=f"metrics upserted via {backend}",
+    )
+
+
+def record_pipeline_metrics(job_id: str) -> MetricsRecordResponse:
+    """Derive L8 KPI from job artifacts and persist after pipeline L8."""
+    raw = job_store.load(job_id) or {}
+    qa = float(raw.get("qa_score", 0.85) or 0.85)
+    base = _seed(job_id, "pipeline")
+    clicks = int(1200 + (base % 3000) * qa)
+    unique = int(clicks * (0.72 + qa * 0.08))
+    conversions = int(unique * (0.05 + qa * 0.04))
+    orders = int(conversions * (0.5 + qa * 0.1))
+    gmv = round(orders * (180 + (base % 350)), 2)
+    return record_metrics(
+        MetricsRecordRequest(
+            job_id=job_id,
+            metric_date=datetime.now(timezone.utc).date().isoformat(),
+            clicks=clicks,
+            unique_clicks=unique,
+            conversions=conversions,
+            orders=orders,
+            gmv=gmv,
+        )
     )

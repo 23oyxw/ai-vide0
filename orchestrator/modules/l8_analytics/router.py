@@ -8,6 +8,9 @@ from orchestrator.modules.l8_analytics.models import (
     ClickResponse,
     ConversionResponse,
     DashboardResponse,
+    DataSourceResponse,
+    MetricsRecordRequest,
+    MetricsRecordResponse,
     OrderResponse,
 )
 from orchestrator.schemas import (
@@ -27,6 +30,17 @@ legacy_router = APIRouter(prefix="/data", tags=["M8 数据运营 (legacy)"])
 @router.get("/dashboard", response_model=ApiEnvelope[DashboardResponse])
 async def get_dashboard(job_id: str | None = Query(default=None)) -> ApiEnvelope[DashboardResponse]:
     return ok_envelope(service.get_dashboard(job_id), layer="L8", job_id=job_id)
+
+
+@router.get("/source", response_model=ApiEnvelope[DataSourceResponse])
+async def get_data_source() -> ApiEnvelope[DataSourceResponse]:
+    data = service.get_data_source()
+    return ok_envelope(DataSourceResponse.model_validate(data), layer="L8")
+
+
+@router.post("/metrics", response_model=ApiEnvelope[MetricsRecordResponse])
+async def post_metrics(req: MetricsRecordRequest) -> ApiEnvelope[MetricsRecordResponse]:
+    return ok_envelope(service.record_metrics(req), layer="L8", job_id=req.job_id)
 
 
 @router.get("/click", response_model=ApiEnvelope[ClickResponse])
@@ -108,3 +122,8 @@ async def legacy_order_post(body: dict) -> ApiEnvelope[DataOrderData]:
 @legacy_router.post("/analysis")
 async def legacy_analysis_post(req: DataAnalysisRequest) -> ApiEnvelope[DataAnalysisData]:
     return await legacy_analysis(req.job_id)
+
+
+@legacy_router.post("/metrics")
+async def legacy_metrics_post(req: MetricsRecordRequest) -> ApiEnvelope[MetricsRecordResponse]:
+    return ok_envelope(service.record_metrics(req), layer="L8", job_id=req.job_id)

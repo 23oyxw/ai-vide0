@@ -1,0 +1,42 @@
+{
+  "id": "s2cf041ff",
+  "full_text": "“姐妹们，走路累到脚废？这双李宁鞋拯救你！”\n“磨脚挤脚、走两步就酸，是不是你？”\n“轻盈耐磨，李宁科技鞋垫，一步到位，舒适不累！”\n“速来抢购，前100名立减50元，评论区晒鞋，赢免费体验！”",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "“姐妹们，走路累到脚废？这双李宁鞋拯救你！”"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "“磨脚挤脚、走两步就酸，是不是你？”"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "“轻盈耐磨，李宁科技鞋垫，一步到位，舒适不累！”"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "“速来抢购，前100名立减50元，评论区晒鞋，赢免费体验！”"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://lining.jd.com/view_search-208102-30530638-99-1-24-1.html",
+  "created_at": "2026-07-05T22:33:59.148681+00:00"
+}

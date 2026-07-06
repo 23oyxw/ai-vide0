@@ -1,0 +1,23 @@
+{
+  "job_id": "jca8c221d",
+  "status": "ok",
+  "demo_name": "post_production_15s_zhongcao",
+  "manifest_path": "data\\l4\\renders\\jca8c221d\\manifest.json",
+  "video_path": "data\\l4\\renders\\jca8c221d\\output.mp4",
+  "output_dir": "data\\l4\\renders\\jca8c221d",
+  "c4d_scene2_output": "",
+  "cogvideo_task_id": "",
+  "cogvideo_video_url": "",
+  "cogvideo_local_path": "",
+  "messages": [
+    "FreeAI: 白底主图",
+    "Placeholder: 别再让“磨脚、挤脚、走路",
+    "Placeholder: 别再让“磨脚、挤脚、走路",
+    "FreeAI: 场景氛围图",
+    "4/4 product images",
+    "4-scene video 4x3.8s=15s",
+    "CogVideo started in background"
+  ],
+  "created_at": "2026-07-06T17:58:58.157669+00:00",
+  "updated_at": "2026-07-06T17:58:58.157669+00:00"
+}

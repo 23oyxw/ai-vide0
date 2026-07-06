@@ -1,0 +1,42 @@
+{
+  "id": "sd516fcf4",
+  "full_text": "【钩子】\n\"还在为找不到洗衣间发愁？试试壁挂脏衣篮，一挂即用！\n\n【痛点展开】\n家里空间小，洗衣间不够用，脏衣堆满地，有了它，轻松解决！\n\n【产品特写】\n免打孔设计，轻松安装，容量大，防滑稳固，一挂即挂，让家务更轻松！\n\n【CTA】\n快来抢购，限时优惠，评论区晒出你的脏衣篮，还有神秘礼物等你哦！🛒🎁",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "\"还在为找不到洗衣间发愁？试试壁挂脏衣篮，一挂即用！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【痛点展开】"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "家里空间小，洗衣间不够用，脏衣堆满地，有了它，轻松解决！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-05T19:49:47.361675+00:00"
+}

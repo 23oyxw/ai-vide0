@@ -1,0 +1,42 @@
+{
+  "id": "s75f6e268",
+  "full_text": "【钩子】\n你还在为笔记乱糟糟找不到头疼吗？\n\n【痛点展开】\n工作学习，资料一堆，手机、电脑、笔记本，全乱糟糟，重要信息总是找不到？\n\n【产品特写】\nRAG智能笔记，自动整理，一键搜索，从此告别杂乱，工作学习更高效！\n\n【CTA】\n马上体验RAG，让你的笔记井井有条，留言#RAG，赢取免费升级大礼！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "你还在为笔记乱糟糟找不到头疼吗？"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【痛点展开】"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "工作学习，资料一堆，手机、电脑、笔记本，全乱糟糟，重要信息总是找不到？"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://example.com/product/demo",
+  "created_at": "2026-07-05T06:30:20.155546+00:00"
+}

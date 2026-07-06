@@ -1,0 +1,42 @@
+{
+  "id": "s0a906430",
+  "full_text": "1. 你是不是也买过几双鞋，磨脚挤脚走两步就想脱掉？别扔，今天这款李宁鞋试试。\n2. 每次逛街脚后跟磨破，走半小时就累得像跑了五公里，真的受够了。\n3. 你看这鞋垫，柔软回弹，鞋头加宽设计，脚趾自由舒展，穿上轻盈不板脚。\n4. 打开李宁官方旗舰店，这双百搭款已经被我抢了，你也快去试试，限时福利等你哦！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "1. 你是不是也买过几双鞋，磨脚挤脚走两步就想脱掉？别扔，今天这款李宁鞋试试"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "2. 每次逛街脚后跟磨破，走半小时就累得像跑了五公里，真的受够了"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "3. 你看这鞋垫，柔软回弹，鞋头加宽设计，脚趾自由舒展，穿上轻盈不板脚"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "4. 打开李宁官方旗舰店，这双百搭款已经被我抢了，你也快去试试，限时福利等你哦！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://lining.jd.com/view_search-208102-30530638-99-1-24-1.html",
+  "created_at": "2026-07-05T21:14:03.396204+00:00"
+}

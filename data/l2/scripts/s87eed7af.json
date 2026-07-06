@@ -1,0 +1,42 @@
+{
+  "id": "s87eed7af",
+  "full_text": "走路磨脚到哭？试试这双李宁，脚感像踩棉花，5秒告别难受！\n磨脚挤脚走路累？爱美却总被鞋折磨？它专为软脚星人设计！\n看这鞋垫弹性十足，透气网面不闷脚，百搭黑白配色，一键解决搭配难题。\n即刻锁定李宁官方旗舰店，轻松穿出逛街不累、颜值在线的高级感！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "走路磨脚到哭？试试这双李宁，脚感像踩棉花，5秒告别难受！"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "磨脚挤脚走路累？爱美却总被鞋折磨？它专为软脚星人设计！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "看这鞋垫弹性十足，透气网面不闷脚，百搭黑白配色，一键解决搭配难题"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "即刻锁定李宁官方旗舰店，轻松穿出逛街不累、颜值在线的高级感！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://lining.jd.com/view_search-208102-30530638-99-1-24-1.html",
+  "created_at": "2026-07-05T21:31:42.466137+00:00"
+}

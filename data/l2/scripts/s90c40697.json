@@ -1,0 +1,42 @@
+{
+  "id": "s90c40697",
+  "full_text": "【钩子】\n“家里的脏衣服堆成山，你还在用传统洗衣方式？”\n\n【痛点展开】\n“每次洗衣都是一场大工程，费时又费力，你还在等什么？”\n\n【产品特写】\n“这款智能脏衣篮，自动分类，轻松收纳，告别杂乱，让洗衣变得更简单，质感十足！”\n\n【CTA】\n“赶快下单，限时优惠，评论区晒出你的脏衣篮生活，还有惊喜等你哦！”",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "“家里的脏衣服堆成山，你还在用传统洗衣方式？”"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【痛点展开】"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "“每次洗衣都是一场大工程，费时又费力，你还在等什么？”"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-06T12:04:27.117294+00:00"
+}

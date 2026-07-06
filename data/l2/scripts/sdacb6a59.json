@@ -1,0 +1,42 @@
+{
+  "id": "sdacb6a59",
+  "full_text": "1. \"衣服堆成山？快来试试这款脏衣篮，告别混乱收纳难题！\"\n2. \"家里脏衣服堆积如山，整理起来真头疼？它，就是你的得力助手。\"\n3. \"环保布料，大容量设计，轻松收纳全家衣物，质感生活从此开始。\"\n4. \"赶紧下单体验，前100名立享半价优惠，评论晒图还能再减10元哦！\"",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "1. \"衣服堆成山？快来试试这款脏衣篮，告别混乱收纳难题！\""
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "2. \"家里脏衣服堆积如山，整理起来真头疼？它，就是你的得力助手"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "\""
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "3. \"环保布料，大容量设计，轻松收纳全家衣物，质感生活从此开始"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-05T22:03:01.520937+00:00"
+}

@@ -1,0 +1,49 @@
+{
+  "id": "sbf494b46d",
+  "demo_name": "post_production_15s_zhongcao",
+  "title": "15s 竖屏种草标准片",
+  "duration_target_sec": 15.0,
+  "width": 1080,
+  "height": 1920,
+  "fps": 24,
+  "segments": [
+    {
+      "code": "hook",
+      "title": "前3秒钩子",
+      "start": 0.0,
+      "end": 3.0,
+      "duration": 3.0,
+      "narration": "1. 惊不惊喜？用了这个，手机秒变超薄充电宝！",
+      "visual": ""
+    },
+    {
+      "code": "pain",
+      "title": "痛点展开",
+      "start": 3.0,
+      "end": 7.0,
+      "duration": 4.0,
+      "narration": "2. 一键连接，告别电量焦虑，随时随地充电，你值得拥有！",
+      "visual": ""
+    },
+    {
+      "code": "product",
+      "title": "产品特写",
+      "start": 7.0,
+      "end": 12.0,
+      "duration": 5.0,
+      "narration": "3. 金属质感，轻巧便携，手机、平板，一充多用，续航力MAX！",
+      "visual": ""
+    },
+    {
+      "code": "cta",
+      "title": "行动号召",
+      "start": 12.0,
+      "end": 15.0,
+      "duration": 3.0,
+      "narration": "4. 立刻下单，限时优惠，评论区留言，抽送体验装！",
+      "visual": ""
+    }
+  ],
+  "yaml_path": "C:\\Users\\oyxw\\Projects\\video-factory\\demos\\post_production_15s_zhongcao.yaml",
+  "created_at": "2026-07-05T06:30:11.514266+00:00"
+}

@@ -69,6 +69,7 @@ def err_envelope(
 class PipelineRunRequest(BaseModel):
     product_url: str | None = None
     demo_name: str = "post_production_15s_zhongcao"
+    video_style: str = "real"  # real | product | 3d | unbox | compare
     c4d_project: str | None = None
     layers: list[str] = Field(default_factory=lambda: list(DEFAULT_PIPELINE))
     force_qa_fail: bool = False

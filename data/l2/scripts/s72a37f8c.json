@@ -1,0 +1,42 @@
+{
+  "id": "s72a37f8c",
+  "full_text": "【开头（3秒）】姐妹们，挖到宝了！一定要看完，不然亏大了！\n\n【中间（8秒）】我上周发现一个超好用的神器——XXX（产品名），第一次用就被惊艳到！它解决了我多年的XXX问题（痛点），真的忍不住想安利给所有人。\n\n【高潮（3秒）】用完之后，皮肤/状态直接起飞，对比效果看图就懂了！\n\n【结尾（1秒）】赶紧去试试吧，不灵来打我！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【开头（3秒）】姐妹们，挖到宝了！一定要看完，不然亏大了！"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "【中间（8秒）】我上周发现一个超好用的神器——XXX（产品名），第一次用就被惊艳到！它解决了我多年的XXX问题（痛点），真的忍不住想安利给所有人"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【高潮（3秒）】用完之后，皮肤/状态直接起飞，对比效果看图就懂了！"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "【结尾（1秒）】赶紧去试试吧，不灵来打我！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "deepseek",
+  "product_url": null,
+  "created_at": "2026-07-05T05:22:22.672051+00:00"
+}

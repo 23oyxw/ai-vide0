@@ -12,9 +12,14 @@ __pycache__/
 .mypy_cache/
 output/
 data/jobs/
+data/chroma_db/
+data/rag_cache/
+*.db
+logs/
 *.log
 .DS_Store
 Thumbs.db
 
 scripts/_*.py
 
+.vercel

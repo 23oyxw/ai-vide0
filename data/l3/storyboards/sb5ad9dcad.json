@@ -1,0 +1,49 @@
+{
+  "id": "sb5ad9dcad",
+  "demo_name": "post_production_15s_zhongcao",
+  "title": "15s 竖屏种草标准片",
+  "duration_target_sec": 15.0,
+  "width": 1080,
+  "height": 1920,
+  "fps": 24,
+  "segments": [
+    {
+      "code": "hook",
+      "title": "前3秒钩子",
+      "start": 0.0,
+      "end": 3.0,
+      "duration": 3.0,
+      "narration": "十五秒带你种草一个能泡着喝的神仙食材！第一段，你有没有发现，熬夜追剧后，第二天脸色特别暗沉、没精神？第二段，那是因为你的身体在默默对抗自由基，暗黄和疲惫都在提醒你需要一点抗氧化",
+      "visual": ""
+    },
+    {
+      "code": "pain",
+      "title": "痛点展开",
+      "start": 3.0,
+      "end": 7.0,
+      "duration": 4.0,
+      "narration": "第三段，快来试试这个羽衣甘蓝粉，满满天然青汁，高维C高纤维，加点温水一泡，就是一杯清甜小绿叶",
+      "visual": ""
+    },
+    {
+      "code": "product",
+      "title": "产品特写",
+      "start": 7.0,
+      "end": 12.0,
+      "duration": 5.0,
+      "narration": "第四段，每天一杯，帮你扫除身体垃圾，甩掉暗沉气色，评论区姐妹都夸它拯救了熬夜脸，不说了，我又去泡一杯了",
+      "visual": ""
+    },
+    {
+      "code": "cta",
+      "title": "行动号召",
+      "start": 12.0,
+      "end": 15.0,
+      "duration": 3.0,
+      "narration": "",
+      "visual": ""
+    }
+  ],
+  "yaml_path": "C:\\Users\\oyxw\\Projects\\video-factory\\demos\\post_production_15s_zhongcao.yaml",
+  "created_at": "2026-07-05T06:52:44.277276+00:00"
+}

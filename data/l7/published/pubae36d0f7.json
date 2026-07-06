@@ -1,0 +1,14 @@
+{
+  "id": "pubae36d0f7",
+  "job_id": "test-pub-api",
+  "utm_campaign": "seed_test-pub-api",
+  "utm_content": "video_test-pub-api",
+  "video_path": "/tmp/fake.mp4",
+  "blob_path": "blob://published/test-pub-api/final.mp4",
+  "publish_target": "douyin",
+  "platforms": [
+    "douyin"
+  ],
+  "status": "ok",
+  "created_at": "2026-07-05T06:37:00.217545+00:00"
+}

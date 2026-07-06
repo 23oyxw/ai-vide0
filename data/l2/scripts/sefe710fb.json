@@ -1,0 +1,42 @@
+{
+  "id": "sefe710fb",
+  "full_text": "【痛点】\n\"你还在为乱糟糟的衣物烦恼吗？\"\n\n【痛点展开】\n\"有了它，告别杂乱，衣物收纳从此省心又省力！\"\n\n【产品特写】\n\"壁挂免打孔设计，轻松安装，不伤墙面，脏衣篮容量大，质感柔软，轻松收纳全家衣物！\"\n\n【CTA】\n\"快来抢购，限时优惠，评论区晒出你的收纳新家，还有精美礼品等你拿！🛒https://item.jd.com/100012043978.html\"",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【痛点】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "\"你还在为乱糟糟的衣物烦恼吗？\""
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【痛点展开】"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "\"有了它，告别杂乱，衣物收纳从此省心又省力！\""
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-05T21:58:37.661683+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "job_id": "jbbdacf5e",
+  "status": "ok",
+  "demo_name": "motion_poster",
+  "manifest_path": "data\\l4\\renders\\jbbdacf5e\\manifest.json",
+  "video_path": "data\\l4\\renders\\jbbdacf5e\\output.mp4",
+  "output_dir": "data\\l4\\renders\\jbbdacf5e",
+  "c4d_scene2_output": "",
+  "cogvideo_task_id": "",
+  "cogvideo_video_url": "",
+  "cogvideo_local_path": "",
+  "messages": [
+    "Placeholder: 【钩子】\n还在为找不到心",
+    "Placeholder: 【钩子】\n还在为找不到心",
+    "Placeholder: 【钩子】\n还在为找不到心",
+    "Placeholder: 【钩子】\n还在为找不到心",
+    "4/4 product images",
+    "4-scene video 4x1.2s=5s",
+    "CogVideo started in background"
+  ],
+  "created_at": "2026-07-06T17:22:15.898507+00:00",
+  "updated_at": "2026-07-06T17:22:15.898507+00:00"
+}

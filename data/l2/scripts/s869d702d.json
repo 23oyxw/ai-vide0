@@ -1,0 +1,42 @@
+{
+  "id": "s869d702d",
+  "full_text": "穿鞋挤脚磨脚？脚踝割伤后跟起泡？\n李宁旗舰店鞋款超软鞋垫+宽楦设计，一蹬即合，轻盈如光脚！\n锁定直播间，这双解放双脚的搭配王炸！\n京东下单，品质保证，立即行动，错过等一年！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "穿鞋挤脚磨脚？脚踝割伤后跟起泡？"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "李宁旗舰店鞋款超软鞋垫+宽楦设计，一蹬即合，轻盈如光脚！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "锁定直播间，这双解放双脚的搭配王炸！"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "京东下单，品质保证，立即行动，错过等一年！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://lining.jd.com/view_search-208102-30530638-99-1-24-1.html",
+  "created_at": "2026-07-05T21:22:59.789659+00:00"
+}

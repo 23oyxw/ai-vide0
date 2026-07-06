@@ -1,0 +1,42 @@
+{
+  "id": "s0b624d04",
+  "full_text": "【钩子】\n每天看手机，眼睛累成狗？试试这款护眼神器！\n\n【痛点展开】\n长时间盯着屏幕，视力模糊还干涩，真的太难受了！\n\n【产品特写】\n这款护眼神器，内置护眼模式，智能调节屏幕光线，护眼又舒适，像给眼睛加了层保护膜！\n\n【CTA】\n快来抢购，限时优惠，评论区晒出你的护眼日常，还有神秘礼物等你哦！🎁",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "每天看手机，眼睛累成狗？试试这款护眼神器！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【痛点展开】"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "长时间盯着屏幕，视力模糊还干涩，真的太难受了！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://example.com/product/demo",
+  "created_at": "2026-07-05T06:22:44.731185+00:00"
+}

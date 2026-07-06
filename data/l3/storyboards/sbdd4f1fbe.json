@@ -1,0 +1,49 @@
+{
+  "id": "sbdd4f1fbe",
+  "demo_name": "post_production_15s_zhongcao",
+  "title": "post_production_15s_zhongcao",
+  "duration_target_sec": 15.0,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "segments": [
+    {
+      "code": "hook",
+      "title": "前3秒钩子",
+      "start": 0.0,
+      "end": 3.0,
+      "duration": 3.0,
+      "narration": "[RAG参考]",
+      "visual": ""
+    },
+    {
+      "code": "pain",
+      "title": "痛点展开",
+      "start": 3.0,
+      "end": 7.0,
+      "duration": 4.0,
+      "narration": "知识库为空",
+      "visual": ""
+    },
+    {
+      "code": "product",
+      "title": "产品特写",
+      "start": 7.0,
+      "end": 12.0,
+      "duration": 5.0,
+      "narration": "请先 POST /rag/ingest 导入文档，或安装 requirements-rag.txt",
+      "visual": ""
+    },
+    {
+      "code": "cta",
+      "title": "行动号召",
+      "start": 12.0,
+      "end": 15.0,
+      "duration": 3.0,
+      "narration": "",
+      "visual": ""
+    }
+  ],
+  "yaml_path": "\\completely\\nonexistent\\path_xyz\\demos\\post_production_15s_zhongcao.yaml",
+  "created_at": "2026-07-05T05:29:40.051797+00:00"
+}

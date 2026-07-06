@@ -1,0 +1,49 @@
+{
+  "id": "sbd4f6eaef",
+  "demo_name": "post_production_15s_zhongcao",
+  "title": "15s 竖屏种草标准片",
+  "duration_target_sec": 15.0,
+  "width": 1080,
+  "height": 1920,
+  "fps": 24,
+  "segments": [
+    {
+      "code": "hook",
+      "title": "前3秒钩子",
+      "start": 0.0,
+      "end": 3.0,
+      "duration": 3.0,
+      "narration": "1. 每天走路走到脚磨起泡、挤得怀疑人生？别硬扛了！",
+      "visual": ""
+    },
+    {
+      "code": "pain",
+      "title": "痛点展开",
+      "start": 3.0,
+      "end": 7.0,
+      "duration": 4.0,
+      "narration": "2. 磨脚挤脚让你走路像受刑，一天下来累到腿软，搭衣服还得翻遍衣柜",
+      "visual": ""
+    },
+    {
+      "code": "product",
+      "title": "产品特写",
+      "start": 7.0,
+      "end": 12.0,
+      "duration": 5.0,
+      "narration": "3. 看这双李宁鞋，柔软鞋身像给脚穿了海绵，鞋型贴合不挤不磨，黑白色系怎么搭都潮",
+      "visual": ""
+    },
+    {
+      "code": "cta",
+      "title": "行动号召",
+      "start": 12.0,
+      "end": 15.0,
+      "duration": 3.0,
+      "narration": "4. 快去李宁官方旗舰店挑一双，走路轻松到飞起，出门不用愁搭配！",
+      "visual": ""
+    }
+  ],
+  "yaml_path": "C:\\Users\\oyxw\\Projects\\video-factory\\demos\\post_production_15s_zhongcao.yaml",
+  "created_at": "2026-07-05T22:38:24.469704+00:00"
+}

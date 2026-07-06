@@ -1,48 +1,38 @@
-export const maxDuration = 60;
-
 import type { ApiEnvelope } from "@/lib/api-envelope";
+import { jsonResponse } from "@/lib/api-envelope";
 
-const ORCHESTRATOR_URL =
-  process.env.ORCHESTRATOR_URL ?? "http://127.0.0.1:8765";
+// Local dev: 120s timeout for pipeline with image generation
+export const maxDuration = 120;
 
-/**
- * Control plane (Vercel) -> orchestration plane proxy — scaffolding only.
- *
- * Flow:
- *   Dashboard POST /api/pipeline/run
- *     -> this Route Handler (apps/web on Vercel or localhost:3000)
- *     -> FastAPI POST /pipeline/run (:8765) runs L1-L8 sequentially
- *     -> L4 adapters may invoke render-plane workers (video-factory, C4D) on the
- *        machine where orchestrator runs — never inside Vercel serverless.
- *
- * Production (see docs/ARCHITECTURE_LOGIC.md):
- *   - This route should enqueue Vercel Workflow, not block on 8 layers.
- *   - Render plane completes via Worker webhook; OpenClaw is dev tooling only.
- */
+const ORCHESTRATOR_URL = process.env.ORCHESTRATOR_URL ?? "http://127.0.0.1:8765";
+const UPSTREAM_TIMEOUT_MS = 110_000;
+
 export async function POST(req: Request) {
   const body = await req.text();
-
   try {
     const upstream = await fetch(`${ORCHESTRATOR_URL}/pipeline/run`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json; charset=utf-8" },
       body: body || "{}",
+      signal: AbortSignal.timeout(UPSTREAM_TIMEOUT_MS),
     });
-
     const envelope = (await upstream.json()) as ApiEnvelope;
-    return Response.json(envelope, { status: upstream.status });
-  } catch {
+    return jsonResponse(envelope, upstream.status);
+  } catch (err) {
+    const isTimeout = err instanceof Error && err.name === "TimeoutError";
+    const message = isTimeout
+      ? "管线超时。完整模式（含视频）约需 30 秒，请重试或改用快速模式。"
+      : "Orchestrator 未启动或连接中断 — 请运行 npm run dev:api";
     const envelope: ApiEnvelope = {
       ok: false,
       data: null,
       error: {
-        code: "orchestrator_unreachable",
-        message:
-          "Orchestrator unreachable. Start: uvicorn orchestrator.main:app --port 8765",
+        code: isTimeout ? "pipeline_timeout" : "orchestrator_unreachable",
+        message,
         detail: { orchestrator_url: ORCHESTRATOR_URL },
       },
       meta: { layer: "L5", timestamp: new Date().toISOString() },
     };
-    return Response.json(envelope, { status: 503 });
+    return jsonResponse(envelope, 503);
   }
 }

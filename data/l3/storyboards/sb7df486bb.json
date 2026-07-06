@@ -1,0 +1,49 @@
+{
+  "id": "sb7df486bb",
+  "demo_name": "product_ad",
+  "title": "电商产品竖屏广告 Demo",
+  "duration_target_sec": 15.0,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "segments": [
+    {
+      "code": "hook",
+      "title": "前3秒钩子",
+      "start": 0.0,
+      "end": 3.0,
+      "duration": 3.0,
+      "narration": "1. 你是不是也买过几双鞋，磨脚挤脚走两步就想脱掉？别扔，今天这款李宁鞋试试",
+      "visual": ""
+    },
+    {
+      "code": "pain",
+      "title": "痛点展开",
+      "start": 3.0,
+      "end": 7.0,
+      "duration": 4.0,
+      "narration": "2. 每次逛街脚后跟磨破，走半小时就累得像跑了五公里，真的受够了",
+      "visual": ""
+    },
+    {
+      "code": "product",
+      "title": "产品特写",
+      "start": 7.0,
+      "end": 12.0,
+      "duration": 5.0,
+      "narration": "3. 你看这鞋垫，柔软回弹，鞋头加宽设计，脚趾自由舒展，穿上轻盈不板脚",
+      "visual": ""
+    },
+    {
+      "code": "cta",
+      "title": "行动号召",
+      "start": 12.0,
+      "end": 15.0,
+      "duration": 3.0,
+      "narration": "4. 打开李宁官方旗舰店，这双百搭款已经被我抢了，你也快去试试，限时福利等你哦！",
+      "visual": ""
+    }
+  ],
+  "yaml_path": "C:\\Users\\oyxw\\Projects\\video-factory\\demos\\product_ad.yaml",
+  "created_at": "2026-07-05T21:14:03.410154+00:00"
+}

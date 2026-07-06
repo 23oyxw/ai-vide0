@@ -1,0 +1,42 @@
+{
+  "id": "s530c5acb",
+  "full_text": "【钩子】敏感肌救星来了！一抹变素颜，谁说遮瑕不能润肤？\n【痛点】卡粉、脱妆、泛红？敏感肌的痛，你懂！\n【特写】奶油质地，润而不腻，京东自营，安全到家门口！\n【CTA】赶紧抢购，早买早美丽，评论区晒美肌！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】敏感肌救星来了！一抹变素颜，谁说遮瑕不能润肤？"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "【痛点】卡粉、脱妆、泛红？敏感肌的痛，你懂！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【特写】奶油质地，润而不腻，京东自营，安全到家门口！"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "【CTA】赶紧抢购，早买早美丽，评论区晒美肌！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/beauty-demo.html",
+  "created_at": "2026-07-05T17:47:03.494700+00:00"
+}

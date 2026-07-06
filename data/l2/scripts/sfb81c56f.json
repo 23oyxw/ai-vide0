@@ -1,0 +1,42 @@
+{
+  "id": "sfb81c56f",
+  "full_text": "【钩子】家里脏衣服堆成山？别急，1分钟安装，告别杂乱！\n\n【痛点展开】告别传统脏衣篓占地，这个壁挂免打孔脏衣篮，让你收纳轻松又整齐！\n\n【产品特写】轻巧设计，承重强，可挂厨房、浴室，质感软布，防滑又耐用！\n\n【CTA】马上下单，限时优惠，评论晒单还有惊喜哦！京东正品保障，点击链接，马上拥有！🛒https://item.jd.com/100012043978.html",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】家里脏衣服堆成山？别急，1分钟安装，告别杂乱！"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "【痛点展开】告别传统脏衣篓占地，这个壁挂免打孔脏衣篮，让你收纳轻松又整齐！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【产品特写】轻巧设计，承重强，可挂厨房、浴室，质感软布，防滑又耐用！"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "【CTA】马上下单，限时优惠，评论晒单还有惊喜哦！京东正品保障，点击链接，马上拥有！🛒https://item.jd.com/100012043978.html"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-05T20:22:48.912974+00:00"
+}

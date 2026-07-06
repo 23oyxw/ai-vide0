@@ -1,0 +1,49 @@
+{
+  "id": "sb24b20d54",
+  "demo_name": "post_production_15s_zhongcao",
+  "title": "15s 竖屏种草标准片",
+  "duration_target_sec": 15.0,
+  "width": 1080,
+  "height": 1920,
+  "fps": 24,
+  "segments": [
+    {
+      "code": "hook",
+      "title": "前3秒钩子",
+      "start": 0.0,
+      "end": 3.0,
+      "duration": 3.0,
+      "narration": "【开头（3秒）】姐妹们，挖到宝了！一定要看完，不然亏大了！",
+      "visual": ""
+    },
+    {
+      "code": "pain",
+      "title": "痛点展开",
+      "start": 3.0,
+      "end": 7.0,
+      "duration": 4.0,
+      "narration": "【中间（8秒）】我上周发现一个超好用的神器——XXX（产品名），第一次用就被惊艳到！它解决了我多年的XXX问题（痛点），真的忍不住想安利给所有人",
+      "visual": ""
+    },
+    {
+      "code": "product",
+      "title": "产品特写",
+      "start": 7.0,
+      "end": 12.0,
+      "duration": 5.0,
+      "narration": "【高潮（3秒）】用完之后，皮肤/状态直接起飞，对比效果看图就懂了！",
+      "visual": ""
+    },
+    {
+      "code": "cta",
+      "title": "行动号召",
+      "start": 12.0,
+      "end": 15.0,
+      "duration": 3.0,
+      "narration": "【结尾（1秒）】赶紧去试试吧，不灵来打我！",
+      "visual": ""
+    }
+  ],
+  "yaml_path": "C:\\Users\\oyxw\\Projects\\video-factory\\demos\\post_production_15s_zhongcao.yaml",
+  "created_at": "2026-07-05T05:22:22.692809+00:00"
+}

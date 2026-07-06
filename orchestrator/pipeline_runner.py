@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from typing import Any
 
 from orchestrator.modules.l1_crawler.models import SearchRequest
@@ -18,6 +19,7 @@ from orchestrator.modules.l7_publish.models import PublishRequest
 from orchestrator.modules.l7_publish import service as l7
 from orchestrator.modules.l8_analytics import service as l8
 from orchestrator.pipeline_state import QA_PASS_THRESHOLD, QA_RETRY_FROM, PipelineState
+from orchestrator.rag.context import fetch_rag_context
 from orchestrator.schemas import LayerResultPayload, PipelineRunData, PipelineRunRequest
 
 
@@ -52,7 +54,17 @@ async def run_pipeline(req: PipelineRunRequest) -> PipelineRunData:
             )
         )
 
-    for lid in req.layers:
+    # Progress tracking: update job store after each layer
+    total_layers = len(req.layers)
+    for idx, lid in enumerate(req.layers):
+        from orchestrator.main import _emit_event
+        l5.update_job(job_id, {
+            "status": "running",
+            "pipeline_status": f"layer_{lid}",
+            "progress": f"{idx}/{total_layers}",
+        })
+        _emit_event(job_id, "layer_start", {"layer": lid, "progress": f"{idx}/{total_layers}"})
+
         if lid == "L1":
             search = await l1.search_topics(
                 SearchRequest(
@@ -62,21 +74,32 @@ async def run_pipeline(req: PipelineRunRequest) -> PipelineRunData:
                 )
             )
             crawl = search.crawl
+            # Save crawled image URLs for L4 fallback
+            crawled_images = getattr(crawl, "images", []) if crawl else []
             layer_art = {
                 "crawled_url": crawl.crawled_url if crawl else (req.product_url or ""),
                 "crawled_title": crawl.title if crawl else "",
                 "crawled_domain": crawl.category if crawl else "",
                 "topics_count": str(len(search.topics)),
+                "crawled_images": json.dumps(crawled_images[:4]),
             }
             artifacts.update(layer_art)
             record("L1", "ok", f"L1: {len(search.topics)} trending topics", layer_art)
 
         elif lid == "L2":
+            rag_question = req.topic or req.script or req.product_url or ""
+            rag_ctx = fetch_rag_context(rag_question)
+            raw_text = req.script or ""
+            # Pass RAG context as style/background hint, not as source text to rewrite
+            style_hint = ""
+            if rag_ctx:
+                style_hint = f"知识参考: {rag_ctx[:300]}"
             gen = await l2.generate_script_record(
                 GenerateScriptRequest(
                     product_url=req.product_url,
                     topic=req.topic or "",
-                    raw_text=req.script or "",
+                    raw_text=raw_text,
+                    style=style_hint,
                 )
             )
             script_id = gen.script.id
@@ -86,32 +109,56 @@ async def run_pipeline(req: PipelineRunRequest) -> PipelineRunData:
                 "segment_count": str(len(gen.script.segments)),
                 "script_provider": gen.script.provider,
             }
+            if rag_ctx:
+                layer_art["rag_context_chars"] = str(len(rag_ctx))
             artifacts.update(layer_art)
-            record("L2", "ok", f"L2: script {script_id} ({gen.script.provider})", layer_art)
+            record(
+                "L2",
+                "ok",
+                f"L2: script {script_id} ({gen.script.provider})"
+                + (f" +RAG({len(rag_ctx)}ch)" if rag_ctx else ""),
+                layer_art,
+            )
 
         elif lid == "L3":
             sb = l3.build_from_script(
-                BuildStoryboardRequest(script_id=script_id or None, demo_name=req.demo_name)
+                BuildStoryboardRequest(
+                    script_id=script_id or None,
+                    demo_name=req.demo_name,
+                    video_style=getattr(req, "video_style", None) or "real",
+                )
             )
             storyboard_id = sb.storyboard.id
+            # Emit per-scene details for frontend preview
+            scene_descriptions = [
+                {"index": s.code, "label": s.title, "duration": s.duration, "narration": s.narration[:60]}
+                for s in sb.storyboard.segments
+            ]
             layer_art = {
                 "storyboard_id": storyboard_id,
                 "storyboard_yaml": sb.storyboard.yaml_path,
                 "storyboard_title": sb.storyboard.title,
                 "segment_count": str(len(sb.storyboard.segments)),
                 "demo_name": sb.storyboard.demo_name,
+                "scenes": json.dumps(scene_descriptions, ensure_ascii=False),
             }
             artifacts.update(layer_art)
             record("L3", "ok", f"L3: storyboard {storyboard_id}", layer_art)
 
         elif lid == "L4":
             pipeline_state = PipelineState.L4_RENDER
+            script_text = artifacts.get("script", req.script or "")
+            crawled_urls = json.loads(artifacts.get("crawled_images", "[]"))
             render = await l4.start_render(
                 RenderRequest(
                     storyboard_id=storyboard_id or None,
                     demo_name=req.demo_name,
+                    video_style=getattr(req, "video_style", None) or "real",
                     c4d_project=req.c4d_project,
                     job_id=job_id,
+                    enable_cogvideo=True,
+                    cogvideo_prompt=script_text[:500] if script_text else None,
+                    crawled_image_urls=crawled_urls,
                 )
             )
             render_job_id = render.job.job_id
@@ -146,11 +193,12 @@ async def run_pipeline(req: PipelineRunRequest) -> PipelineRunData:
             record("L5", "ok", f"L5: job {job_id} scheduled", layer_art)
 
         elif lid == "L6":
-            qa = l6.validate(
+            script_for_qa = artifacts.get("script", req.script or "")
+            qa = await l6.validate(
                 ValidateRequest(
                     manifest_path=artifacts.get("manifest_path", ""),
                     output_dir=artifacts.get("video_factory_output", ""),
-                    script_text=artifacts.get("script", req.script or ""),
+                    script_text=script_for_qa,
                     force_fail=req.force_qa_fail,
                 )
             )
@@ -158,6 +206,9 @@ async def run_pipeline(req: PipelineRunRequest) -> PipelineRunData:
                 "qa_score": str(qa.score),
                 "qa_checks_failed": ",".join(c.name for c in qa.checks if not c.passed),
             }
+            rag_hits = [c.name for c in qa.checks if c.name.startswith("rag_")]
+            if rag_hits:
+                layer_art["rag_qa_checks"] = ",".join(rag_hits)
             artifacts.update(layer_art)
             if not qa.passed:
                 errors.append(qa.message)
@@ -185,6 +236,11 @@ async def run_pipeline(req: PipelineRunRequest) -> PipelineRunData:
             record("L7", pub.published.status, f"L7 publish {pub.published.id}", layer_art)
 
         elif lid == "L8":
+            from orchestrator.rag.service import rag_service
+            from orchestrator.rag.models import L8SyncRequest
+
+            rag_service.sync_l8(L8SyncRequest(job_id=job_id))
+            l8.record_pipeline_metrics(job_id)
             analysis = l8.get_analysis(job_id)
             optimization_hints = analysis.optimization_hints
             layer_art = {

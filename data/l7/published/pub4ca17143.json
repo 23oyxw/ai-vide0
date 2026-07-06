@@ -1,0 +1,14 @@
+{
+  "id": "pub4ca17143",
+  "job_id": "j88e94225",
+  "utm_campaign": "seed_j88e94225",
+  "utm_content": "video_j88e94225",
+  "video_path": "data\\l4\\renders\\j88e94225\\output.mp4",
+  "blob_path": "blob://published/j88e94225/final.mp4",
+  "publish_target": "douyin",
+  "platforms": [
+    "douyin"
+  ],
+  "status": "ok",
+  "created_at": "2026-07-06T17:32:38.821349+00:00"
+}

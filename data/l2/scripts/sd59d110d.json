@@ -1,0 +1,42 @@
+{
+  "id": "sd59d110d",
+  "full_text": "【口播文案原文】  \n（请提供您需要改写的内容，我将基于您给出的原文进行仿写）  \n\n当前您未提供具体待改写文案，请补充后我将按以下风格输出：  \n\n【仿写示例】  \n“姐妹们！这个才39块！谁懂啊！上脸直接磨皮，毛孔隐形到像开了滤镜！持妆8小时还不暗沉，油皮亲妈没跑了！冲就完事！”  \n\n（请提供您的原文，我将按此结构、语气、节奏进行语义级仿写。）",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【口播文案原文】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "（请提供您需要改写的内容，我将基于您给出的原文进行仿写）"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "当前您未提供具体待改写文案，请补充后我将按以下风格输出："
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "【仿写示例】"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "cloud-llm",
+  "product_url": null,
+  "created_at": "2026-07-04T09:04:32.912792+00:00"
+}

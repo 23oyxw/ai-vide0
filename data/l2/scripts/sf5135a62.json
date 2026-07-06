@@ -1,0 +1,42 @@
+{
+  "id": "sf5135a62",
+  "full_text": "你是不是也刷到过，别人一开口就卖爆，你拍了几百条根本没人看？  \n（停顿）  \n不是你不行，是你的开头，根本没长“钩子”。  \n\n今天这套内容，三句话抓住痛点，五秒让人停住——  \n（语气加快）  \n“还在纠结怎么拍？记住三个字：短、准、狠。”  \n（放慢，强调）  \n你要知道，用户刷到你视频的第0.5秒，就决定了要不要划走。  \n（结尾）  \n现在，评论区打“要模板”，我把这套爆款口播公式发你。",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "你是不是也刷到过，别人一开口就卖爆，你拍了几百条根本没人看？"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "（停顿）"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "不是你不行，是你的开头，根本没长“钩子”"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "今天这套内容，三句话抓住痛点，五秒让人停住——"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "cloud-llm",
+  "product_url": "https://example.com/product/demo",
+  "created_at": "2026-07-04T08:59:13.700649+00:00"
+}

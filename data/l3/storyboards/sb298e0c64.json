@@ -1,0 +1,49 @@
+{
+  "id": "sb298e0c64",
+  "demo_name": "post_production_15s_zhongcao",
+  "title": "15s 竖屏种草标准片",
+  "duration_target_sec": 15.0,
+  "width": 1080,
+  "height": 1920,
+  "fps": 24,
+  "segments": [
+    {
+      "code": "hook",
+      "title": "前3秒钩子",
+      "start": 0.0,
+      "end": 3.0,
+      "duration": 3.0,
+      "narration": "家人们，今天必须给你们爆一个颠覆三观的冷知识！你以为天天涂防晒霜就能白？错！大错特错！我闺蜜，雷打不动防晒三年，结果皮肤科医生一看，直接摇头：再这么闷下去，毛孔堵死，过敏烂脸是早晚的事！其实啊，防晒根本不是涂得越厚越管用",
+      "visual": ""
+    },
+    {
+      "code": "pain",
+      "title": "痛点展开",
+      "start": 3.0,
+      "end": 7.0,
+      "duration": 4.0,
+      "narration": "真正科学的防晒法——按场景选倍数，日常SPF30就够，而且一定要提前15分钟拍开成膜",
+      "visual": ""
+    },
+    {
+      "code": "product",
+      "title": "产品特写",
+      "start": 7.0,
+      "end": 12.0,
+      "duration": 5.0,
+      "narration": "评论区告诉我，你今天涂防晒了吗？如果还在盲目叠涂，赶紧停下来听听下面的硬核操作……",
+      "visual": ""
+    },
+    {
+      "code": "cta",
+      "title": "行动号召",
+      "start": 12.0,
+      "end": 15.0,
+      "duration": 3.0,
+      "narration": "",
+      "visual": ""
+    }
+  ],
+  "yaml_path": "C:\\Users\\oyxw\\Projects\\video-factory\\demos\\post_production_15s_zhongcao.yaml",
+  "created_at": "2026-07-03T19:45:13.985674+00:00"
+}

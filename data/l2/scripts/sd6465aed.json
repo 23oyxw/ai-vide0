@@ -1,0 +1,42 @@
+{
+  "id": "sd6465aed",
+  "full_text": "别再被磨脚挤脚的鞋子毁了逛街心情！\n走路不到半小时，脚后跟又红又肿，脚趾挤得变形，搭配还总翻车？\n看李宁这双，云朵般包裹的鞋口+透气缓震中底，回弹感直接拉满！（镜头聚焦鞋底和鞋口细节）\n穿它暴走2万步都不累，搭牛仔裤裙装都炸街！点我主页，解锁王炸款！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "别再被磨脚挤脚的鞋子毁了逛街心情！"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "走路不到半小时，脚后跟又红又肿，脚趾挤得变形，搭配还总翻车？"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "看李宁这双，云朵般包裹的鞋口+透气缓震中底，回弹感直接拉满！（镜头聚焦鞋底和鞋口细节）"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "穿它暴走2万步都不累，搭牛仔裤裙装都炸街！点我主页，解锁王炸款！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://lining.jd.com/view_search-208102-30530638-99-1-24-1.html",
+  "created_at": "2026-07-05T20:44:46.563793+00:00"
+}

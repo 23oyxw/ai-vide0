@@ -1,0 +1,42 @@
+{
+  "id": "sda76afcf",
+  "full_text": "痛点：你知道吗，每天洗脸竟然还在用错误的护肤品？\n\n痛点展开：是不是总感觉脸洗不干净，皮肤问题反反复复？\n\n产品特写：这款测试商品，深层清洁不刺激，敏感肌也能安心用！\n\nCTA：赶紧试试，肌肤水嫩透亮，还有神秘限时福利等你看！评论区分享你的变美秘诀吧~",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "痛点：你知道吗，每天洗脸竟然还在用错误的护肤品？"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "痛点展开：是不是总感觉脸洗不干净，皮肤问题反反复复？"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "产品特写：这款测试商品，深层清洁不刺激，敏感肌也能安心用！"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "CTA：赶紧试试，肌肤水嫩透亮，还有神秘限时福利等你看！评论区分享你的变美秘诀吧~"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://e.g/p/2",
+  "created_at": "2026-07-05T06:21:38.247968+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "job_id": "jc205d741",
+  "status": "ok",
+  "demo_name": "post_production_15s_zhongcao",
+  "manifest_path": "data\\l4\\renders\\jc205d741\\manifest.json",
+  "video_path": "data\\l4\\renders\\jc205d741\\output.mp4",
+  "output_dir": "data\\l4\\renders\\jc205d741",
+  "c4d_scene2_output": "",
+  "cogvideo_task_id": "",
+  "cogvideo_video_url": "",
+  "cogvideo_local_path": "",
+  "messages": [
+    "FFmpeg占位: 1. \"脏衣堆满沙发，家",
+    "FFmpeg占位: 1. \"脏衣堆满沙发，家",
+    "FFmpeg占位: 1. \"脏衣堆满沙发，家",
+    "FFmpeg占位: 1. \"脏衣堆满沙发，家",
+    "4/4 product images",
+    "4-scene video 4x3.8s=15s",
+    "CogVideo started in background"
+  ],
+  "created_at": "2026-07-06T11:38:30.520745+00:00",
+  "updated_at": "2026-07-06T11:38:30.520745+00:00"
+}

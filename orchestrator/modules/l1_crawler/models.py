@@ -26,6 +26,7 @@ class TopicRecord(BaseModel):
     title: str = ""
     description: str = ""
     category: str = ""
+    images: list[str] = Field(default_factory=list)
     created_at: str
 
 

@@ -1,0 +1,42 @@
+{
+  "id": "sff7c76bb",
+  "full_text": "1. \"别再凑合，这床垫一躺就忘腰酸背痛！\"\n2. \"它不仅能缓解疲劳，一整晚都能享受云朵般的舒适。\"\n3. \"RAG记忆棉材质，透气又支撑，你家新宠来啦！\"\n4. \"速来抢购，限时优惠，评论区晒出你的好睡眠！\"",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "1. \"别再凑合，这床垫一躺就忘腰酸背痛！\""
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "2. \"它不仅能缓解疲劳，一整晚都能享受云朵般的舒适"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "\""
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "3. \"RAG记忆棉材质，透气又支撑，你家新宠来啦！\""
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-05T17:39:56.622136+00:00"
+}

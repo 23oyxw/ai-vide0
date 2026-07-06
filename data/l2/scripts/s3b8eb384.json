@@ -1,0 +1,42 @@
+{
+  "id": "s3b8eb384",
+  "full_text": "1. \"每天点4571次，你还在用旧款吗？\"\n2. \"点击率5.33%，告别繁琐，选它就对了！\"\n3. \"209人转化，质感生活，从此开始！\"\n4. \"快来京东，抢购正当时，评论区晒单还有惊喜哦！\"",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "1. \"每天点4571次，你还在用旧款吗？\""
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "2. \"点击率5.33%，告别繁琐，选它就对了！\""
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "3. \"209人转化，质感生活，从此开始！\""
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "4. \"快来京东，抢购正当时，评论区晒单还有惊喜哦！\""
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-05T17:38:19.963269+00:00"
+}

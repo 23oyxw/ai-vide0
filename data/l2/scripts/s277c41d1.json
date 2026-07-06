@@ -1,0 +1,42 @@
+{
+  "id": "s277c41d1",
+  "full_text": "1. “你家衣橱还在乱糟糟？3秒挂上脏衣篮，告别杂乱！”\n2. “工作忙没时间收拾？这款壁挂免打孔脏衣篮，轻松分类，省时又省力！”\n3. “免打孔设计，稳固又安全，挂哪儿都好看，材质软韧，经久耐用！”\n4. “赶紧抢购，限时优惠中，评论区留言分享你的收纳小技巧，还有机会赢好礼哦！”",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "1. “你家衣橱还在乱糟糟？3秒挂上脏衣篮，告别杂乱！”"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "2. “工作忙没时间收拾？这款壁挂免打孔脏衣篮，轻松分类，省时又省力！”"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "3. “免打孔设计，稳固又安全，挂哪儿都好看，材质软韧，经久耐用！”"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "4. “赶紧抢购，限时优惠中，评论区留言分享你的收纳小技巧，还有机会赢好礼哦！”"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-05T21:48:50.512235+00:00"
+}

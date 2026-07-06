@@ -1,0 +1,42 @@
+{
+  "id": "s2b0ef1da",
+  "full_text": "1. 惊不惊喜？用了这个，手机秒变超薄充电宝！\n2. 一键连接，告别电量焦虑，随时随地充电，你值得拥有！\n3. 金属质感，轻巧便携，手机、平板，一充多用，续航力MAX！\n4. 立刻下单，限时优惠，评论区留言，抽送体验装！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "1. 惊不惊喜？用了这个，手机秒变超薄充电宝！"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "2. 一键连接，告别电量焦虑，随时随地充电，你值得拥有！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "3. 金属质感，轻巧便携，手机、平板，一充多用，续航力MAX！"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "4. 立刻下单，限时优惠，评论区留言，抽送体验装！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://example.com/product/demo",
+  "created_at": "2026-07-05T06:30:11.481271+00:00"
+}

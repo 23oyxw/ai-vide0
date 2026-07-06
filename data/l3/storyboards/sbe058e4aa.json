@@ -1,0 +1,49 @@
+{
+  "id": "sbe058e4aa",
+  "demo_name": "post_production_15s_zhongcao",
+  "title": "15s 竖屏种草标准片",
+  "duration_target_sec": 15.0,
+  "width": 1080,
+  "height": 1920,
+  "fps": 24,
+  "segments": [
+    {
+      "code": "hook",
+      "title": "前3秒钩子",
+      "start": 0.0,
+      "end": 3.0,
+      "duration": 3.0,
+      "narration": "1. 别再逼自己硬穿磨脚鞋了，这双李宁就是你的“解放宣言”",
+      "visual": ""
+    },
+    {
+      "code": "pain",
+      "title": "痛点展开",
+      "start": 3.0,
+      "end": 7.0,
+      "duration": 4.0,
+      "narration": "2. 前掌挤脚、后跟磨泡？走路像踩着石头？搭配还总踩雷？选对鞋，这些全拜拜",
+      "visual": ""
+    },
+    {
+      "code": "product",
+      "title": "产品特写",
+      "start": 7.0,
+      "end": 12.0,
+      "duration": 5.0,
+      "narration": "3. 看这柔软鞋底，弹力十足；鞋口设计贴合脚踝，不磨不掉；经典配色，怎么搭都加分",
+      "visual": ""
+    },
+    {
+      "code": "cta",
+      "title": "行动号召",
+      "start": 12.0,
+      "end": 15.0,
+      "duration": 3.0,
+      "narration": "4. 爱走爱跑的姐妹，这波福利别错过——直接戳下方链接，李宁官方旗舰店，舒适又时髦，就它了！",
+      "visual": ""
+    }
+  ],
+  "yaml_path": "C:\\Users\\oyxw\\Projects\\video-factory\\demos\\post_production_15s_zhongcao.yaml",
+  "created_at": "2026-07-05T20:19:05.452125+00:00"
+}

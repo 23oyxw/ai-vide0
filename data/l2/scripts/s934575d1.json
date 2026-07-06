@@ -1,0 +1,42 @@
+{
+  "id": "s934575d1",
+  "full_text": "【钩子】\n\"还在为家用品贵发愁？看这里，性价比之王来了！\"\n\n【痛点展开】\n\"家用品贵，生活压力大，来京东，品质好，价格低，轻松购物，你值得拥有！\"\n\n【产品特写】\n\"京东正品保证，低价促销，家用品全，配送快，用起来舒适放心，让你生活品质UP UP！\"\n\n【CTA】\n\"快来京东，抢购正品低价家用品，限时优惠，下单立享，评论区告诉我你的购物心得！\"",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "\"还在为家用品贵发愁？看这里，性价比之王来了！\""
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【痛点展开】"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "\"家用品贵，生活压力大，来京东，品质好，价格低，轻松购物，你值得拥有！\""
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-05T17:37:12.494069+00:00"
+}

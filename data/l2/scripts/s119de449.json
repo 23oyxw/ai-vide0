@@ -1,0 +1,42 @@
+{
+  "id": "s119de449",
+  "full_text": "【钩子】\n每天穿鞋，脚疼怎么办？\n\n【痛点展开】\n鞋不舒服，走路都成负担，你还在忍？\n\n【产品特写】\n这款RAG参考鞋垫，缓解脚痛，走路像踩云朵，轻盈透气！\n\n【CTA】\n马上下单，享受舒适生活，评论还有神秘礼物哦！🎁",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "每天穿鞋，脚疼怎么办？"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【痛点展开】"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "鞋不舒服，走路都成负担，你还在忍？"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-05T17:36:39.979526+00:00"
+}

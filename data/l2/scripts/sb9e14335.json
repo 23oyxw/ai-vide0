@@ -1,0 +1,42 @@
+{
+  "id": "sb9e14335",
+  "full_text": "别再花大钱买快消牌子了，李宁官方店这个性价比王炸，你绝对想不到！\n总觉得运动服要么太贵不耐穿，要么设计土气，和健身房或逛街场景不搭。\n看这3D剪裁+速干面料（镜头拉近细节），摸起来比几百块的竞品还柔软，颜值谁穿谁显瘦！\n直接去京东李宁旗舰店，搜这套只要99起，现在下单明天就变时髦运动达人！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "别再花大钱买快消牌子了，李宁官方店这个性价比王炸，你绝对想不到！"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "总觉得运动服要么太贵不耐穿，要么设计土气，和健身房或逛街场景不搭"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "看这3D剪裁+速干面料（镜头拉近细节），摸起来比几百块的竞品还柔软，颜值谁穿谁显瘦！"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "直接去京东李宁旗舰店，搜这套只要99起，现在下单明天就变时髦运动达人！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://lining.jd.com/view_search-208102-30530638-99-1-24-1.html",
+  "created_at": "2026-07-05T20:13:18.455783+00:00"
+}

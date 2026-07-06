@@ -52,3 +52,27 @@ class AnalysisResponse(BaseModel):
     optimization_hints: list[str] = Field(default_factory=list)
     feedback_targets: list[str] = Field(default_factory=list)
     chart: dict[str, object] = Field(default_factory=dict)
+
+
+class DataSourceResponse(BaseModel):
+    source: str
+    persistent: bool
+    sqlite_path: str | None = None
+    postgres_configured: bool = False
+
+
+class MetricsRecordRequest(BaseModel):
+    job_id: str = "all"
+    metric_date: str | None = None
+    clicks: int = Field(ge=0)
+    unique_clicks: int = Field(ge=0)
+    conversions: int = Field(ge=0)
+    orders: int = Field(ge=0)
+    gmv: float = Field(ge=0)
+
+
+class MetricsRecordResponse(BaseModel):
+    job_id: str
+    metric_date: str
+    backend: str
+    message: str

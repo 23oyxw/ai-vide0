@@ -1,0 +1,14 @@
+{
+  "id": "pubbb331baa",
+  "job_id": "jca8c221d",
+  "utm_campaign": "seed_jca8c221d",
+  "utm_content": "video_jca8c221d",
+  "video_path": "data\\l4\\renders\\jca8c221d\\output.mp4",
+  "blob_path": "blob://published/jca8c221d/final.mp4",
+  "publish_target": "douyin",
+  "platforms": [
+    "douyin"
+  ],
+  "status": "ok",
+  "created_at": "2026-07-06T17:59:01.493379+00:00"
+}

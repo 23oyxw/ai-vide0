@@ -1,0 +1,42 @@
+{
+  "id": "scabb7496",
+  "full_text": "【钩子】\n\"还在担心网购品质？试试京东，正品保障，购物无忧！\"\n\n【痛点展开】\n\"品质生活，从选对平台开始，京东正品低价，让你轻松享受品质生活。\"\n\n【产品特写】\n\"点击京东，海量商品任你挑，正品保障，价格实惠，品质生活从此开启。\"\n\n【CTA】\n\"速来京东，正品好物等你挑，品质生活，从今天开始，点击链接，马上体验！\"",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "\"还在担心网购品质？试试京东，正品保障，购物无忧！\""
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【痛点展开】"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "\"品质生活，从选对平台开始，京东正品低价，让你轻松享受品质生活"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-06T17:19:45.803064+00:00"
+}

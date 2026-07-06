@@ -1,0 +1,42 @@
+{
+  "id": "sa1d5a1cb",
+  "full_text": "1. 姐妹们，别再忍了！穿鞋磨脚、挤脚、走路累到哭？\n2. 脱下鞋脚后跟都红了，高跟鞋更是走两步就想坐，搭配衣服还难到崩溃。\n3. 看这双鞋，侧边特写包裹舒适，轻轻一踩弹力反馈，完全不打脚，款式百搭裤装裙装。\n4. 戳下方链接，立刻告别脚痛烦恼，变身轻松出街达人！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "1. 姐妹们，别再忍了！穿鞋磨脚、挤脚、走路累到哭？"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "2. 脱下鞋脚后跟都红了，高跟鞋更是走两步就想坐，搭配衣服还难到崩溃"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "3. 看这双鞋，侧边特写包裹舒适，轻轻一踩弹力反馈，完全不打脚，款式百搭裤装裙装"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "4. 戳下方链接，立刻告别脚痛烦恼，变身轻松出街达人！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://detail.tmall.com/item.htm?id=shoes-demo",
+  "created_at": "2026-07-06T17:23:41.404174+00:00"
+}

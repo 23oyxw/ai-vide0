@@ -1,0 +1,49 @@
+{
+  "id": "sb9de406a5",
+  "demo_name": "motion_poster",
+  "title": "动态海报 / 活动预告 Demo",
+  "duration_target_sec": 15.0,
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "segments": [
+    {
+      "code": "hook",
+      "title": "前3秒钩子",
+      "start": 0.0,
+      "end": 3.0,
+      "duration": 3.0,
+      "narration": "这双鞋，让你再也不用忍受磨脚的痛！",
+      "visual": ""
+    },
+    {
+      "code": "pain",
+      "title": "痛点展开",
+      "start": 3.0,
+      "end": 7.0,
+      "duration": 4.0,
+      "narration": "挤脚走路累，磨到脚后跟起泡，上班逛街都受罪？",
+      "visual": ""
+    },
+    {
+      "code": "product",
+      "title": "产品特写",
+      "start": 7.0,
+      "end": 12.0,
+      "duration": 5.0,
+      "narration": "看李宁这鞋，软底包裹，后跟减压鞋垫，走一天都轻快舒服，还百搭休闲风",
+      "visual": ""
+    },
+    {
+      "code": "cta",
+      "title": "行动号召",
+      "start": 12.0,
+      "end": 15.0,
+      "duration": 3.0,
+      "narration": "别再委屈脚了，点击左下角，换上你的行走神器！",
+      "visual": ""
+    }
+  ],
+  "yaml_path": "C:\\Users\\oyxw\\Projects\\video-factory\\demos\\motion_poster.yaml",
+  "created_at": "2026-07-05T20:50:06.047101+00:00"
+}

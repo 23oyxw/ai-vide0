@@ -1,0 +1,49 @@
+{
+  "id": "sb80e5c9b9",
+  "demo_name": "motion_poster",
+  "title": "动态海报 / 活动预告 Demo",
+  "duration_target_sec": 15.0,
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "segments": [
+    {
+      "code": "hook",
+      "title": "前3秒钩子",
+      "start": 0.0,
+      "end": 3.0,
+      "duration": 3.0,
+      "narration": "1. 穿鞋磨脚后跟，痛得要命？李宁新款，脚跟不磨红！",
+      "visual": ""
+    },
+    {
+      "code": "pain",
+      "title": "痛点展开",
+      "start": 3.0,
+      "end": 7.0,
+      "duration": 4.0,
+      "narration": "2. 挤脚走路累，脚疼到不想动？试试李宁鞋，舒适一整天！",
+      "visual": ""
+    },
+    {
+      "code": "product",
+      "title": "产品特写",
+      "start": 7.0,
+      "end": 12.0,
+      "duration": 5.0,
+      "narration": "3. 鞋口软垫紧贴脚跟，超轻鞋底如踩云，李宁鞋，走路更轻松！",
+      "visual": ""
+    },
+    {
+      "code": "cta",
+      "title": "行动号召",
+      "start": 12.0,
+      "end": 15.0,
+      "duration": 3.0,
+      "narration": "4. 别忍了，李宁官方旗舰店，搜索这双鞋，穿上就舍不得脱！",
+      "visual": ""
+    }
+  ],
+  "yaml_path": "C:\\Users\\oyxw\\Projects\\video-factory\\demos\\motion_poster.yaml",
+  "created_at": "2026-07-05T21:47:49.002903+00:00"
+}

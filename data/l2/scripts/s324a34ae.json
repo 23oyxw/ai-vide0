@@ -1,0 +1,42 @@
+{
+  "id": "s324a34ae",
+  "full_text": "1. 穿新鞋磨脚到怀疑人生？别急！\n2. 脚趾挤到想骂人，走两步就累到投降！\n3. 看李宁这款云弹缓震，鞋头加宽设计，踩屎感超绝！\n4. 李宁旗舰店蹲这双，告别磨脚和穿搭难题，评论区聊！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "1. 穿新鞋磨脚到怀疑人生？别急！"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "2. 脚趾挤到想骂人，走两步就累到投降！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "3. 看李宁这款云弹缓震，鞋头加宽设计，踩屎感超绝！"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "4. 李宁旗舰店蹲这双，告别磨脚和穿搭难题，评论区聊！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://lining.jd.com/view_search-208102-30530638-99-1-24-1.html",
+  "created_at": "2026-07-05T22:25:12.778611+00:00"
+}

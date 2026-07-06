@@ -1,0 +1,42 @@
+{
+  "id": "sc0bb4b84",
+  "full_text": "【钩子】\n你还在为手机续航焦虑吗？5分钟充电，全程不卡！\n\n【痛点展开】\n出门在外，手机没电怎么办？关键时刻，急需充电神器！\n\n【产品特写】\n这款RAG超薄移动电源，轻薄如纸，充电快至5分钟，超大容量，轻松续航一整天！\n\n【CTA】\n快来抢购！限时优惠，先到先得！评论区留言“续航救星”，赢取神秘小礼物！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "你还在为手机续航焦虑吗？5分钟充电，全程不卡！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【痛点展开】"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "出门在外，手机没电怎么办？关键时刻，急需充电神器！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://example.com/product/demo",
+  "created_at": "2026-07-05T06:25:18.405450+00:00"
+}

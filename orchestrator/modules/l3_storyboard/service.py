@@ -56,17 +56,31 @@ def build_from_script(req: BuildStoryboardRequest) -> StoryboardResponse:
         if isinstance(loaded, dict):
             raw = loaded
 
+    # Load SceneDef templates for visual direction
+    scene_visuals: list[dict] = []
+    try:
+        from orchestrator.modules.l4_render.scene_defs import get_scenes
+        scene_defs = get_scenes(req.video_style or "real")
+        scene_visuals = [
+            {"label": sd.label, "image_type": sd.image_type, "bg_color": sd.bg_color,
+             "product_size": sd.product_size, "overlay": sd.overlay_style}
+            for sd in scene_defs
+        ]
+    except Exception:
+        pass
+
     if req.segments_override:
         segments = req.segments_override
     elif script_segments:
         segments = [
             StoryboardSegment(
                 code=s.get("code", f"s{i}"),
-                title=s.get("role", "segment"),
+                title=s.get("role", scene_visuals[i]["label"] if i < len(scene_visuals) else "segment"),
                 start=s.get("start_sec", 0),
                 end=s.get("end_sec", 0),
                 duration=s.get("duration_sec", 0),
                 narration=s.get("narration", ""),
+                visual=scene_visuals[i].get("image_type", "") if i < len(scene_visuals) else "",
             )
             for i, s in enumerate(script_segments)
         ]

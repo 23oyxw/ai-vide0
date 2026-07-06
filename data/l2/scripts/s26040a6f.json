@@ -1,0 +1,42 @@
+{
+  "id": "s26040a6f",
+  "full_text": "【钩子】\n“家里杂物堆成山？试试这款免打孔脏衣篮，告别杂乱，生活焕然一新！”\n\n【痛点展开】\n“每天衣服无处安放，洗衣机又不够用，有了它，再也不怕脏衣服没地方放！”\n\n【产品特写】\n“壁挂设计，免打孔安装，承重强大，防尘防螨，随时随地晾晒衣物，让家焕然一新！”\n\n【CTA】\n“快来抢购，限时优惠，评论区晒出你的收纳小技巧，还有机会赢取神秘礼物哦！京东正品保障，点击链接，让生活更美好！https://item.jd.com/100012043978.html”",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "“家里杂物堆成山？试试这款免打孔脏衣篮，告别杂乱，生活焕然一新！”"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【痛点展开】"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "“每天衣服无处安放，洗衣机又不够用，有了它，再也不怕脏衣服没地方放！”"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/100012043978.html",
+  "created_at": "2026-07-06T16:58:24.326706+00:00"
+}

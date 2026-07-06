@@ -1,0 +1,42 @@
+{
+  "id": "sa5d35eb7",
+  "full_text": "【钩子】姐妹！敏感肌不敢试新粉底？别怕，今天挖到宝藏！\n【痛点】卡粉浮粉像墙皮，出门两小时就花妆，越补越脏？\n【特写】（镜头拉近）看这个！京东自营正品，温和到敏感肌随便试，持妆一整天不假面。\n【CTA】赶紧戳链接，挑个适合你的粉底，全天美到炸！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】姐妹！敏感肌不敢试新粉底？别怕，今天挖到宝藏！"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "【痛点】卡粉浮粉像墙皮，出门两小时就花妆，越补越脏？"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【特写】（镜头拉近）看这个！京东自营正品，温和到敏感肌随便试，持妆一整天不假面"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "【CTA】赶紧戳链接，挑个适合你的粉底，全天美到炸！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/beauty-demo.html",
+  "created_at": "2026-07-06T12:01:25.127681+00:00"
+}

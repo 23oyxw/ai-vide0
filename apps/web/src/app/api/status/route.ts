@@ -1,4 +1,5 @@
 import type { ApiEnvelope } from "@/lib/api-envelope";
+import { jsonResponse } from "@/lib/api-envelope";
 
 const ORCHESTRATOR_URL =
   process.env.ORCHESTRATOR_URL ?? "http://127.0.0.1:8765";
@@ -12,6 +13,7 @@ export async function GET() {
     reachable: boolean;
     status?: string;
     error?: string;
+    optimizePrompts?: boolean;
   } = { reachable: false };
 
   try {
@@ -38,6 +40,27 @@ export async function GET() {
     };
   }
 
+  if (orchestrator.reachable) {
+    try {
+      const oapi = await fetch(`${ORCHESTRATOR_URL}/openapi.json`, {
+        signal: AbortSignal.timeout(3000),
+      });
+      if (oapi.ok) {
+        const spec = (await oapi.json()) as { paths?: Record<string, unknown> };
+        const hasOptimize = Boolean(
+          spec.paths?.["/modules/l2-content/optimize-prompts"],
+        );
+        orchestrator.optimizePrompts = hasOptimize;
+        if (!hasOptimize) {
+          orchestrator.error =
+            "旧版后台（缺少 optimize-prompts）— 请重启 npm run dev:api";
+        }
+      }
+    } catch {
+      orchestrator.optimizePrompts = undefined;
+    }
+  }
+
   const envelope: ApiEnvelope<{
     aiGatewayConfigured: boolean;
     orchestratorUrl: string;
@@ -53,5 +76,5 @@ export async function GET() {
     meta: { layer: "L0", timestamp: new Date().toISOString() },
   };
 
-  return Response.json(envelope);
+  return jsonResponse(envelope);
 }

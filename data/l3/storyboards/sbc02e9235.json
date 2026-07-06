@@ -1,0 +1,49 @@
+{
+  "id": "sbc02e9235",
+  "demo_name": "post_production_15s_zhongcao",
+  "title": "15s 竖屏种草标准片",
+  "duration_target_sec": 15.0,
+  "width": 1080,
+  "height": 1920,
+  "fps": 24,
+  "segments": [
+    {
+      "code": "hook",
+      "title": "前3秒钩子",
+      "start": 0.0,
+      "end": 3.0,
+      "duration": 3.0,
+      "narration": "别再让“磨脚、挤脚、走路累”毁了你今天的快乐！",
+      "visual": "场景氛围图"
+    },
+    {
+      "code": "pain",
+      "title": "痛点展开",
+      "start": 3.0,
+      "end": 7.0,
+      "duration": 4.0,
+      "narration": "买鞋时试穿明明舒服，走半小时脚跟出泡、脚趾挤红——你是不是也中招了？",
+      "visual": "场景氛围图"
+    },
+    {
+      "code": "product",
+      "title": "产品特写",
+      "start": 7.0,
+      "end": 12.0,
+      "duration": 5.0,
+      "narration": "看这双Demo Product，鞋垫弹得像踩云朵，后跟是隐藏的“防磨硅胶”，鞋头宽到能跳舞，走路带风！",
+      "visual": "卖点特写图"
+    },
+    {
+      "code": "cta",
+      "title": "行动号召",
+      "start": 12.0,
+      "end": 15.0,
+      "duration": 3.0,
+      "narration": "想要舒适又百搭？点击详情，今天不将就！",
+      "visual": "白底主图"
+    }
+  ],
+  "yaml_path": "C:\\Users\\oyxw\\Projects\\video-factory\\demos\\post_production_15s_zhongcao.yaml",
+  "created_at": "2026-07-06T17:58:03.212287+00:00"
+}

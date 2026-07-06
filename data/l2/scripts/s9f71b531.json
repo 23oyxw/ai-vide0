@@ -1,0 +1,42 @@
+{
+  "id": "s9f71b531",
+  "full_text": "【钩子】\n“每天洗衣堆成山，你还在用手拎？”\n\n【痛点展开】\n“谁说脏衣只能堆地上，有了它，轻松收纳，告别杂乱！”\n\n【产品特写】\n“脏衣篮，大容量设计，防滑轮子，轻松移动，一拉即开，告别手拎重负，生活从此井井有条！”\n\n【CTA】\n“赶紧抢购，限时优惠，评论区晒出你的脏衣篮，还有神秘小礼品等你哦！”",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "“每天洗衣堆成山，你还在用手拎？”"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【痛点展开】"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "“谁说脏衣只能堆地上，有了它，轻松收纳，告别杂乱！”"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-06T11:14:49.010625+00:00"
+}

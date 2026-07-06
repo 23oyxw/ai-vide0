@@ -1,0 +1,49 @@
+{
+  "id": "sb73d9bc2b",
+  "demo_name": "post_production_15s_zhongcao",
+  "title": "15s 竖屏种草标准片",
+  "duration_target_sec": 15.0,
+  "width": 1080,
+  "height": 1920,
+  "fps": 24,
+  "segments": [
+    {
+      "code": "hook",
+      "title": "前3秒钩子",
+      "start": 0.0,
+      "end": 3.0,
+      "duration": 3.0,
+      "narration": "【钩子】别再让鞋子“吃”你的脚了！每次逛街都在忍痛，值吗？",
+      "visual": "场景氛围图"
+    },
+    {
+      "code": "pain",
+      "title": "痛点展开",
+      "start": 3.0,
+      "end": 7.0,
+      "duration": 4.0,
+      "narration": "【痛点】磨脚、挤脚、走两步就累，再好看的鞋也只能在鞋柜里落灰",
+      "visual": "场景氛围图"
+    },
+    {
+      "code": "product",
+      "title": "产品特写",
+      "start": 7.0,
+      "end": 12.0,
+      "duration": 5.0,
+      "narration": "【特写】（展示鞋垫/后跟细节）看这软糯的鞋垫，还有包裹不磨脚的后跟，瞬间解放双脚！",
+      "visual": "卖点特写图"
+    },
+    {
+      "code": "cta",
+      "title": "行动号召",
+      "start": 12.0,
+      "end": 15.0,
+      "duration": 3.0,
+      "narration": "【CTA】姐妹们，选鞋别只看颜值，脚感才是王道！赶紧试试，让你舒服到不想脱！京东正品保障，速来抢购！#京东好物推荐",
+      "visual": "白底主图"
+    }
+  ],
+  "yaml_path": "C:\\Users\\oyxw\\Projects\\video-factory\\demos\\post_production_15s_zhongcao.yaml",
+  "created_at": "2026-07-06T17:31:34.954014+00:00"
+}

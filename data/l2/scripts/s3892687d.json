@@ -1,0 +1,42 @@
+{
+  "id": "s3892687d",
+  "full_text": "【钩子】\n还在为测试商品纠结吗？来试试这款，效果惊人！\n\n【痛点展开】\n每次选择测试商品都像走钢丝，不知道哪款才是真正好用的？\n\n【产品特写】\n这款测试商品，精准检测，一键操作，清晰结果，给你安心体验！\n\n【CTA】\n赶紧下单试试，限时优惠等你来！评论区分享你的使用感受，就有机会赢取神秘礼品哦！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "还在为测试商品纠结吗？来试试这款，效果惊人！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【痛点展开】"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "每次选择测试商品都像走钢丝，不知道哪款才是真正好用的？"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://e.g/p/2",
+  "created_at": "2026-07-05T06:51:44.395199+00:00"
+}

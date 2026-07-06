@@ -1,5 +1,7 @@
 ﻿# Git 远程仓库配置
 
+> 开源依赖、独立仓 vs Monorepo 目录对照、版本迭代见 **[GIT_REPOS.md](GIT_REPOS.md)**。
+
 本仓库采用与 [security-agent](https://github.com/23oyxw/security-agent) 相同的**双远程**模式：GitHub 为主（`origin`），Gitee 为镜像（`gitee`）。
 
 ## 当前远程

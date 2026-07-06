@@ -1,0 +1,42 @@
+{
+  "id": "sc9134964",
+  "full_text": "【钩子】\n\"你还在为家电维修烦恼吗？别等了！\n\n【痛点展开】\n家中的电器总是小问题不断，换又贵修又麻烦，是不是很头疼？\n\n【产品特写】\n这款智能家电评测神器，一键检测，省时又省心，质感十足！\n\n【CTA】\n快来体验，限时优惠中！评论区告诉我，你的家电痛点吧！🛒💡",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "\"你还在为家电维修烦恼吗？别等了！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【痛点展开】"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "家中的电器总是小问题不断，换又贵修又麻烦，是不是很头疼？"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": null,
+  "created_at": "2026-07-05T06:39:16.285845+00:00"
+}

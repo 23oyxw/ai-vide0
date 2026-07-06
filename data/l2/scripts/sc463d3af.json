@@ -1,0 +1,42 @@
+{
+  "id": "sc463d3af",
+  "full_text": "1. “谁说办公室零食只能吃薯片？RAG坚果礼盒，每口都是满满的幸福感！”\n2. “工作疲劳，来份RAG坚果，瞬间精神满满，提升效率不费力！”\n3. “RAG坚果，粒粒饱满，脆脆的口感，就像给生活加点甜！”\n4. “赶紧入手RAG坚果礼盒，下单立享优惠，评论更有好礼相送，快来京东抢购吧！”",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "1. “谁说办公室零食只能吃薯片？RAG坚果礼盒，每口都是满满的幸福感！”"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "2. “工作疲劳，来份RAG坚果，瞬间精神满满，提升效率不费力！”"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "3. “RAG坚果，粒粒饱满，脆脆的口感，就像给生活加点甜！”"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "4. “赶紧入手RAG坚果礼盒，下单立享优惠，评论更有好礼相送，快来京东抢购吧！”"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-05T17:38:45.152104+00:00"
+}

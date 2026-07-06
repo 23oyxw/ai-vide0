@@ -1,0 +1,42 @@
+{
+  "id": "s2b2ff801",
+  "full_text": "【钩子】\n\"还在为找不到心仪好货烦恼？看这里，爆款清单来了！\"\n\n【痛点展开】\n\"每天逛遍全网，却还是找不到心仪的宝贝？试试这个神器，帮你轻松找到超值好货！\"\n\n【产品特写】\n\"京东精选，正品保证，低价秒杀，随时随地，一键购物，享受品质生活！\"\n\n【CTA】\n\"速来抢购，限时优惠，评论区分享你的购物心得，还有惊喜等你哦！\"",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "\"还在为找不到心仪好货烦恼？看这里，爆款清单来了！\""
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【痛点展开】"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "\"每天逛遍全网，却还是找不到心仪的宝贝？试试这个神器，帮你轻松找到超值好货！\""
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-05T17:34:46.427249+00:00"
+}

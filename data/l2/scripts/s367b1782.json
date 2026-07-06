@@ -1,0 +1,42 @@
+{
+  "id": "s367b1782",
+  "full_text": "【钩子】\n脏衣满地？告别手洗痛苦，只需一招！\n\n【痛点展开】\n谁说脏衣只能堆放？看这款脏衣篮，整理生活，从今天开始！\n\n【产品特写】\n加厚环保布料，承重力强，分类收纳，让衣物整洁有序，质感生活触手可及！\n\n【CTA】\n速抢京东新品！前100名下单立享半价优惠，评论区晒出你的脏衣篮，赢取神秘好礼！🛒💰🎁",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "脏衣满地？告别手洗痛苦，只需一招！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【痛点展开】"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "谁说脏衣只能堆放？看这款脏衣篮，整理生活，从今天开始！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-05T22:01:32.750221+00:00"
+}

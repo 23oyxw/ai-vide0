@@ -1,0 +1,42 @@
+{
+  "id": "s617da006",
+  "full_text": "【钩子】\n告别乱糟糟的桌面，一招搞定！\n\n【痛点展开】\n每天工作堆满桌，找文件像大海捞针？\n\n【产品特写】\n[RAG参考]智能桌面管理，一扫分类，秒变效率达人，质感设计，用起来超爽！\n\n【CTA】\n赶紧入手，前100名送独家收纳工具！评论#我的智能桌面#晒出你的高效时刻！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "告别乱糟糟的桌面，一招搞定！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【痛点展开】"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "每天工作堆满桌，找文件像大海捞针？"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://example.com/product/demo",
+  "created_at": "2026-07-05T06:25:24.650470+00:00"
+}

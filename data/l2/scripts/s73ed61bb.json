@@ -1,0 +1,42 @@
+{
+  "id": "s73ed61bb",
+  "full_text": "【钩子】\n告别脏乱，每天轻松！\n【痛点展开】\n家里衣服堆成山，清洁收纳太头疼？\n【产品特写】\n这款脏衣篮大容量，防漏设计，轻松分类，一篮搞定全屋衣物收纳！\n【CTA】\n赶紧下单，限时优惠，评论晒单还有好礼相送！京东正品保障，速来抢购！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "告别脏乱，每天轻松！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【痛点展开】"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "家里衣服堆成山，清洁收纳太头疼？"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-05T22:06:21.784495+00:00"
+}

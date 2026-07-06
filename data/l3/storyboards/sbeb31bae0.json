@@ -1,0 +1,49 @@
+{
+  "id": "sbeb31bae0",
+  "demo_name": "post_production_15s_zhongcao",
+  "title": "15s 竖屏种草标准片",
+  "duration_target_sec": 15.0,
+  "width": 1080,
+  "height": 1920,
+  "fps": 24,
+  "segments": [
+    {
+      "code": "hook",
+      "title": "前3秒钩子",
+      "start": 0.0,
+      "end": 3.0,
+      "duration": 3.0,
+      "narration": "3秒拉满期待值！🎉 你绝对不能错过这个宝藏好物，用了它生活直接开挂！🔝",
+      "visual": ""
+    },
+    {
+      "code": "pain",
+      "title": "痛点展开",
+      "start": 3.0,
+      "end": 7.0,
+      "duration": 4.0,
+      "narration": "5秒坦白讲：颜值在线，功能炸裂，每一分钱都花得值！💰",
+      "visual": ""
+    },
+    {
+      "code": "product",
+      "title": "产品特写",
+      "start": 7.0,
+      "end": 12.0,
+      "duration": 5.0,
+      "narration": "10秒深挖细节：从材质到设计，每一个小心机都在为你的体验服务，简直是细节控的终极福音！✨",
+      "visual": ""
+    },
+    {
+      "code": "cta",
+      "title": "行动号召",
+      "start": 12.0,
+      "end": 15.0,
+      "duration": 3.0,
+      "narration": "最后2秒直接下单：别犹豫，今天不入手，明天可能就在后悔清单上了！🚀 懂的人都冲了，你呢？",
+      "visual": ""
+    }
+  ],
+  "yaml_path": "C:\\Users\\oyxw\\Projects\\video-factory\\demos\\post_production_15s_zhongcao.yaml",
+  "created_at": "2026-07-05T06:40:19.073722+00:00"
+}

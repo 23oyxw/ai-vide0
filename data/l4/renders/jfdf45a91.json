@@ -1,0 +1,15 @@
+{
+  "job_id": "jfdf45a91",
+  "status": "ok",
+  "demo_name": "post_production_15s_zhongcao",
+  "manifest_path": "C:\\Users\\oyxw\\Projects\\video-factory\\output\\post_production_15s_zhongcao\\20260703_194613\\manifest.json",
+  "video_path": "C:\\Users\\oyxw\\Projects\\video-factory\\output\\post_production_15s_zhongcao\\20260703_194613\\final.mp4",
+  "output_dir": "C:\\Users\\oyxw\\Projects\\video-factory\\output\\post_production_15s_zhongcao\\20260703_194613",
+  "c4d_scene2_output": "",
+  "messages": [
+    "video-factory demo 'post_production_15s_zhongcao' completed",
+    "C4D S2 skipped: no .c4d project template found"
+  ],
+  "created_at": "2026-07-03T19:46:41.450238+00:00",
+  "updated_at": "2026-07-03T19:46:41.450238+00:00"
+}

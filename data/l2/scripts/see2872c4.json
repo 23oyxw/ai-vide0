@@ -1,0 +1,42 @@
+{
+  "id": "see2872c4",
+  "full_text": "别再让“磨脚、挤脚、走路累”毁了你今天的快乐！\n买鞋时试穿明明舒服，走半小时脚跟出泡、脚趾挤红——你是不是也中招了？\n看这双Demo Product，鞋垫弹得像踩云朵，后跟是隐藏的“防磨硅胶”，鞋头宽到能跳舞，走路带风！\n想要舒适又百搭？点击详情，今天不将就！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "别再让“磨脚、挤脚、走路累”毁了你今天的快乐！"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "买鞋时试穿明明舒服，走半小时脚跟出泡、脚趾挤红——你是不是也中招了？"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "看这双Demo Product，鞋垫弹得像踩云朵，后跟是隐藏的“防磨硅胶”，鞋头宽到能跳舞，走路带风！"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "想要舒适又百搭？点击详情，今天不将就！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://detail.tmall.com/item.htm?id=shoes-demo",
+  "created_at": "2026-07-06T17:58:03.167570+00:00"
+}

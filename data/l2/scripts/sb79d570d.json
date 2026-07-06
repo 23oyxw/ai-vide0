@@ -1,0 +1,42 @@
+{
+  "id": "sb79d570d",
+  "full_text": "1. 每天走路走到脚磨起泡、挤得怀疑人生？别硬扛了！\n2. 磨脚挤脚让你走路像受刑，一天下来累到腿软，搭衣服还得翻遍衣柜。\n3. 看这双李宁鞋，柔软鞋身像给脚穿了海绵，鞋型贴合不挤不磨，黑白色系怎么搭都潮。\n4. 快去李宁官方旗舰店挑一双，走路轻松到飞起，出门不用愁搭配！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "1. 每天走路走到脚磨起泡、挤得怀疑人生？别硬扛了！"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "2. 磨脚挤脚让你走路像受刑，一天下来累到腿软，搭衣服还得翻遍衣柜"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "3. 看这双李宁鞋，柔软鞋身像给脚穿了海绵，鞋型贴合不挤不磨，黑白色系怎么搭都潮"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "4. 快去李宁官方旗舰店挑一双，走路轻松到飞起，出门不用愁搭配！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://lining.jd.com/view_search-208102-30530638-99-1-24-1.html",
+  "created_at": "2026-07-05T22:38:24.450899+00:00"
+}

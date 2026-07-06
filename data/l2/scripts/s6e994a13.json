@@ -1,0 +1,42 @@
+{
+  "id": "s6e994a13",
+  "full_text": "1. 你还在为找不到靠谱信息头疼吗？RAG来救星啦！\n2. 一键获取权威知识，工作学习两不误，效率翻倍不是梦！\n3. 智能筛选，精准推荐，专业团队打造的品质保证，用起来就是顺滑！\n4. 立即体验，限时免费！快来评论区告诉我你的惊喜发现吧！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "1. 你还在为找不到靠谱信息头疼吗？RAG来救星啦！"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "2. 一键获取权威知识，工作学习两不误，效率翻倍不是梦！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "3. 智能筛选，精准推荐，专业团队打造的品质保证，用起来就是顺滑！"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "4. 立即体验，限时免费！快来评论区告诉我你的惊喜发现吧！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://example.com/product/demo",
+  "created_at": "2026-07-05T06:25:30.451593+00:00"
+}

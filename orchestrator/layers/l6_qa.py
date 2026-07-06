@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
+from orchestrator.adapters.content_safety import check_content
 from orchestrator.adapters.video_factory import read_manifest
 from orchestrator.layers.base import BaseLayer, LayerContext, LayerResult
 from orchestrator.pipeline_state import QA_PASS_THRESHOLD
@@ -77,6 +79,27 @@ class QALayer(BaseLayer):
     async def run(self, ctx: LayerContext) -> LayerResult:
         manifest_path = ctx.artifacts.get("manifest_path", "")
         output_dir = ctx.artifacts.get("video_factory_output", "")
+        script_text = str(ctx.metadata.get("script", ""))
+
+        safety = check_content(script_text) if script_text else None
+        if safety and not safety.passed:
+            ctx.artifacts["qa_safety_score"] = str(round(safety.score, 3))
+            ctx.artifacts["qa_safety_hits"] = ",".join(safety.hits)
+            ctx.errors.append(safety.message)
+            return LayerResult(
+                layer_id=self.layer_id,
+                status="error",
+                message=f"QA content safety failed: {safety.message}",
+                artifacts={
+                    "qa_score": str(round(safety.score, 3)),
+                    "qa_checks_failed": "safety_check",
+                    "qa_safety_hits": ",".join(safety.hits),
+                },
+            )
+        elif safety:
+            ctx.artifacts["qa_safety_score"] = str(round(safety.score, 3))
+            if safety.hits:
+                ctx.artifacts["qa_safety_hits"] = ",".join(safety.hits)
 
         if ctx.metadata.get("force_qa_fail"):
             score = QA_PASS_THRESHOLD - 0.1

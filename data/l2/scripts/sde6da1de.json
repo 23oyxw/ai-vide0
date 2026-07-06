@@ -1,0 +1,42 @@
+{
+  "id": "sde6da1de",
+  "full_text": "【钩子】\n你还在为找不到心仪好物而烦恼吗？\n\n【痛点展开】\n看中了好物却担心品质？下单后等得心焦？\n\n【产品特写】\n京东正品保证，低价优品，闪电配送，轻松购物！\n\n【CTA】\n速来京东，品质好物，等你挑！#京东好物# 评论晒单还有惊喜哦！🛒🎁",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "你还在为找不到心仪好物而烦恼吗？"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【痛点展开】"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "看中了好物却担心品质？下单后等得心焦？"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-06T17:20:37.944384+00:00"
+}

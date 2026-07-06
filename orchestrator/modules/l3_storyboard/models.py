@@ -16,6 +16,7 @@ class StoryboardSegment(BaseModel):
 class BuildStoryboardRequest(BaseModel):
     script_id: str | None = None
     demo_name: str = "post_production_15s_zhongcao"
+    video_style: str = "real"
     segments_override: list[StoryboardSegment] = Field(default_factory=list)
     script_text: str = ""
 

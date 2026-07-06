@@ -1,0 +1,42 @@
+{
+  "id": "s70fd111e",
+  "full_text": "【钩子】\n别再熬夜追剧了，你的眼睛需要救！\n\n【痛点展开】\n每天对着手机，眼睛干涩、疲劳，再贵的护肤品都救不了！\n\n【产品特写】\n这款护眼精华，像水滴般滋润，用后瞬间提神，缓解疲劳，告别红血丝！\n\n【CTA】\n速来抢购，前50名还有额外福利！评论区晒出你的护眼时刻，赢好礼！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "别再熬夜追剧了，你的眼睛需要救！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【痛点展开】"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "每天对着手机，眼睛干涩、疲劳，再贵的护肤品都救不了！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": null,
+  "created_at": "2026-07-05T06:32:20.092864+00:00"
+}

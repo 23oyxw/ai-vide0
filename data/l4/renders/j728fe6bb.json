@@ -1,0 +1,23 @@
+{
+  "job_id": "j728fe6bb",
+  "status": "ok",
+  "demo_name": "motion_poster",
+  "manifest_path": "data\\l4\\renders\\j728fe6bb\\manifest.json",
+  "video_path": "data\\l4\\renders\\j728fe6bb\\output.mp4",
+  "output_dir": "data\\l4\\renders\\j728fe6bb",
+  "c4d_scene2_output": "",
+  "cogvideo_task_id": "",
+  "cogvideo_video_url": "",
+  "cogvideo_local_path": "",
+  "messages": [
+    "FFmpeg占位: 【钩子】姐妹！敏感肌不敢",
+    "FFmpeg占位: 【钩子】姐妹！敏感肌不敢",
+    "FFmpeg占位: 【钩子】姐妹！敏感肌不敢",
+    "FFmpeg占位: 【钩子】姐妹！敏感肌不敢",
+    "4/4 product images",
+    "4-scene video 4x1.2s=5s",
+    "CogVideo started in background"
+  ],
+  "created_at": "2026-07-06T12:01:33.392734+00:00",
+  "updated_at": "2026-07-06T12:01:33.392734+00:00"
+}

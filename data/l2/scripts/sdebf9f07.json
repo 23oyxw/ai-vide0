@@ -1,0 +1,42 @@
+{
+  "id": "sdebf9f07",
+  "full_text": "1. 你还在为找不到好货头疼吗？看这里，RAG帮你轻松种草！\n2. 每天精选，海量好物，让你告别选择困难症！\n3. 懒人必备，一键收藏，随时随地享受购物乐趣！\n4. 赶紧关注，还有限时福利等你拿，评论区见！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "1. 你还在为找不到好货头疼吗？看这里，RAG帮你轻松种草！"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "2. 每天精选，海量好物，让你告别选择困难症！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "3. 懒人必备，一键收藏，随时随地享受购物乐趣！"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "4. 赶紧关注，还有限时福利等你拿，评论区见！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://example.com/product/demo",
+  "created_at": "2026-07-05T06:26:19.665339+00:00"
+}

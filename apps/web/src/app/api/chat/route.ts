@@ -1,7 +1,8 @@
 import { createOpenAI } from "@ai-sdk/openai";
 import { streamText, type CoreMessage } from "ai";
 
-export const maxDuration = 30;
+// Vercel Hobby max 10s
+export const maxDuration = 10;
 
 function stubTextStream(message: string) {
   const encoder = new TextEncoder();

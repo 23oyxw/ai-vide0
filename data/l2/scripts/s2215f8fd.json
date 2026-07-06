@@ -1,0 +1,42 @@
+{
+  "id": "s2215f8fd",
+  "full_text": "3秒抓眼球👇  \n为什么你总穿不出高级感？问题就在这三个细节！  \n\n7秒抛痛点👇  \n同款衣服别人穿像超模，你穿像买家秀？不是身材问题，是少了这个“调色调配”秘密！  \n\n10秒给方案👇  \n今天安利这瓶【万能喷雾中和剂】，只要喷在起球、发黄的衣角，3秒恢复质感，搭配99%面料，衣柜瞬间变高定秀场！  \n\n15秒促行动👇  \n不费吹灰之力，告别廉价感。同款链接在左下角，手慢无！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "3秒抓眼球👇"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "为什么你总穿不出高级感？问题就在这三个细节！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "7秒抛痛点👇"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "同款衣服别人穿像超模，你穿像买家秀？不是身材问题，是少了这个“调色调配”秘密！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "deepseek",
+  "product_url": null,
+  "created_at": "2026-07-05T06:38:04.156931+00:00"
+}

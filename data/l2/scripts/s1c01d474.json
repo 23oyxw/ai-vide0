@@ -1,0 +1,42 @@
+{
+  "id": "s1c01d474",
+  "full_text": "【钩子】\n你还在为手机充电慢而烦恼吗？\n\n【痛点展开】\n每天手机电量告急，出门在外找不到充电宝？\n\n【产品特写】\n这款快充宝，5分钟回血，轻巧便携，出门必备！\n\n【CTA】\n赶紧行动，限时特价，评论区留言抢福利！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "你还在为手机充电慢而烦恼吗？"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【痛点展开】"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "每天手机电量告急，出门在外找不到充电宝？"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": null,
+  "created_at": "2026-07-05T06:26:03.269396+00:00"
+}

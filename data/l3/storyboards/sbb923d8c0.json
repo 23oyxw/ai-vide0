@@ -1,0 +1,49 @@
+{
+  "id": "sbb923d8c0",
+  "demo_name": "motion_poster",
+  "title": "动态海报 / 活动预告 Demo",
+  "duration_target_sec": 15.0,
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "segments": [
+    {
+      "code": "hook",
+      "title": "前3秒钩子",
+      "start": 0.0,
+      "end": 3.0,
+      "duration": 3.0,
+      "narration": "1. \"鞋子磨脚？走两步就想扔？别急，李宁新款来救驾！\"",
+      "visual": ""
+    },
+    {
+      "code": "pain",
+      "title": "痛点展开",
+      "start": 3.0,
+      "end": 7.0,
+      "duration": 4.0,
+      "narration": "2. \"逛街脚后跟磨破，走半小时像跑五公里？试试这鞋垫，告别疼痛！\"",
+      "visual": ""
+    },
+    {
+      "code": "product",
+      "title": "产品特写",
+      "start": 7.0,
+      "end": 12.0,
+      "duration": 5.0,
+      "narration": "3. \"柔软回弹鞋垫，加宽鞋头，脚趾自由，轻盈不板脚，穿上它，你也能轻松漫步！\"",
+      "visual": ""
+    },
+    {
+      "code": "cta",
+      "title": "行动号召",
+      "start": 12.0,
+      "end": 15.0,
+      "duration": 3.0,
+      "narration": "4. \"李宁官方旗舰店，这百搭款已抢光，快来试试，还有惊喜福利等你哦！#李宁新鞋#评论区分享你的新鞋体验吧！\"",
+      "visual": ""
+    }
+  ],
+  "yaml_path": "C:\\Users\\oyxw\\Projects\\video-factory\\demos\\motion_poster.yaml",
+  "created_at": "2026-07-05T21:15:08.849084+00:00"
+}

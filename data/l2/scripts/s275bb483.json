@@ -1,0 +1,42 @@
+{
+  "id": "s275bb483",
+  "full_text": "【钩子】告别衣橱混乱，脏衣篮，收纳新主张！\n【痛点展开】家里乱糟糟，洗衣前无从下手？脏衣篮来帮你！\n【产品特写】加厚防漏设计，轻松装满一周衣物，质感十足，一触即净！\n【CTA】立即入手，限时优惠，评论区晒出你的整洁生活！京东正品保障，点击链接抢购🛒！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】告别衣橱混乱，脏衣篮，收纳新主张！"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "【痛点展开】家里乱糟糟，洗衣前无从下手？脏衣篮来帮你！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【产品特写】加厚防漏设计，轻松装满一周衣物，质感十足，一触即净！"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "【CTA】立即入手，限时优惠，评论区晒出你的整洁生活！京东正品保障，点击链接抢购🛒！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-05T21:09:49.646177+00:00"
+}

@@ -1,0 +1,2 @@
+# Optional L8 Postgres + full RAG stack
+psycopg[binary]>=3.2.0

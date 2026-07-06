@@ -1,0 +1,42 @@
+{
+  "id": "s7dc33dbf",
+  "full_text": "【钩子】别再让鞋子“吃”你的脚了！每次逛街都在忍痛，值吗？\n【痛点】磨脚、挤脚、走两步就累，再好看的鞋也只能在鞋柜里落灰。\n【特写】（展示鞋垫/后跟细节）看这软糯的鞋垫，还有包裹不磨脚的后跟，瞬间解放双脚！\n【CTA】姐妹们，选鞋别只看颜值，脚感才是王道！赶紧试试，让你舒服到不想脱！京东正品保障，速来抢购！#京东好物推荐",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】别再让鞋子“吃”你的脚了！每次逛街都在忍痛，值吗？"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "【痛点】磨脚、挤脚、走两步就累，再好看的鞋也只能在鞋柜里落灰"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【特写】（展示鞋垫/后跟细节）看这软糯的鞋垫，还有包裹不磨脚的后跟，瞬间解放双脚！"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "【CTA】姐妹们，选鞋别只看颜值，脚感才是王道！赶紧试试，让你舒服到不想脱！京东正品保障，速来抢购！#京东好物推荐"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://detail.tmall.com/item.htm?id=shoes-demo",
+  "created_at": "2026-07-06T17:31:34.922061+00:00"
+}

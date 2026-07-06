@@ -1,0 +1,23 @@
+{
+  "job_id": "jcb65cb9c",
+  "status": "ok",
+  "demo_name": "product_ad",
+  "manifest_path": "data\\l4\\renders\\jcb65cb9c\\manifest.json",
+  "video_path": "data\\l4\\renders\\jcb65cb9c\\output.mp4",
+  "output_dir": "data\\l4\\renders\\jcb65cb9c",
+  "c4d_scene2_output": "",
+  "cogvideo_task_id": "",
+  "cogvideo_video_url": "",
+  "cogvideo_local_path": "",
+  "messages": [
+    "Placeholder: 【钩子】\n\"还在担心购物",
+    "Placeholder: 【钩子】\n\"还在担心购物",
+    "Placeholder: 【钩子】\n\"还在担心购物",
+    "Placeholder: 【钩子】\n\"还在担心购物",
+    "4/4 product images",
+    "4-scene video 4x7.5s=30s",
+    "CogVideo started in background"
+  ],
+  "created_at": "2026-07-06T17:22:50.979284+00:00",
+  "updated_at": "2026-07-06T17:22:50.979284+00:00"
+}

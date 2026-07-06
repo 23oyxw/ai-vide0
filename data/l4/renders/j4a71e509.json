@@ -1,0 +1,23 @@
+{
+  "job_id": "j4a71e509",
+  "status": "ok",
+  "demo_name": "post_production_15s_zhongcao",
+  "manifest_path": "data\\l4\\renders\\j4a71e509\\manifest.json",
+  "video_path": "data\\l4\\renders\\j4a71e509\\output.mp4",
+  "output_dir": "data\\l4\\renders\\j4a71e509",
+  "c4d_scene2_output": "",
+  "cogvideo_task_id": "",
+  "cogvideo_video_url": "",
+  "cogvideo_local_path": "",
+  "messages": [
+    "Placeholder: 【钩子】别再让鞋子“吃”",
+    "Placeholder: 【钩子】别再让鞋子“吃”",
+    "Placeholder: 【钩子】别再让鞋子“吃”",
+    "Placeholder: 【钩子】别再让鞋子“吃”",
+    "4/4 product images",
+    "4-scene video 4x3.8s=15s",
+    "CogVideo started in background"
+  ],
+  "created_at": "2026-07-06T17:29:41.336762+00:00",
+  "updated_at": "2026-07-06T17:29:41.336762+00:00"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "s5f0b9887",
+  "full_text": "这双鞋，让你再也不用忍受磨脚的痛！\n挤脚走路累，磨到脚后跟起泡，上班逛街都受罪？\n看李宁这鞋，软底包裹，后跟减压鞋垫，走一天都轻快舒服，还百搭休闲风。\n别再委屈脚了，点击左下角，换上你的行走神器！",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "这双鞋，让你再也不用忍受磨脚的痛！"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "挤脚走路累，磨到脚后跟起泡，上班逛街都受罪？"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "看李宁这鞋，软底包裹，后跟减压鞋垫，走一天都轻快舒服，还百搭休闲风"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "别再委屈脚了，点击左下角，换上你的行走神器！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://lining.jd.com/view_search-208102-30530638-99-1-24-1.html",
+  "created_at": "2026-07-05T20:50:06.032881+00:00"
+}

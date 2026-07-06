@@ -1,0 +1,42 @@
+{
+  "id": "s1d78f2ab",
+  "full_text": "【钩子】\n每天看剧，手机电量却不够？快试试这款续航王！\n\n【痛点展开】\n谁不想追剧不卡顿，工作不中断？但手机电池不给力，简直是折磨！\n\n【产品特写】\n这款RAG手机电池容量超大，看一天剧都没问题，轻薄便携，充电速度快，随时随地，轻松续航！\n\n【CTA】\n速来京东抢购，前100名下单还有神秘礼物哦！评论区留言，分享你的续航小秘诀！🔋🎁",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "每天看剧，手机电量却不够？快试试这款续航王！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【痛点展开】"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "谁不想追剧不卡顿，工作不中断？但手机电池不给力，简直是折磨！"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-05T17:39:53.344796+00:00"
+}

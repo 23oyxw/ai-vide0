@@ -1,0 +1,18 @@
+{
+  "job_id": "jd5612bae",
+  "status": "ok",
+  "demo_name": "product_ad",
+  "manifest_path": "data\\l4\\renders\\jd5612bae\\manifest.json",
+  "video_path": "data\\l4\\renders\\jd5612bae\\output.mp4",
+  "output_dir": "data\\l4\\renders\\jd5612bae",
+  "c4d_scene2_output": "",
+  "cogvideo_task_id": "",
+  "cogvideo_video_url": "",
+  "cogvideo_local_path": "",
+  "messages": [
+    "4-scene video 4x7.5s=30s",
+    "CogVideo started in background"
+  ],
+  "created_at": "2026-07-05T22:06:24.836602+00:00",
+  "updated_at": "2026-07-05T22:06:24.836602+00:00"
+}

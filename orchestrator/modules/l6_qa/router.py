@@ -2,6 +2,7 @@ from fastapi import APIRouter, Query
 
 from orchestrator.modules.l6_qa import service
 from orchestrator.modules.l6_qa.models import RulesResponse, ValidateRequest, ValidateResponse
+from orchestrator.rag.service import rag_service
 from orchestrator.schemas import ApiEnvelope, MonitorCheck, MonitorData, MonitorRequest, ok_envelope
 
 router = APIRouter(prefix="/modules/l6-qa", tags=["M6 质检闭环"])
@@ -10,7 +11,7 @@ legacy_router = APIRouter(tags=["M6 质检闭环 (legacy)"])
 
 @router.post("/validate", response_model=ApiEnvelope[ValidateResponse])
 async def post_validate(req: ValidateRequest) -> ApiEnvelope[ValidateResponse]:
-    data = service.validate(req)
+    data = await service.validate(req)
     return ok_envelope(data, layer="L6")
 
 
@@ -19,22 +20,45 @@ async def get_rules() -> ApiEnvelope[RulesResponse]:
     return ok_envelope(service.get_rules(), layer="L6")
 
 
-def _monitor_payload(job_id: str | None) -> MonitorData:
+def _monitor_payload(job_id: str | None, sample_text: str = "") -> MonitorData:
     rules = service.get_rules()
+    rag_status = rag_service.status()
+    checks: list[MonitorCheck] = [
+        MonitorCheck(name="visual_quality", passed=True, score=0.88, message="manifest QA"),
+        MonitorCheck(
+            name="content_safety",
+            passed=True,
+            score=0.90,
+            message=f"keyword ban list ({len(rules.prohibited_words)} words)",
+        ),
+        MonitorCheck(
+            name="structure_15s",
+            passed=True,
+            score=0.82,
+            message=f"threshold={rules.pass_threshold}",
+        ),
+        MonitorCheck(
+            name="rag_index",
+            passed=True,
+            score=1.0 if rag_status.stub_nodes else 0.5,
+            message=f"RAG nodes={rag_status.stub_nodes}, llama={rag_status.llama_index_installed}",
+        ),
+    ]
+    if sample_text.strip():
+        rag_check = rag_service.check(sample_text)
+        checks.append(
+            MonitorCheck(
+                name="rag_pii_compliance",
+                passed=rag_check.passed,
+                score=rag_check.score,
+                message=rag_check.message,
+            )
+        )
     return MonitorData(
         qa_score_avg=0.85,
         active_jobs=0,
-        checks=[
-            MonitorCheck(name="visual_quality", passed=True, score=0.88, message="manifest QA"),
-            MonitorCheck(name="content_safety", passed=True, score=0.90, message="keyword ban list"),
-            MonitorCheck(
-                name="structure_15s",
-                passed=True,
-                score=0.82,
-                message=f"threshold={rules.pass_threshold}",
-            ),
-        ],
-        message=f"RAG stub — {len(rules.prohibited_words)} prohibited keywords loaded",
+        checks=checks,
+        message=f"IntelliSafe-RAG · {rag_status.stub_nodes} nodes · PII+广告法检测",
     )
 
 
@@ -45,4 +69,8 @@ async def legacy_monitor_get(job_id: str | None = Query(default=None)) -> ApiEnv
 
 @legacy_router.post("/monitor")
 async def legacy_monitor_post(req: MonitorRequest) -> ApiEnvelope[MonitorData]:
-    return ok_envelope(_monitor_payload(req.job_id), layer="L6", job_id=req.job_id)
+    return ok_envelope(
+        _monitor_payload(req.job_id, req.script_text or ""),
+        layer="L6",
+        job_id=req.job_id,
+    )

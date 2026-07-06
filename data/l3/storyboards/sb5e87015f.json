@@ -1,0 +1,49 @@
+{
+  "id": "sb5e87015f",
+  "demo_name": "post_production_15s_zhongcao",
+  "title": "post_production_15s_zhongcao",
+  "duration_target_sec": 15.0,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "segments": [
+    {
+      "code": "hook",
+      "title": "前3秒钩子",
+      "start": 0.0,
+      "end": 3.0,
+      "duration": 3.0,
+      "narration": "1. 你还在为找不到靠谱信息头疼吗？RAG来救星啦！",
+      "visual": ""
+    },
+    {
+      "code": "pain",
+      "title": "痛点展开",
+      "start": 3.0,
+      "end": 7.0,
+      "duration": 4.0,
+      "narration": "2. 一键获取权威知识，工作学习两不误，效率翻倍不是梦！",
+      "visual": ""
+    },
+    {
+      "code": "product",
+      "title": "产品特写",
+      "start": 7.0,
+      "end": 12.0,
+      "duration": 5.0,
+      "narration": "3. 智能筛选，精准推荐，专业团队打造的品质保证，用起来就是顺滑！",
+      "visual": ""
+    },
+    {
+      "code": "cta",
+      "title": "行动号召",
+      "start": 12.0,
+      "end": 15.0,
+      "duration": 3.0,
+      "narration": "4. 立即体验，限时免费！快来评论区告诉我你的惊喜发现吧！",
+      "visual": ""
+    }
+  ],
+  "yaml_path": "\\completely\\nonexistent\\path_xyz\\demos\\post_production_15s_zhongcao.yaml",
+  "created_at": "2026-07-05T06:25:30.463656+00:00"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "s8a4a4d70",
+  "full_text": "【钩子】\n\"告别杂乱，只需一挂，脏衣篮新革命！\"\n\n【痛点展开】\n\"家中小孩衣物多，又怕打孔破坏墙面？\"\n\n【产品特写】\n\"壁挂免打孔设计，轻松挂起，收纳无忧，质感耐用，让家更整洁！\"\n\n【CTA】\n\"立即下单，限时优惠，评论区晒出你的新家，还有惊喜等你哦！\"",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "\"告别杂乱，只需一挂，脏衣篮新革命！\""
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【痛点展开】"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "\"家中小孩衣物多，又怕打孔破坏墙面？\""
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-05T21:50:42.526842+00:00"
+}

@@ -1,0 +1,42 @@
+{
+  "id": "s4f0d948e",
+  "full_text": "【钩子】告别脏衣服满天飞，脏衣篮让你生活焕然一新！\n【痛点展开】家里乱糟糟，衣服堆满地，你知道脏衣篮有多重要吗？\n【产品特写】这款脏衣篮大容量设计，轻松收纳，简约时尚，让你的家焕然一新！\n【CTA】快来京东抢购，限时优惠，评论晒单还有惊喜哦！🛒🛍️📣",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】告别脏衣服满天飞，脏衣篮让你生活焕然一新！"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "【痛点展开】家里乱糟糟，衣服堆满地，你知道脏衣篮有多重要吗？"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【产品特写】这款脏衣篮大容量设计，轻松收纳，简约时尚，让你的家焕然一新！"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "【CTA】快来京东抢购，限时优惠，评论晒单还有惊喜哦！🛒🛍️📣"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-05T21:38:44.560872+00:00"
+}

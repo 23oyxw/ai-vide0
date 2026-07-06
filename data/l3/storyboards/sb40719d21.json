@@ -1,0 +1,49 @@
+{
+  "id": "sb40719d21",
+  "demo_name": "motion_poster",
+  "title": "动态海报 / 活动预告 Demo",
+  "duration_target_sec": 15.0,
+  "width": 1080,
+  "height": 1350,
+  "fps": 30,
+  "segments": [
+    {
+      "code": "hook",
+      "title": "前3秒钩子",
+      "start": 0.0,
+      "end": 3.0,
+      "duration": 3.0,
+      "narration": "1. 姐妹们，别再忍了！穿鞋磨脚、挤脚、走路累到哭？",
+      "visual": "场景氛围图"
+    },
+    {
+      "code": "pain",
+      "title": "痛点展开",
+      "start": 3.0,
+      "end": 7.0,
+      "duration": 4.0,
+      "narration": "2. 脱下鞋脚后跟都红了，高跟鞋更是走两步就想坐，搭配衣服还难到崩溃",
+      "visual": "场景氛围图"
+    },
+    {
+      "code": "product",
+      "title": "产品特写",
+      "start": 7.0,
+      "end": 12.0,
+      "duration": 5.0,
+      "narration": "3. 看这双鞋，侧边特写包裹舒适，轻轻一踩弹力反馈，完全不打脚，款式百搭裤装裙装",
+      "visual": "卖点特写图"
+    },
+    {
+      "code": "cta",
+      "title": "行动号召",
+      "start": 12.0,
+      "end": 15.0,
+      "duration": 3.0,
+      "narration": "4. 戳下方链接，立刻告别脚痛烦恼，变身轻松出街达人！",
+      "visual": "白底主图"
+    }
+  ],
+  "yaml_path": "C:\\Users\\oyxw\\Projects\\video-factory\\demos\\motion_poster.yaml",
+  "created_at": "2026-07-06T17:23:41.441123+00:00"
+}

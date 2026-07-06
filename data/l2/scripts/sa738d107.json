@@ -1,0 +1,42 @@
+{
+  "id": "sa738d107",
+  "full_text": "【钩子】\n谁说洗衣还要手洗？脏衣篮让你告别繁琐！\n\n【痛点展开】\n每天一堆脏衣服，手洗又累又慢，还不干净？\n\n【产品特写】\n这款脏衣篮大容量设计，轻松收纳全家衣物，网眼透气，防止细菌滋生，一机在手，家务轻松搞定！\n\n【CTA】\n赶紧抢购，前100名下单立减20元！在评论区晒出你的脏衣篮使用心得，还有机会获得神秘礼品哦！🎁🎁🎁",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "【钩子】"
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "谁说洗衣还要手洗？脏衣篮让你告别繁琐！"
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "【痛点展开】"
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "每天一堆脏衣服，手洗又累又慢，还不干净？"
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://item.jd.com/1",
+  "created_at": "2026-07-05T21:16:30.239222+00:00"
+}

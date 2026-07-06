@@ -36,3 +36,47 @@ class GenerateScriptResponse(BaseModel):
 
 class ScriptGetResponse(BaseModel):
     script: ScriptRecord
+
+
+class OptimizePromptsRequest(BaseModel):
+    product_url: str = ""
+    topic: str = ""
+    script: str = ""
+    product_title: str = ""
+    category: str = ""
+    pain_points: list[str] = Field(default_factory=list)
+    platform: str = "抖音/小红书"
+
+
+class OptimizePromptsResponse(BaseModel):
+    optimized_topic: str
+    optimized_script: str
+    hook_suggestions: list[str]
+    rag_snippets: list[str]
+    next_steps: list[str]
+    provider: str = "rag-template"
+
+
+class GenerateProductImageRequest(BaseModel):
+    product_url: str = ""
+    product_title: str = ""
+    category: str = ""
+    reference_image_url: str = ""  # 参考产品图 URL → 图生图，保证一致性
+    image_types: list[str] = Field(
+        default_factory=lambda: ["白底主图", "场景氛围图", "卖点特写图"]
+    )
+
+
+class ProductImageVariant(BaseModel):
+    type: str
+    url: str
+    prompt: str
+    width: int = 512
+    height: int = 512
+
+
+class GenerateProductImageResponse(BaseModel):
+    images: list[ProductImageVariant]
+    provider: str = "stub"
+    product_title: str
+    category: str

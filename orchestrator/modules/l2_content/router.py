@@ -4,8 +4,12 @@ from fastapi import APIRouter, HTTPException
 
 from orchestrator.modules.l2_content import service
 from orchestrator.modules.l2_content.models import (
+    GenerateProductImageRequest,
+    GenerateProductImageResponse,
     GenerateScriptRequest,
     GenerateScriptResponse,
+    OptimizePromptsRequest,
+    OptimizePromptsResponse,
     ScriptGetResponse,
 )
 from orchestrator.schemas import ApiEnvelope, ok_envelope
@@ -17,6 +21,25 @@ router = APIRouter(prefix="/modules/l2-content", tags=["M2 内容创作"])
 async def post_generate_script(req: GenerateScriptRequest) -> ApiEnvelope[GenerateScriptResponse]:
     data = await service.generate_script_record(req)
     return ok_envelope(data, layer="L2", job_id=data.script.id)
+
+
+@router.post("/optimize-prompts", response_model=ApiEnvelope[OptimizePromptsResponse])
+async def post_optimize_prompts(
+    req: OptimizePromptsRequest,
+) -> ApiEnvelope[OptimizePromptsResponse]:
+    data = await service.optimize_prompts(req)
+    return ok_envelope(data, layer="L2")
+
+
+@router.post(
+    "/generate-product-image",
+    response_model=ApiEnvelope[GenerateProductImageResponse],
+)
+async def post_generate_product_image(
+    req: GenerateProductImageRequest,
+) -> ApiEnvelope[GenerateProductImageResponse]:
+    data = await service.generate_product_images(req)
+    return ok_envelope(data, layer="L2")
 
 
 @router.get("/scripts/{script_id}", response_model=ApiEnvelope[ScriptGetResponse])

@@ -1,0 +1,19 @@
+{
+  "job_id": "j584b58aa",
+  "status": "ok",
+  "demo_name": "post_production_15s_zhongcao",
+  "manifest_path": "data\\l4\\renders\\j584b58aa\\manifest.json",
+  "video_path": "data\\l4\\renders\\j584b58aa\\output.mp4",
+  "output_dir": "C:\\Users\\oyxw\\Projects\\video-factory\\output\\post_production_15s_zhongcao\\20260705_213144",
+  "c4d_scene2_output": "",
+  "cogvideo_task_id": "",
+  "cogvideo_video_url": "",
+  "cogvideo_local_path": "",
+  "messages": [
+    "FFmpeg video generated: output.mp4",
+    "video-factory demo 'post_production_15s_zhongcao' completed",
+    "CogVideo generation started in background"
+  ],
+  "created_at": "2026-07-05T21:32:10.914809+00:00",
+  "updated_at": "2026-07-05T21:32:10.914809+00:00"
+}

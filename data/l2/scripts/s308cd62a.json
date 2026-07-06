@@ -1,0 +1,42 @@
+{
+  "id": "s308cd62a",
+  "full_text": "1. \"还在为笔记杂乱无章头疼？试试RAG，秒变高效笔记达人！\"\n2. \"RAG帮你整理海量资料，一键生成清晰大纲，告别混乱，工作学习两不误！\"\n3. \"智能标签，自动分类，质感界面，用RAG，你的知识库从此井井有条！\"\n4. \"速来体验RAG，前100名还有免费试用，评论区见，快来抢！🏃‍♂️🏃‍♀️\"",
+  "segments": [
+    {
+      "code": "hook",
+      "role": "前3秒钩子",
+      "start_sec": 0.0,
+      "end_sec": 3.0,
+      "duration_sec": 3.0,
+      "narration": "1. \"还在为笔记杂乱无章头疼？试试RAG，秒变高效笔记达人！\""
+    },
+    {
+      "code": "pain",
+      "role": "痛点展开",
+      "start_sec": 3.0,
+      "end_sec": 7.0,
+      "duration_sec": 4.0,
+      "narration": "2. \"RAG帮你整理海量资料，一键生成清晰大纲，告别混乱，工作学习两不误！\""
+    },
+    {
+      "code": "product",
+      "role": "产品特写",
+      "start_sec": 7.0,
+      "end_sec": 12.0,
+      "duration_sec": 5.0,
+      "narration": "3. \"智能标签，自动分类，质感界面，用RAG，你的知识库从此井井有条！\""
+    },
+    {
+      "code": "cta",
+      "role": "行动号召",
+      "start_sec": 12.0,
+      "end_sec": 15.0,
+      "duration_sec": 3.0,
+      "narration": "4. \"速来体验RAG，前100名还有免费试用，评论区见，快来抢！🏃‍♂️🏃‍♀️\""
+    }
+  ],
+  "duration_sec": 15.0,
+  "provider": "zhipu",
+  "product_url": "https://example.com/product/demo",
+  "created_at": "2026-07-05T06:33:20.458930+00:00"
+}
