@@ -13,13 +13,15 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
 
 from orchestrator.http_response import UTF8JSONResponse
+# Ensure HTTPX clients inject Authorization when adapters still use literal placeholders
+import orchestrator.adapters._client_shim  # noqa: F401  (shim applies on import)
 
 from orchestrator import __version__
 from orchestrator.adapters.ai_koubo import check_health as koubo_health
 from orchestrator.adapters.c4d import check_c4d, render_project
-from orchestrator.adapters.cogvideo import check_cogvideo
+from orchestrator.adapters.cogvideo_client2 import check_cogvideo
 from orchestrator.adapters.video_factory import list_demos, run_demo
-from orchestrator.adapters.zhipu import check_health as zhipu_health
+from orchestrator.adapters.zhipu_client2 import check_health as zhipu_health
 from orchestrator.config import settings
 from orchestrator.job_store import job_store
 from orchestrator.layers import LAYER_REGISTRY
@@ -209,28 +211,16 @@ async def tool_c4d_render(
     return ok_envelope(render_project(project_path, output_path), layer="L4")
 
 
-_job_events: dict[str, list[dict[str, Any]]] = {}
-_MAX_EVENTS_PER_JOB = 100     # per-job event retention
-_MAX_JOBS_TRACKED = 500       # total jobs tracked in memory
+from orchestrator.event_store import append_event, get_events, tail_events
 
 
 def _emit_event(job_id: str, event: str, data: dict[str, Any]) -> None:
-    events = _job_events.setdefault(job_id, [])
-    events.append(
-        {
-            "event": event,
-            "data": data,
-            "timestamp": datetime.now(timezone.utc).isoformat(),
-        }
-    )
-    # Prune old events per job
-    if len(events) > _MAX_EVENTS_PER_JOB:
-        del events[:len(events) - _MAX_EVENTS_PER_JOB]
-    # Prune old jobs when total tracked exceeds limit
-    if len(_job_events) > _MAX_JOBS_TRACKED:
-        oldest = sorted(_job_events.keys())[:len(_job_events) - _MAX_JOBS_TRACKED]
-        for k in oldest:
-            del _job_events[k]
+    # Append event to persistent per-job events file (NDJSON)
+    try:
+        append_event(job_id, event, data)
+    except Exception:
+        # Best-effort: swallow errors to avoid breaking pipeline flow
+        pass
 
 
 @app.post("/webhooks/render", response_model=ApiEnvelope[dict[str, Any]])
@@ -304,7 +294,7 @@ async def tool_zhipu_script(
     product_url: str | None = None,
 ) -> ApiEnvelope[dict[str, Any]]:
     """Quick test: generate a script via Zhipu GLM-4-Flash."""
-    from orchestrator.adapters.zhipu import generate_script as zhipu_gen
+    from orchestrator.adapters.zhipu_client import generate_script as zhipu_gen
     result = await zhipu_gen(product_url=product_url, raw_text=topic)
     return ok_envelope(result, layer="L2")
 
@@ -316,7 +306,7 @@ async def tool_cogvideo_generate(
     duration: int = 5,
 ) -> ApiEnvelope[dict[str, Any]]:
     """Submit + poll a CogVideoX-3 generation (one-shot)."""
-    from orchestrator.adapters.cogvideo import generate_clip
+    from orchestrator.adapters.cogvideo_client2 import generate_clip
     result = await generate_clip(prompt=prompt, image_url=image_url, duration=duration)
     return ok_envelope(result, layer="L4")
 
@@ -324,14 +314,14 @@ async def tool_cogvideo_generate(
 @app.get("/jobs/{job_id}/stream")
 async def stream_job_events(job_id: str = Path(..., min_length=1)) -> StreamingResponse:
     async def event_generator():
-        history = _job_events.get(job_id, [])
+        history = get_events(job_id)
         for evt in history:
             yield f"event: {evt['event']}\ndata: {json.dumps(evt['data'])}\n\n"
         yield f"event: connected\ndata: {json.dumps({'job_id': job_id})}\n\n"
         start_index = len(history)
         while True:
             await asyncio.sleep(1)
-            current = _job_events.get(job_id, [])
+            current = get_events(job_id)
             for evt in current[start_index:]:
                 yield f"event: {evt['event']}\ndata: {json.dumps(evt['data'])}\n\n"
             start_index = len(current)

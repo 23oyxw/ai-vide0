@@ -1,15 +1,31 @@
 from __future__ import annotations
 
 import asyncio
+import subprocess as _sp
+import logging
 from pathlib import Path
+from typing import Tuple
 
 from orchestrator.adapters.c4d import render_project
 from orchestrator.adapters.c4d_scene2 import render_scene2_stub
-from orchestrator.adapters.cogvideo import generate_clip as cogvideo_generate_clip
+from orchestrator.adapters.cogvideo_client2 import generate_clip as cogvideo_generate_clip
 from orchestrator.adapters.video_factory import run_demo
 from orchestrator.modules.common import load_json, module_dir, new_id, save_json, utc_now_iso
 from orchestrator.modules.l3_storyboard.service import get_storyboard
 from orchestrator.modules.l4_render.models import RenderJobRecord, RenderRequest, RenderResponse, RenderStatusResponse
+
+logger = logging.getLogger(__name__)
+
+
+def _run_cmd(cmd: list[str], timeout: int = 20) -> Tuple[bool, str, str]:
+    """Run a subprocess command safely and return (success, stdout, stderr)."""
+    try:
+        r = _sp.run(cmd, capture_output=True, text=True, timeout=timeout)
+        return (r.returncode == 0, r.stdout or "", r.stderr or "")
+    except _sp.TimeoutExpired as e:
+        return (False, "", f"timeout: {e}")
+    except Exception as e:
+        return (False, "", str(e))
 
 
 async def _cogvideo_bg(prompt: str, output_dir: str, job_id: str) -> None:
@@ -64,13 +80,17 @@ async def start_render(req: RenderRequest) -> RenderResponse:
 
         # Auto-detect Chinese font for FFmpeg
         font_candidates = [
-            "C\\:/Windows/Fonts/simhei.ttf",
-            "C\\:/Windows/Fonts/msyh.ttc",
+            "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
+            "/usr/share/fonts/truetype/noto/NotoSansCJKsc-Regular.otf",
+            "C:/Windows/Fonts/simhei.ttf",
+            "C:/Windows/Fonts/msyh.ttc",
         ]
-        font_file = "C\\:/Windows/Fonts/simhei.ttf"  # default
+        # Default to a common Linux CJK font; fall back to first existing candidate
+        font_file = font_candidates[0]
         for fc in font_candidates:
-            if Path(fc.replace("\\:", "").replace("\\\\", "\\")).exists():
-                font_file = fc
+            p = Path(fc)
+            if p.exists():
+                font_file = str(p)
                 break
 
         # ── Duration from selected template ──
@@ -97,13 +117,24 @@ async def start_render(req: RenderRequest) -> RenderResponse:
         # Crawled images
         for cu in crawled_urls[:len(scene_defs)]:
             try:
-                async with httpx.AsyncClient(timeout=20) as client:
-                    r = await client.get(cu)
-                    if r.status_code == 200 and len(r.content) > 2000:
-                        path = Path(output_dir) / f"crawled_{len(all_fallback_imgs)}.jpg"
-                        path.write_bytes(r.content)
-                        if path.stat().st_size > 2000:
-                            all_fallback_imgs.append(str(path))
+                # Try downloading crawled image with a few retries
+                downloaded = False
+                for attempt in range(3):
+                    try:
+                        async with httpx.AsyncClient(timeout=20) as client:
+                            r = await client.get(cu)
+                            if r.status_code == 200 and len(r.content) > 2000:
+                                path = Path(output_dir) / f"crawled_{len(all_fallback_imgs)}.jpg"
+                                path.write_bytes(r.content)
+                                if path.stat().st_size > 2000:
+                                    all_fallback_imgs.append(str(path))
+                                    downloaded = True
+                                    break
+                    except Exception as e:
+                        logger.debug("Attempt %s failed downloading %s: %s", attempt + 1, cu, e)
+                    await asyncio.sleep(0.5)
+                if not downloaded:
+                    logger.debug("Failed to download crawled image after retries: %s", cu)
             except Exception:
                 pass
         # Uploaded images (from frontend file input)
@@ -168,7 +199,7 @@ async def start_render(req: RenderRequest) -> RenderResponse:
             if not got_img:
                 label = product_title[:12] if product_title else f"场景{idx+1}"
                 img_type_name = ["白底主图", "场景氛围图", "卖点特写图", "场景氛围图"][idx % 4]
-                sp.run([
+                ok, out, err = _run_cmd([
                     ffmpeg, "-y",
                     "-f", "lavfi", "-i", "color=c=0xf5f5f0:s=512x512:d=0.1",
                     "-vf", (
@@ -182,10 +213,13 @@ async def start_render(req: RenderRequest) -> RenderResponse:
                     ),
                     "-frames:v", "1", "-q:v", "3",
                     str(img_file),
-                ], capture_output=True, text=True, timeout=10)
-                if img_file.exists() and img_file.stat().st_size > 500:
+                ], timeout=10)
+                if ok and img_file.exists() and img_file.stat().st_size > 500:
                     product_images.append(str(img_file))
                     messages.append(f"Placeholder: {label}")
+                else:
+                    logger.warning("FFmpeg placeholder generation failed for %s: %s", str(img_file), err[:400])
+                    messages.append(f"Placeholder failed: {label} - {err[:160]}")
 
         messages.append(f"{len(product_images)}/{len(scene_defs)} product images")
 
@@ -228,18 +262,23 @@ async def start_render(req: RenderRequest) -> RenderResponse:
             if has_prod:
                 # Step 1: product image → video clip with padding (centered on bg color)
                 tmp_path = Path(output_dir) / f"tmp_{sd.index}.mp4"
-                sp.run([
+                frames = max(1, int(scene_actual_dur * 24))
+                ok, out, err = _run_cmd([
                     ffmpeg, "-y",
                     "-loop", "1", "-i", str(prod_file),
-                    "-f", "lavfi", "-i", f"color=c={sd.bg_color}:s=720x1280:r=24",
-                    "-filter_complex", "[0:v]scale=500:500:force_original_aspect_ratio=decrease[prod];[1:v][prod]overlay=(W-w)/2:(H-h)/3",
-                    "-c:v", "libx264", "-preset", "ultrafast", "-crf", "23", "-pix_fmt", "yuv420p",
-                    "-t", str(scene_actual_dur), "-shortest",
+                    "-vf", f"scale=720:-1,zoompan=z='min(zoom+0.001,1.15)':d={frames}:s=720x1280,setsar=1",
+                    "-r", "24",
+                    "-c:v", "libx264", "-preset", "ultrafast", "-crf", "23",
+                    "-pix_fmt", "yuv420p",
+                    "-t", str(scene_actual_dur),
                     str(tmp_path),
-                ], capture_output=True, text=True, timeout=15)
+                ], timeout=20)
+                if not ok:
+                    logger.warning("FFmpeg step1 failed for tmp_path %s: %s", str(tmp_path), err[:400])
+                    messages.append(f"S{sd.index} step1 ffmpeg error: {err[:160]}")
                 # Step 2: add text overlay
                 if tmp_path.exists() and tmp_path.stat().st_size > 1000:
-                    r = sp.run([
+                    ok2, out2, err2 = _run_cmd([
                         ffmpeg, "-y",
                         "-i", str(tmp_path),
                         "-vf", (
@@ -251,12 +290,17 @@ async def start_render(req: RenderRequest) -> RenderResponse:
                         "-c:v", "libx264", "-preset", "ultrafast", "-crf", "23",
                         "-pix_fmt", "yuv420p",
                         str(spath),
-                    ], capture_output=True, text=True, timeout=15)
+                    ], timeout=15)
+                    if not ok2:
+                        logger.warning("FFmpeg drawtext failed for scene %s: %s", sd.index, err2[:400])
+                        r = type("R", (), {"stderr": err2})()
+                    else:
+                        r = type("R", (), {"stderr": ""})()
                 else:
                     r = None
                     messages.append(f"S{sd.index} step1 fail")
             else:
-                r = sp.run([
+                ok3, out3, err3 = _run_cmd([
                     ffmpeg, "-y",
                     "-f", "lavfi", "-i", f"color=c={sd.bg_color}:s=720x1280:d={scene_actual_dur}:r=24",
                     "-vf", (
@@ -268,7 +312,10 @@ async def start_render(req: RenderRequest) -> RenderResponse:
                     "-c:v", "libx264", "-preset", "ultrafast", "-crf", "23",
                     "-pix_fmt", "yuv420p",
                     str(spath),
-                ], capture_output=True, text=True, timeout=20)
+                ], timeout=20)
+                if not ok3:
+                    logger.warning("FFmpeg scene generation failed for scene %s: %s", sd.index, err3[:400])
+                    r = type("R", (), {"stderr": err3})()
 
             if spath.exists() and spath.stat().st_size > 1000:
                 scene_files.append(spath)
@@ -309,11 +356,43 @@ async def start_render(req: RenderRequest) -> RenderResponse:
         else:
             messages.append(f"video-factory: {vf_result['message']}")
 
-    # ── CogVideo async ─────────────────────────
+    # ── CogVideo (sync/async modes) ─────────────────────────
     if req.enable_cogvideo:
         prompt = req.cogvideo_prompt or f"电商产品种草视频：{demo_name}"
-        asyncio.create_task(_cogvideo_bg(prompt, output_dir, job_id))
-        messages.append("CogVideo started in background")
+        mode = (getattr(req, "cogvideo_mode", "auto") or "auto").lower()
+        cogvideo_task_id = ""
+        cogvideo_video_url = ""
+        cogvideo_local_path = ""
+        if mode == "async":
+            asyncio.create_task(_cogvideo_bg(prompt, output_dir, job_id))
+            messages.append("CogVideo started in background (async mode)")
+        else:
+            # mode == 'sync' or 'auto' => try synchronous generation first
+            try:
+                result = await cogvideo_generate_clip(
+                    prompt=prompt,
+                    image_url=product_images[0] if product_images else None,
+                    duration=total_duration,
+                    output_dir=output_dir,
+                )
+                cogvideo_task_id = result.get("task_id", "")
+                cogvideo_video_url = result.get("video_url", "")
+                cogvideo_local_path = result.get("local_path", "")
+                if result.get("status") == "ok" and (cogvideo_local_path or cogvideo_video_url):
+                    video_path = cogvideo_local_path or cogvideo_video_url or video_path
+                    messages.append("CogVideo produced video synchronously")
+                else:
+                    if mode == "auto":
+                        asyncio.create_task(_cogvideo_bg(prompt, output_dir, job_id))
+                        messages.append("CogVideo started in background (async fallback)")
+                    else:
+                        # sync mode requested but failed -> still spawn background task to attempt completion
+                        asyncio.create_task(_cogvideo_bg(prompt, output_dir, job_id))
+                        messages.append("CogVideo sync failed; started background retry")
+            except Exception as e:
+                logger.exception("CogVideo sync failed: %s", e)
+                asyncio.create_task(_cogvideo_bg(prompt, output_dir, job_id))
+                messages.append("CogVideo started in background after exception")
 
     now = utc_now_iso()
     job = RenderJobRecord(

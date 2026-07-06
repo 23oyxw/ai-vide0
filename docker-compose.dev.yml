@@ -1,0 +1,53 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: orchestrator
+      POSTGRES_PASSWORD: orchestrator
+      POSTGRES_DB: ai_video
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+
+  orchestrator:
+    build:
+      context: .
+      dockerfile: orchestrator/Dockerfile.dev
+    volumes:
+      - ./:/app
+    working_dir: /app
+    env_file:
+      - .env.dev
+    ports:
+      - "8765:8765"
+    command: uvicorn orchestrator.main:app --host 0.0.0.0 --port 8765 --reload
+    depends_on:
+      - postgres
+      - redis
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile.dev
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    working_dir: /app/apps/web
+    environment:
+      - NEXT_PUBLIC_ORCHESTRATOR_URL=http://orchestrator:8765
+      - HOST=0.0.0.0
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install && npm run dev -- -H 0.0.0.0"
+    depends_on:
+      - orchestrator
+
+volumes:
+  pgdata:

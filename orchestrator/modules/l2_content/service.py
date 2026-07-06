@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import base64
 
@@ -59,7 +59,7 @@ async def _deepseek_rewrite(text: str, style: str) -> str | None:
         async with httpx.AsyncClient(timeout=30.0) as client:
             resp = await client.post(
                 "https://api.deepseek.com/chat/completions",
-                headers={"Authorization": f"Bearer {api_key}"},
+                headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
                 json={
                     "model": "deepseek-chat",
                     "messages": [
@@ -90,7 +90,7 @@ async def generate_script_record(req: GenerateScriptRequest) -> GenerateScriptRe
     full_text = ""
 
     # 1. Zhipu GLM-4-Flash (free, best Chinese)
-    from orchestrator.adapters.zhipu import generate_script as zhipu_generate
+    from orchestrator.adapters.zhipu_client2 import generate_script as zhipu_generate
     zhipu = await zhipu_generate(
         product_url=req.product_url,
         raw_text=source,
@@ -233,7 +233,7 @@ async def generate_product_images(req: GenerateProductImageRequest) -> GenerateP
     ref_url = req.reference_image_url.strip()
 
     async def _try_generate(prompt: str) -> str | None:
-        from orchestrator.adapters.zhipu import generate_image
+        from orchestrator.adapters.zhipu_client2 import generate_image
         result = await generate_image(prompt, reference_image_url=ref_url if ref_url else "")
         return result.get("url") if result.get("status") == "ok" else None
 
@@ -300,3 +300,4 @@ async def generate_product_images(req: GenerateProductImageRequest) -> GenerateP
         product_title=title,
         category=category,
     )
+
