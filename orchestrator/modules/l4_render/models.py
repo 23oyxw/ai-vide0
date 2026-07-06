@@ -10,6 +10,8 @@ class RenderRequest(BaseModel):
     c4d_project: str | None = None
     enable_c4d_scene2: bool = True
     enable_cogvideo: bool = False
+    # cogvideo_mode: 'sync' | 'async' | 'auto' (auto = try sync, fallback to async)
+    cogvideo_mode: str = "auto"
     cogvideo_prompt: str = ""
     job_id: str | None = None
     crawled_image_urls: list[str] = Field(default_factory=list)

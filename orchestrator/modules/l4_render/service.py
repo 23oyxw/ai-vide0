@@ -356,28 +356,43 @@ async def start_render(req: RenderRequest) -> RenderResponse:
         else:
             messages.append(f"video-factory: {vf_result['message']}")
 
-    # ── CogVideo (synchronous preferred) ─────────────────────────
+    # ── CogVideo (sync/async modes) ─────────────────────────
     if req.enable_cogvideo:
         prompt = req.cogvideo_prompt or f"电商产品种草视频：{demo_name}"
-        # Try synchronous generation first so final video contains real motion instead of only static images.
-        try:
-            result = await cogvideo_generate_clip(
-                prompt=prompt,
-                image_url=product_images[0] if product_images else None,
-                duration=total_duration,
-                output_dir=output_dir,
-            )
-            if result.get("status") == "ok" and (result.get("local_path") or result.get("video_url")):
-                video_path = result.get("local_path") or result.get("video_url", "")
-                messages.append("CogVideo produced video synchronously")
-            else:
-                # If synchronous generation failed or is unavailable, fall back to background generation.
-                asyncio.create_task(_cogvideo_bg(prompt, output_dir, job_id))
-                messages.append("CogVideo started in background (async fallback)")
-        except Exception as e:
-            logger.exception("CogVideo sync failed: %s", e)
+        mode = (getattr(req, "cogvideo_mode", "auto") or "auto").lower()
+        cogvideo_task_id = ""
+        cogvideo_video_url = ""
+        cogvideo_local_path = ""
+        if mode == "async":
             asyncio.create_task(_cogvideo_bg(prompt, output_dir, job_id))
-            messages.append("CogVideo started in background after exception")
+            messages.append("CogVideo started in background (async mode)")
+        else:
+            # mode == 'sync' or 'auto' => try synchronous generation first
+            try:
+                result = await cogvideo_generate_clip(
+                    prompt=prompt,
+                    image_url=product_images[0] if product_images else None,
+                    duration=total_duration,
+                    output_dir=output_dir,
+                )
+                cogvideo_task_id = result.get("task_id", "")
+                cogvideo_video_url = result.get("video_url", "")
+                cogvideo_local_path = result.get("local_path", "")
+                if result.get("status") == "ok" and (cogvideo_local_path or cogvideo_video_url):
+                    video_path = cogvideo_local_path or cogvideo_video_url or video_path
+                    messages.append("CogVideo produced video synchronously")
+                else:
+                    if mode == "auto":
+                        asyncio.create_task(_cogvideo_bg(prompt, output_dir, job_id))
+                        messages.append("CogVideo started in background (async fallback)")
+                    else:
+                        # sync mode requested but failed -> still spawn background task to attempt completion
+                        asyncio.create_task(_cogvideo_bg(prompt, output_dir, job_id))
+                        messages.append("CogVideo sync failed; started background retry")
+            except Exception as e:
+                logger.exception("CogVideo sync failed: %s", e)
+                asyncio.create_task(_cogvideo_bg(prompt, output_dir, job_id))
+                messages.append("CogVideo started in background after exception")
 
     now = utc_now_iso()
     job = RenderJobRecord(
